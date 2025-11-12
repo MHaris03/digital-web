@@ -20,8 +20,7 @@ export const Header = () => {
         "Local Maps Optimization",
         "Social Media Marketing",
         "PPC Management",
-        "Content Marketing",
-        "App Development",
+        "Content Writing",
     ];
 
     return (

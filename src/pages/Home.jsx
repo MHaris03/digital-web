@@ -1,18 +1,18 @@
 import { Link, useNavigate } from "react-router-dom";
-import { Button } from "../components/ui/button";
-import { Card } from "../components/ui/card";
-import { Badge } from "../components/ui/badge";
-import { ArrowRight, Star, TrendingUp, Users, Target, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import { HeroSlider } from "../components/HeroSliderbar";
-import { AnimatedCounter } from "../components/AnimatedCounter";
+import Info from "../pages/Info"
 import heroImage from "../assets/hero-main.jpg";
 import video2 from "../assets/video2.mp4"
-import teamWork from "../assets/team-work.jpg";
 import analytics from "../assets/analytics.jpg";
-import workDesk from "../assets/work-desk.jpg";
 import bghero from "../assets/bg-hero.jpg"
 import SliderBar from "./Sliderbar";
+import Plan from "./Plan";
+import FocusPoints from "./Focus";
+import WhatWeOffer from "./WhatWeOffer";
+import CTASection from "./CtaSection";
+import FAQSection from "./Faq";
+import Counter from "./Counter";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -100,9 +100,12 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <SliderBar/>
-        {/* Animated Stats Section */}
-      <section className="bg-primary text-primary-foreground py-12 relative overflow-hidden">
+      <SliderBar />
+      {/* Animated Stats Section */}
+      <Info />
+      <Plan />
+      <FocusPoints />
+      {/* <section className="bg-primary text-primary-foreground py-12 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/50 to-primary opacity-50"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
@@ -124,24 +127,24 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Services Preview with Animations */}
-      <section className="py-20 bg-muted/30">
+      {/* <section className="py-20 ">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
             <Badge className="mb-4">What We Offer</Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Comprehensive Digital Solutions
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg max-w-2xl mx-auto">
               From strategy to execution, we deliver end-to-end digital marketing services tailored to your business goals.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in group">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 mb-4 group-hover:bg-primary group-hover:scale-110 transition-all">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg mb-4 group-hover:bg-primary group-hover:scale-110 transition-all">
                 <Target className="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
               <h3 className="text-xl font-bold mb-2">Digital Strategy</h3>
@@ -189,10 +192,12 @@ const Home = () => {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <WhatWeOffer />
 
       {/* CTA Section with Animation */}
-      <section className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
+      {/* <section className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary/80"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
@@ -210,7 +215,12 @@ const Home = () => {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
+      <CTASection />
+      <FAQSection />
+      <Counter />
+
+      {/* <RequestQuoteForm/> */}
     </div>
   );
 };

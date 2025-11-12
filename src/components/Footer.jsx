@@ -1,98 +1,117 @@
 import { Link } from "react-router-dom";
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
 
 export const Footer = () => {
   return (
-    <footer className="border-t bg-muted/50">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-                <span className="text-xl font-bold text-primary-foreground">DM</span>
-              </div>
-              <span className="text-xl font-bold">DigitalMark</span>
+    <footer className="relative py-20 overflow-hidden rounded-t-[5rem] shadow-[0_0_50px_rgba(0,0,0,0.25)] bg-gradient-to-tr from-[#00A693] to-[#00796B]">
+
+      {/* Container */}
+      <div className="container mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+        {/* Brand Section */}
+        <motion.div
+          className="space-y-4"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <div className="flex items-center gap-3">
+            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#FFD166] text-[#00796B] font-bold text-lg shadow-lg">
+              SM
             </div>
-            <p className="text-sm text-muted-foreground">
-              Empowering businesses through innovative digital marketing strategies and creative solutions.
-            </p>
+            <span className="text-2xl font-bold text-white">Sky Rise Marketing</span>
           </div>
-
-          <div>
-            <h3 className="mb-4 text-sm font-semibold">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">
-                  Our Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/work" className="text-muted-foreground hover:text-primary transition-colors">
-                  Our Work
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">
-                  Contact Us
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="mb-4 text-sm font-semibold">Services</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Digital Strategy</li>
-              <li>SEO & Marketing</li>
-              <li>Content Creation</li>
-              <li>Social Media</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="mb-4 text-sm font-semibold">Contact</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li className="flex items-center">
-                <Phone className="mr-2 h-4 w-4" />
-                (555) 123-4567
-              </li>
-              <li className="flex items-center">
-                <Mail className="mr-2 h-4 w-4" />
-                hello@digitalmark.com
-              </li>
-              <li className="flex items-center">
-                <MapPin className="mr-2 h-4 w-4" />
-                123 Business Ave, NY
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="mt-8 flex flex-col items-center justify-between border-t pt-8 md:flex-row">
-          <p className="text-sm text-muted-foreground">
-            © 2024 DigitalMark. All rights reserved.
+          <p className="text-[#E0F2F1] text-md font-semibold">
+            Empowering businesses through innovative digital marketing strategies with measurable results.
           </p>
-          <div className="mt-4 flex space-x-4 md:mt-0">
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <Facebook className="h-5 w-5" />
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <Twitter className="h-5 w-5" />
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <Linkedin className="h-5 w-5" />
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <Instagram className="h-5 w-5" />
-            </a>
-          </div>
-        </div>
+        </motion.div>
+
+        {/* Quick Links */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
+        >
+          <h3 className="mb-4 font-bold text-lg text-white">Quick Links</h3>
+          <ul className="space-y-2 text-[#E0F2F1] text-md font-semibold">
+            {[
+              { label: "Home", path: "/" },
+              { label: "Services", path: "/services" },
+              { label: "Our Work", path: "/work" },
+              { label: "Contact", path: "/contact" },
+            ].map((link) => (
+              <li key={link.label}>
+                <Link
+                  to={link.path}
+                  className="inline-block hover:text-[#FFD166] hover:scale-110 transition-all duration-300"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
+        {/* Services */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <h3 className="mb-4 font-bold text-lg text-white">Services</h3>
+          <ul className="space-y-2 text-[#E0F2F1] text-md font-semibold">
+            {["Digital Strategy", "SEO & Marketing", "Content Creation", "Social Media", "Paid Advertising"].map((service) => (
+              <li key={service}>
+                <span className="inline-block hover:text-[#FFD166] hover:scale-110 transition-all duration-300 cursor-pointer">
+                  {service}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+        {/* Contact */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <h3 className="mb-4 font-bold text-lg text-white">Contact</h3>
+          <ul className="space-y-3 text-[#E0F2F1] text-md font-semibold">
+            <li className="flex items-center gap-2">
+              <Phone className="w-5 h-5 text-[#FFD166]" /> (555) 123-4567
+            </li>
+            <li className="flex items-center gap-2">
+              <Mail className="w-5 h-5 text-[#FFD166]" /> hello@skyrisemarketing.com
+            </li>
+            <li className="flex items-center gap-2">
+              <MapPin className="w-5 h-5 text-[#FFD166]" /> 123 Business Ave, NY
+            </li>
+          </ul>
+        </motion.div>
+
       </div>
+
+      {/* Bottom Section */}
+      <motion.div
+        className="mt-12 flex flex-col md:flex-row items-center justify-between pt-6 px-6 border-t border-white/20"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        viewport={{ once: true }}
+      >
+        <p className="text-white/70 text-md font-semibold">© 2025 Sky Rise Marketing. All rights reserved.</p>
+        <div className="mt-4 md:mt-0 flex space-x-4">
+          <a href="#" className="hover:text-[#FFD166] transition-colors text-white/70"><Facebook className="w-6 h-6" /></a>
+          <a href="#" className="hover:text-[#FFD166] transition-colors text-white/70"><Twitter className="w-6 h-6" /></a>
+          <a href="#" className="hover:text-[#FFD166] transition-colors text-white/70"><Linkedin className="w-6 h-6" /></a>
+          <a href="#" className="hover:text-[#FFD166] transition-colors text-white/70"><Instagram className="w-6 h-6" /></a>
+        </div>
+      </motion.div>
     </footer>
   );
 };
