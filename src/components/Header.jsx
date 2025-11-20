@@ -5,8 +5,10 @@ import logo from "../assets/logo-transparent.png";
 
 export const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [openDropdowns, setOpenDropdowns] = useState({});
     const [isServicesOpen, setIsServicesOpen] = useState(false);
     const location = useLocation();
+    let timeoutId = null;
 
     const navItems = [
         { label: "Home", to: "/" },
@@ -30,6 +32,13 @@ export const Header = () => {
         document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
     }, [isMenuOpen]);
 
+    const toggleDropdown = (label) => {
+        setOpenDropdowns(prev => ({
+            ...prev,
+            [label]: !prev[label],
+        }));
+    };
+
     return (
         <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/90 backdrop-blur-md transition-shadow duration-300 shadow-sm">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,8 +60,13 @@ export const Header = () => {
                                 <div
                                     key={label}
                                     className="relative group"
-                                    onMouseEnter={() => setIsServicesOpen(true)}
-                                    onMouseLeave={() => setIsServicesOpen(false)}
+                                    onMouseEnter={() => {
+                                        clearTimeout(timeoutId);
+                                        setIsServicesOpen(true);
+                                    }}
+                                    onMouseLeave={() => {
+                                        timeoutId = setTimeout(() => setIsServicesOpen(false), 200);
+                                    }}
                                 >
                                     <Link
                                         to={to}
@@ -61,14 +75,12 @@ export const Header = () => {
                                         {label} <ChevronDown className="w-4 h-4" />
                                     </Link>
 
-                                    {/* Desktop Dropdown */}
                                     {isServicesOpen && (
                                         <ul className="absolute left-0 mt-2 w-60 bg-white shadow-lg rounded-md overflow-hidden animate-fadeIn pointer-events-auto z-50">
                                             {serviceItems.map(({ label, to }) => (
                                                 <li key={label}>
                                                     <Link
                                                         to={to}
-                                                        onClick={() => setIsServicesOpen(false)}
                                                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#00A693]"
                                                     >
                                                         {label}
@@ -82,14 +94,15 @@ export const Header = () => {
                                 <Link
                                     key={label}
                                     to={to}
-                                    className={`text-sm font-medium transition-colors ${location.pathname === to ? "text-[#00A693]" : "text-gray-700 hover:text-[#00A693]"
+                                    className={`text-sm font-medium transition-colors ${location.pathname === to
+                                        ? "text-[#00A693]"
+                                        : "text-gray-700 hover:text-[#00A693]"
                                         }`}
                                 >
                                     {label}
                                 </Link>
                             )
                         )}
-
                     </nav>
 
                     {/* Desktop Actions */}

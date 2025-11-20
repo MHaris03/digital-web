@@ -14,17 +14,16 @@ import SocialMediaMarketing from "./pages/SocialMedia";
 import PPCManagement from "./pages/Ppc";
 import ContentWritingServices from "./pages/Writing";
 import Designweb from "./pages/Designdevelopment";
-// import NotFound from "./pages/NotFound";
-// import { Toaster } from "./components/ui/toaster";
+import ScrollToTop from "./components/Scrolltotop";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      {/* <Toaster /> */}
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
@@ -43,7 +42,6 @@ const App = () => (
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
-  // <div class="bg-red-500 text-white p-4">Hello Tailwind</div>
 
 );
 

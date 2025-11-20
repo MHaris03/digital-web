@@ -194,7 +194,7 @@ const PPCManagement = () => {
                                     : "text-[#00A693] border border-[#00A693] hover:bg-[#00A693] hover:text-white"
                                     }`}
                             >
-                                Learn More
+                                Lets Start
                             </button>
                         </motion.div>
                     ))}
