@@ -1,40 +1,41 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Target, TrendingUp, Users, PenTool, BarChart, Sparkles, ArrowRight } from "lucide-react";
+import { Target, PenTool, ArrowRight, Search, MapPin, Share2, Code2 } from "lucide-react";
 
 export default function WhatWeOffer2025() {
     const services = [
         {
+            icon: <Code2 className="h-7 w-7 text-white" />,
+            title: "Web Design & Development",
+            desc: "Custom, fast, and responsive websites built to match your brand and convert visitors into customers.",
+        },
+        {
+            icon: <Search className="h-7 w-7 text-white" />,
+            title: "Search Engine Optimization",
+            desc: "Improve rankings, boost traffic, and strengthen your online visibility with proven SEO practices.",
+        },
+        {
+            icon: <MapPin className="h-7 w-7 text-white" />,
+            title: "Local Maps Optimization",
+            desc: "Get your business discovered in local searches with optimized Google Business profiles and map listings.",
+        },
+        {
+            icon: <Share2 className="h-7 w-7 text-white" />,
+            title: "Social Media Marketing",
+            desc: "Grow your audience and build a strong community with tailored social campaigns for every platform.",
+        },
+        {
             icon: <Target className="h-7 w-7 text-white" />,
-            title: "Digital Strategy",
-            desc: "We build adaptive strategies that blend innovation with precision to keep your brand ahead of the curve.",
-        },
-        {
-            icon: <TrendingUp className="h-7 w-7 text-white" />,
-            title: "SEO & Growth Marketing",
-            desc: "Drive measurable success through AI-driven analytics, optimized content, and market visibility that lasts.",
-        },
-        {
-            icon: <Users className="h-7 w-7 text-white" />,
-            title: "Social Media Innovation",
-            desc: "Turn followers into fans with storytelling, trends, and platform-specific strategies that connect authentically.",
+            title: "PPC Management",
+            desc: "Run high-performing ad campaigns that bring predictable results and a better return on ad spend.",
         },
         {
             icon: <PenTool className="h-7 w-7 text-white" />,
-            title: "Creative Content Studio",
-            desc: "From video to copywriting, we craft content that sparks emotion, builds trust, and inspires engagement.",
-        },
-        {
-            icon: <BarChart className="h-7 w-7 text-white" />,
-            title: "Performance Analytics",
-            desc: "Real-time insights, predictive data, and visual dashboards that make every marketing decision smarter.",
-        },
-        {
-            icon: <Sparkles className="h-7 w-7 text-white" />,
-            title: "AI Automation",
-            desc: "Enhance productivity with intelligent automation that personalizes campaigns and optimizes performance.",
+            title: "Content Writing",
+            desc: "Clear, engaging, and search-friendly content crafted to educate, inspire, and convert your audience.",
         },
     ];
+
 
     return (
         <section className="relative py-24 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900">

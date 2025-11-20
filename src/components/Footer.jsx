@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
+import logo from "../assets/main-logo.png"
 
 export const Footer = () => {
   return (
@@ -18,10 +19,15 @@ export const Footer = () => {
           viewport={{ once: true }}
         >
           <div className="flex items-center gap-3">
-            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#FFD166] text-[#00796B] font-bold text-lg shadow-lg">
-              SM
-            </div>
-            <span className="text-2xl font-bold text-white">Sky Rise Marketing</span>
+            <img
+              src={logo}
+              alt="Sky Lift Marketing"
+              className="h-auto w-40 object-cover"
+            />
+
+            {/* <span className="text-2xl font-bold text-white">
+              Sky Lift Marketing
+            </span> */}
           </div>
           <p className="text-[#E0F2F1] text-md font-semibold">
             Empowering businesses through innovative digital marketing strategies with measurable results.
@@ -104,7 +110,7 @@ export const Footer = () => {
         transition={{ duration: 0.6, delay: 0.4 }}
         viewport={{ once: true }}
       >
-        <p className="text-white/70 text-md font-semibold">© 2025 Sky Rise Marketing. All rights reserved.</p>
+        <p className="text-white/70 text-md font-semibold">© 2025 Sky Lift Marketing. All rights reserved.</p>
         <div className="mt-4 md:mt-0 flex space-x-4">
           <a href="#" className="hover:text-[#FFD166] transition-colors text-white/70"><Facebook className="w-6 h-6" /></a>
           <a href="#" className="hover:text-[#FFD166] transition-colors text-white/70"><Twitter className="w-6 h-6" /></a>

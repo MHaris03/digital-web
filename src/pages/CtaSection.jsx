@@ -4,48 +4,51 @@ import { ArrowRight } from "lucide-react";
 
 export default function CTASection() {
   return (
-    <section className="relative py-24 bg-gradient-to-tr from-[#00A693] via-[#00C1A0] to-[#00A693] overflow-hidden">
-      {/* Background Abstract Shapes */}
-      <div className="absolute -top-20 -left-20 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-blob"></div>
-      <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+    <section className="relative py-20 md:py-24 bg-gradient-to-tr from-[#00A693] via-[#00C1A0] to-[#00A693] overflow-hidden">
 
-      <div className="relative z-10 max-w-3xl mx-auto text-center px-6">
-        <motion.h2
-          className="text-4xl md:text-5xl font-extrabold text-white mb-6"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          Elevate Your Brand to the Next Level
-        </motion.h2>
+  {/* Background Abstract Shapes */}
+  <div className="absolute -top-32 -left-32 w-72 md:w-96 h-72 md:h-96 bg-white/10 rounded-full blur-3xl animate-blob"></div>
+  <div className="absolute -bottom-32 -right-32 w-72 md:w-96 h-72 md:h-96 bg-white/10 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
 
-        <motion.p
-          className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          At <strong>Sky Rise Marketing</strong>, we craft smart, data-driven strategies that grow your audience, boost conversions, and make your brand unforgettable.
-        </motion.p>
+  <div className="relative z-10 max-w-3xl mx-auto text-center px-4 sm:px-6">
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <Link
-            to="/contact"
-            className="inline-flex items-center bg-white text-[#00A693] font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-2xl transition-all hover:scale-105"
-          >
-            Get Your Free Consultation
-            <ArrowRight className="ml-3 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
-        </motion.div>
-      </div>
-    </section>
+    <motion.h2
+      className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-4 sm:mb-6"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
+      Elevate Your Brand to the Next Level
+    </motion.h2>
+
+    <motion.p
+      className="text-base sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-10 leading-relaxed"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+      viewport={{ once: true }}
+    >
+      At <strong>Sky Lift Marketing</strong>, we craft smart and data-driven strategies that grow your audience, boost conversions, and help your brand stand out.
+    </motion.p>
+
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.6, delay: 0.4 }}
+      viewport={{ once: true }}
+    >
+      <Link
+        to="/contact"
+        className="inline-flex items-center justify-center bg-white text-[#00A693] font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg hover:shadow-2xl transition-transform hover:scale-105"
+      >
+        Get Your Free Consultation
+        <ArrowRight className="ml-2 sm:ml-3 h-5 w-5 transition-transform duration-300" />
+      </Link>
+    </motion.div>
+  </div>
+</section>
+
   );
 }
 
@@ -85,7 +88,7 @@ export default function CTASection() {
 //           transition={{ duration: 0.8, delay: 0.2 }}
 //           viewport={{ once: true }}
 //         >
-//           At <strong>Sky Rise Marketing</strong>, we combine data, creativity, and AI-driven insights to grow your brand smarter and faster. Your audience, conversions, and revenue — elevated.
+//           At <strong>Sky Lift Marketing</strong>, we combine data, creativity, and AI-driven insights to grow your brand smarter and faster. Your audience, conversions, and revenue — elevated.
 //         </motion.p>
 
 //         <motion.div

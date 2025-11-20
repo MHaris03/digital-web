@@ -1,134 +1,257 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { Badge } from "../components/ui/badge";
-import { Button } from "../components/ui/button";
-import { Check, Target, TrendingUp, Users, PenTool, BarChart3, Megaphone } from "lucide-react";
-import HeroBg from "../assets/servicebgimg.jpg"; 
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Smartphone,
+  ShoppingCart,
+  Search,
+  Settings,
+  Code2,
+  Wrench
+} from "lucide-react";
+import HeroBg from "../assets/web-design.jpg";
+import Webimg from "../assets/web-side.jpg"
+import SliderBar from "./Sliderbar";
+import CTASection from "./CtaSection";
+import Testimonials from "./Testionmial";
+
 
 const services = [
   {
-    icon: Target,
-    title: "Digital Strategy",
-    description: "Tailored strategies to grow your business.",
-    features: ["Market Analysis", "Competitor Research", "Customer Mapping", "KPI Planning"]
+    icon: <Code2 size={34} />,
+    title: "Custom Website Design",
+    desc: "Unique layouts that match your brand with clean visuals and a smooth user experience.",
+    highlight: true,
   },
   {
-    icon: TrendingUp,
-    title: "SEO Optimization",
-    description: "Boost your website visibility and traffic.",
-    features: ["On-page SEO", "Technical Audits", "Link Building", "Local SEO"]
+    icon: <Wrench size={34} />,
+    title: "WordPress Website Development",
+    desc: "Custom themes, plugins and performance-optimized sites built for stability.",
   },
   {
-    icon: Users,
-    title: "Social Media Marketing",
-    description: "Engage your audience across all platforms.",
-    features: ["Content Planning", "Community Management", "Paid Ads", "Influencer Campaigns"]
+    icon: <Smartphone size={34} />,
+    title: "Mobile Responsive Design",
+    desc: "Fully responsive interfaces tested on all major screen sizes.",
   },
   {
-    icon: PenTool,
-    title: "Content Creation",
-    description: "Create content that resonates with your audience.",
-    features: ["Blogs & Articles", "Video Production", "Graphic Design", "Brand Storytelling"]
+    icon: <ShoppingCart size={34} />,
+    title: "E-Commerce Development",
+    desc: "Secure stores with payment integration, product management and order automation.",
+  },
+  {
+    icon: <Search size={34} />,
+    title: "SEO-Friendly Web Development",
+    desc: "Fast, structured, and optimized for better visibility on search engines.",
+  },
+  {
+    icon: <Settings size={34} />,
+    title: "Website Maintenance & Support",
+    desc: "Updates, security monitoring, backups and speed improvements.",
   },
 ];
 
-const cardVariants = {
-  hidden: { opacity: 0, rotateY: -45, scale: 0.8 },
-  visible: { opacity: 1, rotateY: 0, scale: 1 },
-};
+const faqs = [
+  {
+    q: "What is the typical development timeline?",
+    a: "The timeline varies based on complexity, but most projects are completed within 1–4 weeks.",
+  },
+  {
+    q: "Do you offer post-launch support?",
+    a: "Yes. We provide maintenance plans that include updates, monitoring, and security enhancements.",
+  },
+  {
+    q: "Will my website be optimized for SEO?",
+    a: "Yes. Every site is developed with modern SEO structure, clean markup, and fast performance.",
+  },
+  {
+    q: "Can you develop advanced or custom features?",
+    a: "Yes. We build custom modules, integrations, and tailored functionality based on your goals.",
+  },
+];
 
 const Services = () => {
+
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
-    <div className="flex flex-col">
+   <div className="w-full">
+  {/* SECTION 1 */}
+  <section
+    className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"
+    style={{ backgroundImage: `url(${HeroBg})` }}
+  >
+    <div className="absolute inset-0 bg-black/50" />
 
-      {/* Hero Section */}
-      <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
-        <img src={HeroBg} alt="Digital Marketing Hero" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/70"></div>
-        <div className="relative z-10 text-center px-6">
-          {/* <Badge className="mb-4 bg-yellow-400 text-[#00796B]">Our Services</Badge> */}
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg"
-          >
-            Our Digital Marketing Solutions
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl max-w-3xl mx-auto text-white/90 mb-8"
-          >
-            Explore our services and see how we can help your business grow.
-          </motion.p>
-          <motion.div
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            {/* <Button size="lg" variant="secondary" asChild>
-              <Link to="/contact">Get Started</Link>
-            </Button> */}
-          </motion.div>
+    <motion.h1
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="relative text-white text-4xl md:text-6xl font-bold text-center"
+    >
+      Website Design & Development
+    </motion.h1>
+
+    <motion.p
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      className="relative text-white text-lg md:text-xl mt-4 text-center max-w-xl"
+    >
+      Helping brands rise with creativity, strategy and measurable growth.
+    </motion.p>
+  </section>
+
+  <SliderBar />
+
+  {/* SECTION 2 — Web Maintenance */}
+  <motion.section
+    className="relative py-20 md:py-24 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+  >
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,#00A69330,transparent_70%)] blur-2xl"></div>
+
+    <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-12 items-center px-6 md:px-0">
+      {/* LEFT SIDE */}
+      <motion.div
+        className="text-white"
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <p className="text-xs sm:text-sm tracking-wide opacity-80">
+          PROUDLY AWARDED 20+ WEB DESIGN AWARDS
+        </p>
+
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-4 leading-tight">
+          Web Maintenance <br />
+          <span className="text-[#00A693]">& Support</span>
+        </h2>
+
+        <p className="italic text-lg sm:text-xl mt-4">
+          We’re Also Specialists In...
+        </p>
+
+        <div className="flex flex-wrap gap-2 sm:gap-3 mt-5">
+          <span className="px-3 py-2 sm:px-4 sm:py-2 bg-white/20 rounded-full text-xs sm:text-sm backdrop-blur">
+            SEO Services
+          </span>
+          <span className="px-3 py-2 sm:px-4 sm:py-2 bg-white/20 rounded-full text-xs sm:text-sm backdrop-blur">
+            Content Marketing
+          </span>
+          <span className="px-3 py-2 sm:px-4 sm:py-2 bg-white/20 rounded-full text-xs sm:text-sm backdrop-blur">
+            Local Maps Optimization
+          </span>
         </div>
-      </section>
+      </motion.div>
 
-      {/* Services Grid */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              variants={cardVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="bg-white rounded-3xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 cursor-pointer"
-            >
-              <motion.div
-                whileHover={{ scale: 1.15, rotate: 5 }}
-                className="flex h-16 w-16 items-center justify-center rounded-full bg-[#00A693] text-white mb-6 shadow-md"
-              >
-                <service.icon className="h-8 w-8" />
-              </motion.div>
-              <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
-              <p className="text-gray-700 mb-6">{service.description}</p>
-              <ul className="space-y-2">
-                {service.features.map((f, idx) => (
-                  <motion.li
-                    key={idx}
-                    whileHover={{ scale: 1.1, x: 5 }}
-                    className="flex items-start gap-2 text-gray-600"
-                  >
-                    <Check className="h-5 w-5 text-[#00A693] mt-1 flex-shrink-0" /> {f}
-                  </motion.li>
-                ))}
-              </ul>
+      {/* RIGHT SIDE */}
+      <motion.div
+        className="text-white text-base sm:text-lg leading-relaxed space-y-4"
+        initial={{ opacity: 0, x: 40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <p>
+          In today’s digital world, your website is often the first interaction potential customers have with your brand. At <strong>SKy Lift Marketing</strong>, we create modern, user-friendly websites that look great and perform even better.
+        </p>
+        <p>
+          Whether you’re starting new or redesigning an existing site, we bring your vision to life.
+        </p>
+        <p>
+          Let’s build a website that reflects your brand and supports your business goals. Get in touch to start your project.
+        </p>
+      </motion.div>
+    </div>
+  </motion.section>
+
+  {/* SECTION 3 — SERVICE CARDS */}
+  <motion.section
+    className="py-20 px-6 md:px-12 bg-white"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+  >
+    <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+      {services.map((service, idx) => (
+        <motion.div
+          key={idx}
+          className={`relative group rounded-2xl p-8 border transition-all duration-500 shadow-md backdrop-blur-xl bg-white/10 hover:shadow-[0_0_25px_#00A69340] hover:border-[#00A693]/40 ${service.highlight ? 'border-[#00A693]/30' : 'border-gray-200'}`}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: idx * 0.2 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-[#00A693] mb-4">{service.icon}</div>
+          <h3 className="font-semibold text-xl mb-3 text-gray-900">{service.title}</h3>
+          <p className="text-gray-700 text-sm leading-relaxed mb-6">{service.desc}</p>
+          <button className={`px-4 py-2 rounded-full font-semibold transition cursor-pointer ${service.highlight ? 'bg-[#00A693] text-white hover:bg-[#00927f]' : 'text-[#00A693] border border-[#00A693] hover:bg-[#00A693] hover:text-white'}`}>Lets Start</button>
+        </motion.div>
+      ))}
+    </div>
+  </motion.section>
+
+  {/* SECTION 4 — FAQ */}
+  <motion.section
+    className="bg-white py-20 px-6 md:px-12"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+  >
+    <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+      {/* LEFT */}
+      <motion.div
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-3xl font-bold mb-6">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          {faqs.map((item, index) => (
+            <motion.div key={index} layout className={`border border-[#00A693] rounded-xl p-4 cursor-pointer transition-all duration-300 hover:shadow-[0_0_12px_#00A69350] hover:border-[#00A693] hover:scale-[1.01]`} onClick={() => toggleFAQ(index)}>
+              <div className="flex items-center justify-between">
+                <h3 className={`font-semibold text-lg transition-colors duration-300 ${openIndex === index ? 'text-[#00A693]' : 'text-[#00A693] group-hover:text-[#008d7c]'}`}>{item.q}</h3>
+                <ChevronDown size={20} className={`text-[#00A693] transition-all duration-300 ${openIndex === index ? 'rotate-180' : 'rotate-0'} group-hover:text-[#008d7c]`} />
+              </div>
+              <AnimatePresence>
+                {openIndex === index && (
+                  <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }}>
+                    <div className="mt-4 border-t border-gray-300 pt-3">
+                      <p className="text-black text-md leading-relaxed">{item.a}</p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
           ))}
         </div>
-      </section>
+      </motion.div>
 
-      {/* CTA Section */}
-      {/* <section className="py-20 bg-gradient-to-r from-[#00A693] to-[#00796B] text-white text-center relative overflow-hidden">
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Elevate Your Business?</h2>
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            Let's work together to create a measurable impact for your brand.
-          </p>
-          <Button size="lg" variant="secondary" asChild>
-            <Link to="/contact">Start Your Project</Link>
-          </Button>
-        </motion.div>
-      </section> */}
-
+      {/* RIGHT Image */}
+      <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="flex items-center justify-center">
+        <div className="w-full h-80 bg-gray-100 rounded-2xl flex items-center justify-center shadow-md">
+         <img src={Webimg} alt="web-development" />
+        </div>
+      </motion.div>
     </div>
+  </motion.section>
+
+  <CTASection />
+  <Testimonials />
+</div>
+
   );
 };
 

@@ -44,7 +44,7 @@ const Info = () => {
                     variants={itemVariants}
                     className="text-base sm:text-lg md:text-xl max-w-4xl leading-relaxed text-gray-800"
                 >
-                    Sky Rise Marketing stands at the forefront of digital innovation, combining cutting-edge AI technology
+                    Sky Lift Marketing stands at the forefront of digital innovation, combining cutting-edge AI technology
                     with proven marketing strategies. Our dedicated team leverages data-driven insights and creative excellence
                     to transform your brand's potential into tangible success. Together, we'll elevate your digital presence
                     and create campaigns that resonate, convert, and drive sustainable growth.

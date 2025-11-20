@@ -13,6 +13,7 @@ import WhatWeOffer from "./WhatWeOffer";
 import CTASection from "./CtaSection";
 import FAQSection from "./Faq";
 import Counter from "./Counter";
+import Testimonials from "./Testionmial";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -219,7 +220,7 @@ const Home = () => {
       <CTASection />
       <FAQSection />
       <Counter />
-
+      <Testimonials />
       {/* <RequestQuoteForm/> */}
     </div>
   );

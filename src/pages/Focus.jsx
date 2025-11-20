@@ -57,7 +57,7 @@ export default function FocusPoints() {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          At <strong>Sky Rise Marketing</strong>, we don’t chase trends — we
+          At <strong>Sky Lift Marketing</strong>, we don’t chase trends — we
           build scalable systems that help brands grow with purpose, precision,
           and creativity.
         </motion.p>

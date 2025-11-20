@@ -1,0 +1,134 @@
+import React from "react";
+import Slider from "react-slick";
+import { Star } from "lucide-react";
+import { motion } from "framer-motion";
+
+
+export default function Testimonials() {
+    const settings = {
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 2500,
+        arrows: false,
+        dots: false,
+        pauseOnHover: false,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                },
+            },
+            {
+                breakpoint: 640,
+                settings: {
+                    slidesToShow: 1,
+                },
+            },
+        ],
+    };
+
+    const reviews = [
+        {
+            name: "Ayesha Khan",
+            img: "https://i.pravatar.cc/150?img=1",
+            review:
+                "Great experience. The service was fast, clear, and delivered exactly what I needed.",
+        },
+        {
+            name: "Hassan Raza",
+            img: "https://i.pravatar.cc/150?img=5",
+            review:
+                "Professional and reliable. My project turned out better than I expected.",
+        },
+        {
+            name: "Maria Ahmed",
+            img: "https://i.pravatar.cc/150?img=3",
+            review:
+                "Outstanding quality and attention to detail. Highly recommended!",
+        },
+        {
+            name: "Ayesha Khan",
+            img: "https://i.pravatar.cc/150?img=1",
+            review:
+                "Great experience. The service was fast, clear, and delivered exactly what I needed.",
+        },
+        {
+            name: "Hassan Raza",
+            img: "https://i.pravatar.cc/150?img=5",
+            review:
+                "Professional and reliable. My project turned out better than I expected.",
+        },
+        {
+            name: "Maria Ahmed",
+            img: "https://i.pravatar.cc/150?img=3",
+            review:
+                "Outstanding quality and attention to detail. Highly recommended!",
+        },
+    ];
+
+    return (
+        <>
+            <section className="relative py-20 sm:py-24 mb-10 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,#00A69330,transparent_70%)] blur-2xl"></div>
+
+                <motion.div
+                    className="text-center mb-16 sm:mb-20 px-4"
+                    initial={{ opacity: 0, y: -40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7 }}
+                    viewport={{ once: true }}
+                >
+                    <span className="inline-block bg-[#00A693]/20 text-[#00A693] px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold mb-5 backdrop-blur-md border border-[#00A693]/40">
+                        Testimonials
+                    </span>
+
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+                        What Our <span className="text-[#00A693]">Clients Say</span>
+                    </h2>
+
+                    <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto">
+                        Real stories from people who trusted us with their brand. Their experience speaks for itself.
+                    </p>
+                </motion.div>
+
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+                    <Slider {...settings}>
+                        {reviews.map((r, i) => (
+                            <div key={i} className="px-3 sm:px-4 cursor-grab">
+                                <motion.div
+                                    className="relative group bg-white/5 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-white/10 hover:border-[#00A693]/40 transition-all duration-500 shadow-lg hover:shadow-[0_0_30px_#00A69340] min-h-[310px] flex flex-col"
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.5 }}
+                                    viewport={{ once: true }}
+                                >
+
+                                    <div className="flex items-center gap-4 mb-6">
+                                        <img
+                                            src={r.img}
+                                            alt={r.name}
+                                            className="h-14 w-14 sm:h-16 sm:w-16 rounded-full object-cover border border-[#00A693]/40"
+                                        />
+                                        <div>
+                                            <h3 className="text-white text-base sm:text-lg font-semibold">{r.name}</h3>
+                                            <div className="flex text-[#00A693] mt-1">
+                                                {[...Array(5)].map((_, i) => (
+                                                    <Star key={i} className="h-3.5 w-3.5 sm:h-4 sm:w-4 fill-current" />
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p className="text-gray-300 text-sm sm:text-base leading-relaxed line-clamp-4">{r.review}</p>
+                                </motion.div>
+                            </div>
+                        ))}
+                    </Slider>
+                </div>
+            </section>
+        </>
+    );
+}
