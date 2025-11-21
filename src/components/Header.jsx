@@ -15,7 +15,7 @@ export const Header = () => {
         { label: "Our Services", to: "/services", hasDropdown: true },
         { label: "Our Work", to: "/work" },
         { label: "Contact Us", to: "/contact" },
-        { label: "Blog", to: "/blog" },
+        // { label: "Blog", to: "/blog" },
     ];
 
     const serviceItems = [

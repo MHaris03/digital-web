@@ -3,8 +3,8 @@ import { AnimatedCounter } from "../components/AnimatedCounter";
 
 export default function StatsSection() {
     return (
-        <section className="bg-primary text-primary-foreground py-16 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/50 to-primary opacity-40"></div>
+        <section className=" py-16 relative overflow-hidden">
+            <div className="absolute inset-0 opacity-40"></div>
             <div className="container mx-auto px-6 relative z-10">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
 

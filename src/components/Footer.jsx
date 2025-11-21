@@ -5,7 +5,7 @@ import logo from "../assets/main-logo.png"
 
 export const Footer = () => {
   return (
-    <footer className="relative py-20 overflow-hidden rounded-t-[5rem] shadow-[0_0_50px_rgba(0,0,0,0.25)] bg-gradient-to-tr from-[#00A693] to-[#00796B]">
+    <footer className="relative py-20 overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.25)] bg-gradient-to-tr from-[#00A693] to-[#00796B]">
 
       {/* Container */}
       <div className="container mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">

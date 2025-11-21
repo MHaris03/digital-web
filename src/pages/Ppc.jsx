@@ -264,8 +264,8 @@ const PPCManagement = () => {
                         viewport={{ once: true }}
                         className="flex items-center justify-center"
                     >
-                        <div className="w-full h-80 bg-gray-100 rounded-2xl flex items-center justify-center shadow-md">
-                            <img src={PPCside} alt="PPC Management Services" />
+                        <div className="w-full h-80 flex items-center justify-center">
+                            <img src={PPCside} alt="PPC Management Services" className="rounded-2xl shadow-lg"/>
                         </div>
                     </motion.div>
                 </div>

@@ -265,8 +265,8 @@ const LocalMapOptimization = () => {
                         viewport={{ once: true }}
                         className="flex items-center justify-center"
                     >
-                        <div className="w-full h-80 bg-gray-100 rounded-2xl flex items-center justify-center shadow-md">
-                            <img src={Mapside} alt="Local Maps Optimization Services" />
+                        <div className="w-full h-80 flex items-center justify-center">
+                            <img src={Mapside} alt="Local Maps Optimization Services" className="rounded-2xl shadow-lg"/>
                         </div>
                     </motion.div>
                 </div>

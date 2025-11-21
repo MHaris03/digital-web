@@ -37,7 +37,7 @@ export default function FAQQuoteSection() {
     };
 
     return (
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-gradient-to-br from-[#F7FAFC] to-[#E8F5F3]">
             <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-10">
 
                 {/* Left: FAQ */}

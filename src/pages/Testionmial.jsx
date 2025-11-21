@@ -2,6 +2,8 @@ import React from "react";
 import Slider from "react-slick";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 export default function Testimonials() {
@@ -71,7 +73,7 @@ export default function Testimonials() {
 
     return (
         <>
-            <section className="relative py-20 sm:py-24 mb-10 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900">
+            <section className="relative py-20 sm:py-24 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,#00A69330,transparent_70%)] blur-2xl"></div>
 
                 <motion.div
