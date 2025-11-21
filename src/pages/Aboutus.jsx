@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Lightbulb, Target, Users, ShieldCheck, Rocket, Award } from "lucide-react";
+import { Lightbulb, Target, Users, ShieldCheck, Award } from "lucide-react";
 import heroBg from "../assets/servicebgimg.jpg";
 import story from "../assets/ourstory.jpg"
 import CTASection from "./CtaSection";

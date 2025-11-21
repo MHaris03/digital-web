@@ -5,7 +5,6 @@ import logo from "../assets/logo-transparent.png";
 
 export const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [openDropdowns, setOpenDropdowns] = useState({});
     const [isServicesOpen, setIsServicesOpen] = useState(false);
     const location = useLocation();
     let timeoutId = null;
@@ -24,20 +23,30 @@ export const Header = () => {
         { label: "Search Engine Optimization", to: "/services/seo" },
         { label: "Local Maps Optimization", to: "/services/local-maps" },
         { label: "Social Media Marketing", to: "/services/social-media" },
-        { label: "PPC Management", to: "/services/ppc" },
+        { label: "PPC Management", to: "/services/ppc-management" },
         { label: "Content Writing", to: "/services/content-writing" },
     ];
 
+    const mobilenav = [
+        { label: "Home", to: "/" },
+        { label: "About Us", to: "/about-us" },
+        { label: "Our Services", to: "/services" },
+        { label: "Web Design & Development", to: "/services/web-design" },
+        { label: "Search Engine Optimization", to: "/services/seo" },
+        { label: "Local Maps Optimization", to: "/services/local-maps" },
+        { label: "Social Media Marketing", to: "/services/social-media" },
+        { label: "PPC Management", to: "/services/ppc-management" },
+        { label: "Content Writing", to: "/services/content-writing" },
+        { label: "Our Work", to: "/work" },
+        { label: "Contact Us", to: "/contact" },
+
+    ]
+
     useEffect(() => {
         document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
-    }, [isMenuOpen]);
+        setIsServicesOpen(false);
+    }, [isMenuOpen, location.pathname]);
 
-    const toggleDropdown = (label) => {
-        setOpenDropdowns(prev => ({
-            ...prev,
-            [label]: !prev[label],
-        }));
-    };
 
     return (
         <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/90 backdrop-blur-md transition-shadow duration-300 shadow-sm">
@@ -128,9 +137,9 @@ export const Header = () => {
                         className="md:hidden text-gray-700 hover:text-[#00A693] transition"
                     >
                         {isMenuOpen ? (
-                            <X className="h-7 w-7 transition-transform duration-300 rotate-180" />
+                            <X className="h-7 w-7 transition-transform duration-300 rotate-180 cursor-pointer" />
                         ) : (
-                            <Menu className="h-7 w-7 transition-transform duration-300" />
+                            <Menu className="h-7 w-7 transition-transform duration-300 cursor-pointer" />
                         )}
                     </button>
                 </div>
@@ -139,45 +148,26 @@ export const Header = () => {
                 <div
                     className={`md:hidden fixed top-0 left-0 h-screen w-full bg-white z-50 transform transition-transform duration-500 ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}
                 >
-                    <div className="flex items-center justify-between p-4 border-b">
-                        <img src={logo} className="w-32 h-auto object-contain" />
+                    <div className="flex items-center justify-between p-2 border-b">
+                        <img src={logo} className="w-32 h-[32] object-contain" />
                         <button
                             onClick={() => setIsMenuOpen(false)}
-                            className="text-red-500 hover:text-[#00A693] transition"
+                            className="text-red-500 hover:text-[#00A693] transition cursor-pointer"
                         >
                             <X className="h-7 w-7" />
                         </button>
                     </div>
 
                     <nav className="flex flex-col space-y-4 p-6 text-lg overflow-y-auto h-[calc(100vh-80px)]">
-                        {navItems.map(({ label, to, hasDropdown }) => (
+                        {mobilenav.map(({ label, to }) => (
                             <div key={label} className="relative">
                                 <Link
                                     to={to}
                                     onClick={() => { setIsMenuOpen(false); setIsServicesOpen(false); }}
                                     className={`font-medium ${location.pathname === to ? "text-[#00A693]" : "text-gray-700"}`}
                                 >
-                                    {label} {hasDropdown && <ChevronDown className="inline w-4 h-4 ml-1" />}
+                                    {label}
                                 </Link>
-
-                                {/* Mobile dropdown */}
-                                {hasDropdown && (
-                                    <div className={`${isServicesOpen ? "max-h-96" : "max-h-0"} overflow-hidden transition-all duration-300`}>
-                                        <ul className="mt-2 space-y-2 pl-4">
-                                            {serviceItems.map(({ label, to }) => (
-                                                <li key={label}>
-                                                    <Link
-                                                        to={to}
-                                                        onClick={() => setIsMenuOpen(false)}
-                                                        className="block text-gray-700 hover:text-[#00A693]"
-                                                    >
-                                                        {label}
-                                                    </Link>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                )}
                             </div>
                         ))}
 
