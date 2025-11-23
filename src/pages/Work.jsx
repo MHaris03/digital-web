@@ -1,16 +1,25 @@
-import { Card } from "../components/ui/card";
-import { Badge } from "../components/ui/badge";
-import { Button } from "../components/ui/button";
-import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import workDesk from "../assets/work-desk.jpg";
 import analytics from "../assets/analytics.jpg";
 import teamWork from "../assets/team-work.jpg";
 import Workside from "../assets/our-work.jpg"
+import { useCountUp } from "../hooks/counte";
+import { useRef } from "react";
+import CTASection from "./CtaSection";
 
 
 const Work = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-100px" });
+
+  const stats = [
+    { value: 500, suffix: "+", label: "Projects Delivered" },
+    { value: 350, suffix: "+", label: "Happy Clients" },
+    { value: 85, suffix: "%", label: "Average Growth" },
+    { value: 95, suffix: "%", label: "Client Retention" }
+  ];
+
   const projects = [
     {
       title: "TechStart Solutions",
@@ -43,103 +52,166 @@ const Work = () => {
     <div className="flex flex-col">
       {/* Hero Section */}
       <section
-        className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"
+        className="relative w-full min-h-[70vh] md:min-h-[88vh] flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat px-4"
         style={{ backgroundImage: `url(${Workside})` }}
       >
         <div className="absolute inset-0 bg-black/50" />
 
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative text-white text-4xl md:text-6xl font-bold text-center"
+          className="relative text-white text-3xl sm:text-4xl md:text-6xl font-bold text-center leading-tight"
         >
           Success Stories That Inspire
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="relative text-white text-lg md:text-xl mt-4 text-center max-w-xl"
+          className="relative text-white text-base sm:text-lg md:text-xl mt-4 text-center max-w-md sm:max-w-xl"
         >
           Explore how we've helped businesses like yours achieve remarkable growth through innovative digital marketing strategies.
         </motion.p>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-12 ">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold mb-2">500+</div>
-              <div className="text-sm opacity-90">Projects Delivered</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">350+</div>
-              <div className="text-sm opacity-90">Happy Clients</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">85%</div>
-              <div className="text-sm opacity-90">Average Growth</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">95%</div>
-              <div className="text-sm opacity-90">Client Retention</div>
-            </div>
+      <section className="relative py-24 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,#00A69325,transparent_70%)] blur-2xl"></div>
+
+        <div ref={ref} className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+
+            {stats.map((stat, i) => {
+              const animatedValue = useCountUp(inView ? stat.value : 0);
+
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 25 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: i * 0.15 }}
+                  className="relative"
+                >
+                  <div className="text-4xl md:text-5xl font-extrabold text-[#00A693] drop-shadow-[0_0_15px_#00A69370]">
+                    {animatedValue}
+                    {stat.suffix}
+                  </div>
+
+                  <div className="text-sm md:text-base text-white opacity-90 mt-2 tracking-wide">
+                    {stat.label}
+                  </div>
+
+                  {/* subtle glow pulse */}
+                  <div className="absolute inset-0 mx-auto w-20 h-20 blur-xl rounded-full bg-[#00A69330] opacity-40 -z-10 group-hover:scale-150 transition-all"></div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section className="py-20">
+      <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="space-y-16">
-            {projects.map((project, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-                  <div className={`${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
+
+          {/* Section Title */}
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-5xl font-bold text-center mb-14 text-gray-900"
+          >
+            Our Work
+          </motion.h2>
+
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+            {projects.map((project, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group"
+              >
+                {/* Card Wrapper */}
+                <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-[0_10px_35px_rgba(0,166,147,0.35)] transition-all duration-300 border border-gray-200 hover:border-[#00A693]/40 hover:-translate-y-2">
+
+                  {/* Image */}
+                  <div className="h-56 w-full overflow-hidden cursor-pointer">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover min-h-[300px]"
+                      className="h-full w-full object-cover group-hover:scale-110 transition-all duration-500"
                     />
                   </div>
-                  <div className={`p-8 md:p-12 ${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
-                    <Badge className="mb-4">{project.category}</Badge>
-                    <h3 className="text-3xl font-bold mb-4">{project.title}</h3>
-                    <p className=" mb-6">{project.description}</p>
 
-                    <div className="mb-6">
-                      <h4 className="font-semibold mb-3">Key Results:</h4>
-                      <ul className="space-y-2">
-                        {project.results.map((result, idx) => (
-                          <li key={idx} className="flex items-center text-sm">
-                            <ArrowRight className="h-4 w-4 mr-2 flex-shrink-0" />
-                            {result}
+                  {/* Content */}
+                  <div className="p-6">
+
+                    {/* Small Category */}
+                    <p className="text-sm text-[#00A693] font-semibold mb-2 tracking-wide">
+                      {project.category}
+                    </p>
+
+                    {/* Title */}
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                      {project.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                      {project.description}
+                    </p>
+
+                    {/* Results */}
+                    <div className="mb-4">
+                      <h4 className="text-sm font-semibold text-gray-900 mb-2">
+                        Key Results:
+                      </h4>
+                      <ul className="space-y-1 text-sm">
+                        {project.results.slice(0, 2).map((res, idx) => (
+                          <li
+                            key={idx}
+                            className="flex items-center text-gray-700"
+                          >
+                            <ArrowRight className="h-4 w-4 mr-2 text-[#00A693]" />
+                            {res}
                           </li>
                         ))}
                       </ul>
                     </div>
 
+                    {/* Tags */}
                     <div className="flex flex-wrap gap-2 mb-6">
-                      {project.tags.map((tag, idx) => (
-                        <Badge key={idx} variant="outline">
+                      {project.tags.slice(0, 3).map((tag, idx) => (
+                        <div
+                          key={idx}
+                          className="px-3 font-semibold py-1 rounded-full text-xs border border-[#00A693] text-[#00A693] bg-[#00A693]/5"
+                        >
                           {tag}
-                        </Badge>
+                        </div>
                       ))}
                     </div>
 
-                    <Button variant="outline">
-                      View Case Study <ExternalLink className="ml-2 h-4 w-4" />
-                    </Button>
+                    {/* Button */}
+                    <button
+                      className="w-full cursor-pointer flex items-center justify-center gap-2 py-3 rounded-xl border border-gray-400 text-gray-700 font-bold hover:bg-[#00A693] hover:text-white hover:border-[#00A693] transition-all duration-300 shadow-sm hover:shadow-[0_6px_20px_rgba(0,166,147,0.35)]"
+                    >
+                      View Case Study
+                      <ExternalLink className="h-4 w-4" />
+                    </button>
+
                   </div>
                 </div>
-              </Card>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
+      <CTASection />
     </div>
   );
 };
