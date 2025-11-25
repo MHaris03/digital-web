@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import contact from "../assets/contact.jpg"
 import SliderBar from "./Sliderbar";
+import "flag-icons/css/flag-icons.min.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -51,7 +52,7 @@ const Contact = () => {
           Have a project in mind? Send us a message and our team will get back to you shortly.
         </motion.p>
       </section>
-      <SliderBar/>
+      <SliderBar />
       {/* FORM + INFO SECTION */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -65,20 +66,34 @@ const Contact = () => {
                   title: "Email Us",
                   lines: ["hello@digitalmark.com", "support@digitalmark.com"],
                 },
-                {
-                  icon: <Phone className="h-6 w-6 text-white" />,
-                  title: "Call Us",
-                  lines: ["(555) 123-4567", "(555) 987-6543"],
-                },
+                // {
+                //   icon: <Phone className="h-6 w-6 text-white" />,
+                //   title: "Call Us",
+                //   lines: ["(555) 123-4567", "(555) 987-6543"],
+                // },
                 {
                   icon: <MapPin className="h-6 w-6 text-white" />,
-                  title: "Visit Us",
-                  lines: ["123 Business Avenue", "New York, NY 10001"],
-                },
+                  title: "Location",
+                  lines: [
+                    <div className="flex items-center gap-2">
+                      <i className="fa fa-flag text-red-500"></i>
+                      United States Of America
+                    </div>,
+                    <div className="flex items-center gap-2">
+                      <i className="fa fa-flag text-blue-500"></i>
+                      Canada
+                    </div>,
+                    <div className="flex items-center gap-2">
+                      <i className="fa fa-flag text-green-500"></i>
+                      Australia
+                    </div>,
+                  ],
+                }
+                ,
                 {
                   icon: <Clock className="h-6 w-6 text-white" />,
                   title: "Business Hours",
-                  lines: ["Mon - Fri: 9AM - 6PM", "Sat - Sun: Closed"],
+                  lines: ["Mon - Fri: 9AM - 5PM (est)", "Sat - Sun: Closed"],
                 },
               ].map((item, i) => (
                 <motion.div

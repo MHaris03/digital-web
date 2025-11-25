@@ -2,13 +2,15 @@ import { Link } from "react-router-dom";
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import logo from "../assets/main-logo.png"
+import "flag-icons/css/flag-icons.min.css";
+
 
 export const Footer = () => {
   return (
     <footer className="relative py-20 overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.25)] bg-gradient-to-tr from-[#00A693] to-[#00796B]">
 
       {/* Container */}
-      <div className="container mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="container mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12">
 
         {/* Brand Section */}
         <motion.div
@@ -88,9 +90,9 @@ export const Footer = () => {
         >
           <h3 className="mb-4 font-bold text-lg text-white">Contact</h3>
           <ul className="space-y-3 text-[#E0F2F1] text-md font-semibold">
-            <li className="flex items-center gap-2">
+            {/* <li className="flex items-center gap-2">
               <Phone className="w-5 h-5 text-[#FFD166]" /> (555) 123-4567
-            </li>
+            </li> */}
             <li className="flex items-center gap-2">
               <Mail className="w-5 h-5 text-[#FFD166]" /> hello@skyrisemarketing.com
             </li>
@@ -99,7 +101,31 @@ export const Footer = () => {
             </li>
           </ul>
         </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <h3 className="mb-4 font-bold text-lg text-white">Location</h3>
 
+          <ul className="space-y-3 text-[#E0F2F1] text-md font-semibold">
+            <li className="flex items-center gap-2">
+              <span className="fi fi-us"></span>
+              USA
+            </li>
+
+            <li className="flex items-center gap-2">
+              <span className="fi fi-ca"></span>
+              Canada
+            </li>
+
+            <li className="flex items-center gap-2">
+              <span className="fi fi-au"></span>
+              Australia
+            </li>
+          </ul>
+        </motion.div>
       </div>
 
       {/* Bottom Section */}

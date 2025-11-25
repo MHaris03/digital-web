@@ -7,31 +7,37 @@ export default function WhatWeOffer2025() {
         {
             icon: <Code2 className="h-7 w-7 text-white" />,
             title: "Web Design & Development",
+            link: "/services/web-design",
             desc: "Custom, fast, and responsive websites built to match your brand and convert visitors into customers.",
         },
         {
             icon: <Search className="h-7 w-7 text-white" />,
             title: "Search Engine Optimization",
+            link: "/services/seo",
             desc: "Improve rankings, boost traffic, and strengthen your online visibility with proven SEO practices.",
         },
         {
             icon: <MapPin className="h-7 w-7 text-white" />,
             title: "Local Maps Optimization",
+            link: "/services/local-maps",
             desc: "Get your business discovered in local searches with optimized Google Business profiles and map listings.",
         },
         {
             icon: <Share2 className="h-7 w-7 text-white" />,
             title: "Social Media Marketing",
+            link: "/services/social-media",
             desc: "Grow your audience and build a strong community with tailored social campaigns for every platform.",
         },
         {
             icon: <Target className="h-7 w-7 text-white" />,
             title: "PPC Management",
+            link: "/services/ppc-management",
             desc: "Run high-performing ad campaigns that bring predictable results and a better return on ad spend.",
         },
         {
             icon: <PenTool className="h-7 w-7 text-white" />,
             title: "Content Writing",
+            link: "/services/content-writing",
             desc: "Clear, engaging, and search-friendly content crafted to educate, inspire, and convert your audience.",
         },
     ];
@@ -78,7 +84,7 @@ export default function WhatWeOffer2025() {
                             <p className="text-gray-300 mb-6">{service.desc}</p>
 
                             <Link
-                                to="/services"
+                                to={service.link}
                                 className="inline-flex items-center text-[#00A693] font-medium cursor-pointer"
                             >
                                 Lets Start
