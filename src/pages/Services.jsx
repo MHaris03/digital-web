@@ -1,258 +1,244 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Smartphone,
-  ShoppingCart,
-  Search,
-  Settings,
-  Code2,
-  Wrench
-} from "lucide-react";
-import HeroBg from "../assets/web-design.jpg";
-import Webimg from "../assets/web-side.jpg"
-import SliderBar from "./Sliderbar";
-import CTASection from "./CtaSection";
-import Testimonials from "./Testionmial";
+import { Link } from "react-router-dom";
 
 
 const services = [
   {
-    icon: <Code2 size={34} />,
-    title: "Custom Website Design",
-    desc: "Unique layouts that match your brand with clean visuals and a smooth user experience.",
-    highlight: true,
+    id: "web-design",
+    label: "Web Design & Development",
+    paragraph:
+      "We design fast, conversion-focused websites with pixel-perfect UI, smooth interactions and accessibility in mind. From marketing landing pages to complex web applications — we deliver measurable results.",
+    sub: [
+      "Custom Website Design",
+      "Responsive & Mobile-first Development",
+      "Headless / JAMstack Sites",
+      "E‑commerce Stores (Shopify, WooCommerce)",
+      "Performance & Accessibility Optimization",
+    ],
   },
   {
-    icon: <Wrench size={34} />,
-    title: "WordPress Website Development",
-    desc: "Custom themes, plugins and performance-optimized sites built for stability.",
+    id: "seo",
+    label: "Search Engine Optimization",
+    paragraph:
+      "SEO that balances technical excellence and content strategy. We increase organic visibility with data-driven keyword work, on-page fixes and white-hat link building.",
+    sub: [
+      "Technical SEO Audits",
+      "On-page Optimization",
+      "Content Strategy",
+      "Local & International SEO",
+    ],
   },
   {
-    icon: <Smartphone size={34} />,
-    title: "Mobile Responsive Design",
-    desc: "Fully responsive interfaces tested on all major screen sizes.",
+    id: "local-maps",
+    label: "Local Maps Optimization",
+    paragraph:
+      "Appear where local customers search. We manage your Maps presence, reviews and citations to increase footfall and local leads.",
+    sub: [
+      "Google Business Profile",
+      "Local Citations & Directory Management",
+      "Review & Reputation Strategy",
+    ],
   },
   {
-    icon: <ShoppingCart size={34} />,
-    title: "E-Commerce Development",
-    desc: "Secure stores with payment integration, product management and order automation.",
+    id: "social",
+    label: "Social Media Marketing",
+    paragraph:
+      "Strategic social campaigns and creative content that build brand affinity and drive conversions across platforms like Facebook, Instagram and TikTok.",
+    sub: ["Content Creation", "Paid Social", "Community Management", "Influencer Campaigns"],
   },
   {
-    icon: <Search size={34} />,
-    title: "SEO-Friendly Web Development",
-    desc: "Fast, structured, and optimized for better visibility on search engines.",
+    id: "ppc",
+    label: "PPC Management",
+    paragraph:
+      "Data-driven paid campaigns with strong ROI: Google Ads, remarketing and conversion-optimized landing pages.",
+    sub: ["Search & Shopping Ads", "Remarketing", "Conversion Rate Optimization"],
   },
   {
-    icon: <Settings size={34} />,
-    title: "Website Maintenance & Support",
-    desc: "Updates, security monitoring, backups and speed improvements.",
+    id: "content",
+    label: "Content Writing",
+    paragraph:
+      "Brand-aligned copy that educates, converts and performs in search — from product descriptions to long-form thought leadership.",
+    sub: ["Website Copy", "Blog & Articles", "Product Descriptions", "SEO Content"],
   },
 ];
 
-const faqs = [
-  {
-    q: "What is the typical development timeline?",
-    a: "The timeline varies based on complexity, but most projects are completed within 1–4 weeks.",
-  },
-  {
-    q: "Do you offer post-launch support?",
-    a: "Yes. We provide maintenance plans that include updates, monitoring, and security enhancements.",
-  },
-  {
-    q: "Will my website be optimized for SEO?",
-    a: "Yes. Every site is developed with modern SEO structure, clean markup, and fast performance.",
-  },
-  {
-    q: "Can you develop advanced or custom features?",
-    a: "Yes. We build custom modules, integrations, and tailored functionality based on your goals.",
-  },
-];
+export default function ServicesAttractive() {
+  const [active, setActive] = useState(0);
+  const containerRef = useRef(null);
 
-const Services = () => {
-
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
+  // track which section is in view using IntersectionObserver
+  const refs = useRef([]);
+  refs.current = [];
+  const addToRefs = (el) => {
+    if (el && !refs.current.includes(el)) refs.current.push(el);
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const idx = Number(entry.target.getAttribute("data-idx"));
+            setActive(idx);
+          }
+        });
+      },
+      { root: containerRef.current, threshold: 0.55 }
+    );
+
+    refs.current.forEach((r) => observer.observe(r));
+    return () => observer.disconnect();
+  }, []);
+
   return (
-   <div className="w-full">
-  {/* SECTION 1 */}
-  <section
-    className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"
-    style={{ backgroundImage: `url(${HeroBg})` }}
-  >
-    <div className="absolute inset-0 bg-black/50" />
-
-    <motion.h1
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      className="relative text-white text-4xl md:text-6xl font-bold text-center"
-    >
-      Website Design & Development
-    </motion.h1>
-
-    <motion.p
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-      className="relative text-white text-lg md:text-xl mt-4 text-center max-w-xl"
-    >
-      Helping brands rise with creativity, strategy and measurable growth.
-    </motion.p>
-  </section>
-
-  <SliderBar />
-
-  {/* SECTION 2 — Web Maintenance */}
-  <motion.section
-    className="relative py-20 md:py-24 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8 }}
-    viewport={{ once: true }}
-  >
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,#00A69330,transparent_70%)] blur-2xl"></div>
-
-    <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-12 items-center px-6 md:px-0">
-      {/* LEFT SIDE */}
-      <motion.div
-        className="text-white"
-        initial={{ opacity: 0, x: -40 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <p className="text-xs sm:text-sm tracking-wide opacity-80">
-          PROUDLY AWARDED 20+ WEB DESIGN AWARDS
-        </p>
-
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-4 leading-tight">
-          Web Maintenance <br />
-          <span className="text-[#00A693]">& Support</span>
-        </h2>
-
-        <p className="italic text-lg sm:text-xl mt-4">
-          We’re Also Specialists In...
-        </p>
-
-        <div className="flex flex-wrap gap-2 sm:gap-3 mt-5">
-          <span className="px-3 py-2 sm:px-4 sm:py-2 bg-white/20 rounded-full text-xs sm:text-sm backdrop-blur">
-            SEO Services
-          </span>
-          <span className="px-3 py-2 sm:px-4 sm:py-2 bg-white/20 rounded-full text-xs sm:text-sm backdrop-blur">
-            Content Marketing
-          </span>
-          <span className="px-3 py-2 sm:px-4 sm:py-2 bg-white/20 rounded-full text-xs sm:text-sm backdrop-blur">
-            Local Maps Optimization
-          </span>
-        </div>
-      </motion.div>
-
-      {/* RIGHT SIDE */}
-      <motion.div
-        className="text-white text-base sm:text-lg leading-relaxed space-y-4"
-        initial={{ opacity: 0, x: 40 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <p>
-          In today’s digital world, your website is often the first interaction potential customers have with your brand. At <strong>SKy Lift Marketing</strong>, we create modern, user-friendly websites that look great and perform even better.
-        </p>
-        <p>
-          Whether you’re starting new or redesigning an existing site, we bring your vision to life.
-        </p>
-        <p>
-          Let’s build a website that reflects your brand and supports your business goals. Get in touch to start your project.
-        </p>
-      </motion.div>
-    </div>
-  </motion.section>
-
-  {/* SECTION 3 — SERVICE CARDS */}
-  <motion.section
-    className="py-20 px-6 md:px-12 bg-white"
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8 }}
-    viewport={{ once: true }}
-  >
-    <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-      {services.map((service, idx) => (
-        <motion.div
-          key={idx}
-          className={`relative group rounded-2xl p-8 border transition-all duration-500 shadow-md backdrop-blur-xl bg-white/10 hover:shadow-[0_0_25px_#00A69340] hover:border-[#00A693]/40 ${service.highlight ? 'border-[#00A693]/30' : 'border-gray-200'}`}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: idx * 0.2 }}
-          viewport={{ once: true }}
+    <div className="min-h-screen bg-gradient-to-b from-[#081026] via-[#071226] to-[#06121b] text-white py-16 px-6">
+      <div className="max-w-7xl mx-auto overflow-x-hidden">
+        <motion.header
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-8"
         >
-          <div className="text-[#00A693] mb-4">{service.icon}</div>
-          <h3 className="font-semibold text-xl mb-3 text-gray-900">{service.title}</h3>
-          <p className="text-gray-700 text-sm leading-relaxed mb-6">{service.desc}</p>
-          <button className={`px-4 py-2 rounded-full font-semibold transition cursor-pointer ${service.highlight ? 'bg-[#00A693] text-white hover:bg-[#00927f]' : 'text-[#00A693] border border-[#00A693] hover:bg-[#00A693] hover:text-white'}`}>Lets Start</button>
-        </motion.div>
-      ))}
-    </div>
-  </motion.section>
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+            Services that move the needle
+          </h1>
+          <p className="mt-3 text-gray-300 max-w-3xl">
+            Practical, measurable digital services — designed and executed for
+            growth. Click a service on the left or scroll the list to explore
+            details.
+          </p>
+        </motion.header>
 
-  {/* SECTION 4 — FAQ */}
-  <motion.section
-    className="bg-white py-20 px-6 md:px-12"
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8 }}
-    viewport={{ once: true }}
-  >
-    <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
-      {/* LEFT */}
-      <motion.div
-        initial={{ opacity: 0, x: -40 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <h2 className="text-3xl font-bold mb-6">Frequently Asked Questions</h2>
-        <div className="space-y-4">
-          {faqs.map((item, index) => (
-            <motion.div key={index} layout className={`border border-[#00A693] rounded-xl p-4 cursor-pointer transition-all duration-300 hover:shadow-[0_0_12px_#00A69350] hover:border-[#00A693] hover:scale-[1.01]`} onClick={() => toggleFAQ(index)}>
-              <div className="flex items-center justify-between">
-                <h3 className={`font-semibold text-lg transition-colors duration-300 ${openIndex === index ? 'text-[#00A693]' : 'text-[#00A693] group-hover:text-[#008d7c]'}`}>{item.q}</h3>
-                <ChevronDown size={20} className={`text-[#00A693] transition-all duration-300 ${openIndex === index ? 'rotate-180' : 'rotate-0'} group-hover:text-[#008d7c]`} />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* LEFT nav */}
+          <aside className="md:col-span-1 sticky top-24 self-start">
+            <nav className="bg-[#071129] p-4 rounded-2xl shadow-xl border border-[#132033]">
+              <ul className="space-y-3">
+                {services.map((s, i) => (
+                  <li key={s.id}>
+                    <button
+                      onClick={() => {
+                        refs.current[i]?.scrollIntoView({ behavior: "smooth", block: "center" });
+                      }}
+                      className={`w-full text-left py-3 px-4 rounded-lg flex items-center justify-between transition-all transform hover:scale-[1.01] focus:outline-none
+                        ${active === i ? "bg-gradient-to-r from-[#12304b] to-[#184e6d] shadow-[0_6px_18px_rgba(20,40,80,0.5)] text-white" : "bg-transparent text-gray-200"}`}
+                    >
+                      <div>
+                        <div className="text-sm font-semibold">{s.label}</div>
+                        <div className="text-xs text-gray-400 mt-1">{s.sub.slice(0, 2).join(" · ")}</div>
+                      </div>
+
+                      <div className="ml-4 flex items-center gap-2">
+                        <span className={`text-xs px-2 py-1 rounded-full ${active === i ? 'bg-white/10' : 'bg-white/5'}`}>View</span>
+                      </div>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-6 text-sm text-gray-400">
+                <div>Need a custom solution?</div>
+                <Link to="/contact" className="text-[#7EE3B6] font-semibold">
+                  Request a quote
+                </Link>
               </div>
-              <AnimatePresence>
-                {openIndex === index && (
-                  <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }}>
-                    <div className="mt-4 border-t border-gray-300 pt-3">
-                      <p className="text-black text-md leading-relaxed">{item.a}</p>
+            </nav>
+          </aside>
+
+          {/* RIGHT scroll area */}
+          <main
+            ref={containerRef}
+            className="md:col-span-2 h-[70vh] overflow-y-auto scroll-snap-y snap-mandatory space-y-8 pr-4"
+            style={{ WebkitOverflowScrolling: "touch" }}
+          >
+            {services.map((s, i) => (
+              <section
+                data-idx={i}
+                key={s.id}
+                ref={addToRefs}
+                className="bg-gradient-to-r from-[#071226]/40 to-transparent p-6 rounded-2xl border border-[#142238] backdrop-blur-md scroll-snap-start"
+                style={{ scrollSnapAlign: "start" }}
+              >
+                <div className="flex flex-col md:flex-row md:items-start gap-6">
+                  <div className="flex-1">
+                    <motion.h2
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: active === i ? 1 : 0.6, x: 0 }}
+                      transition={{ duration: 0.5 }}
+                      className="text-2xl md:text-3xl font-bold"
+                    >
+                      {s.label}
+                    </motion.h2>
+
+                    <motion.p
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: active === i ? 1 : 0.6 }}
+                      transition={{ duration: 0.5, delay: 0.1 }}
+                      className="mt-3 text-gray-300 max-w-2xl leading-relaxed"
+                    >
+                      {s.paragraph}
+                    </motion.p>
+
+                    <div className="mt-4 flex flex-wrap gap-3">
+                      {s.sub.map((sub, idx) => (
+                        <motion.span
+                          key={idx}
+                          whileHover={{ scale: 1.03 }}
+                          className="px-3 py-1 rounded-full bg-white/5 text-sm text-gray-100 border border-white/8"
+                        >
+                          {sub}
+                        </motion.span>
+                      ))}
                     </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
 
-      {/* RIGHT Image */}
-      <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="flex items-center justify-center">
-        <div className="w-full h-80 flex items-center justify-center">
-         <img src={Webimg} alt="web-development" className="rounded-2xl shadow-lg"/>
+                    <div className="mt-6 flex items-center gap-4">
+                      <Link
+                        to={s.to}
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#7EE3B6] to-[#4ADE80] text-black font-semibold shadow-md hover:scale-[1.02] transition-transform"
+                      >
+                        Learn more
+                      </Link>
+
+                      <button className="px-3 py-2 text-sm rounded-md border border-white/10">
+                        Get a proposal
+                      </button>
+                    </div>
+                  </div>
+
+                  <aside className="w-full md:w-56 flex-shrink-0">
+                    <div className="p-4 rounded-xl bg-[#011426] border border-[#113042] shadow-inner">
+                      <div className="text-xs text-gray-400 uppercase tracking-wider">Highlights</div>
+                      <ul className="mt-3 space-y-2 text-sm text-gray-200">
+                        {s.sub.slice(0, 3).map((h, idx) => (
+                          <li key={idx} className="flex items-start gap-2">
+                            <span className="mt-1 w-2 h-2 rounded-full bg-[#7EE3B6]"></span>
+                            <div className="leading-tight">{h}</div>
+                          </li>
+                        ))}
+                      </ul>
+
+                      <div className="mt-4 text-xs text-gray-400">Avg. delivery</div>
+                      <div className="text-sm font-semibold">2–6 weeks</div>
+                    </div>
+                  </aside>
+                </div>
+              </section>
+            ))}
+
+            <div className="h-24" />
+          </main>
         </div>
-      </motion.div>
+      </div>
+
+      <AnimatePresence>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.06 }}
+          className="pointer-events-none fixed inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#7EE3B6] via-transparent to-transparent"
+        />
+      </AnimatePresence>
     </div>
-  </motion.section>
-
-  <CTASection />
-  <Testimonials />
-</div>
-
   );
-};
+}
 
-export default Services;

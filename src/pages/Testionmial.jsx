@@ -34,14 +34,14 @@ export default function Testimonials() {
 
     const reviews = [
         {
-            name: "Ayesha Khan",
+            name: "Parker Arben",
             img: "https://i.pravatar.cc/150?img=1",
             review:
                 "Great experience. The service was fast, clear, and delivered exactly what I needed.",
         },
         {
-            name: "Hassan Raza",
-            img: "https://i.pravatar.cc/150?img=5",
+            name: "Steven Carter",
+            img: "https://i.pravatar.cc/150?img=12",
             review:
                 "Professional and reliable. My project turned out better than I expected.",
         },
@@ -52,24 +52,25 @@ export default function Testimonials() {
                 "Outstanding quality and attention to detail. Highly recommended!",
         },
         {
-            name: "Ayesha Khan",
-            img: "https://i.pravatar.cc/150?img=1",
+            name: "Sophia Lee",
+            img: "https://i.pravatar.cc/150?img=8",
             review:
-                "Great experience. The service was fast, clear, and delivered exactly what I needed.",
+                "Very smooth experience. The communication was clear and everything was on time.",
         },
         {
-            name: "Hassan Raza",
-            img: "https://i.pravatar.cc/150?img=5",
+            name: "David Miller",
+            img: "https://i.pravatar.cc/150?img=15",
             review:
-                "Professional and reliable. My project turned out better than I expected.",
+                "Excellent work. The results were even better than what I had in mind.",
         },
         {
-            name: "Maria Ahmed",
-            img: "https://i.pravatar.cc/150?img=3",
+            name: "Emma Brown",
+            img: "https://i.pravatar.cc/150?img=9",
             review:
-                "Outstanding quality and attention to detail. Highly recommended!",
+                "Fast delivery and amazing quality. I’ll definitely come back again.",
         },
     ];
+
 
     return (
         <>

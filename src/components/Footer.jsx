@@ -71,12 +71,32 @@ export const Footer = () => {
           viewport={{ once: true }}
         >
           <h3 className="mb-4 font-bold text-lg text-white">Services</h3>
-          <ul className="space-y-2 text-[#E0F2F1] text-md font-semibold">
+          {/* <ul className="space-y-2 text-[#E0F2F1] text-md font-semibold">
             {["Digital Strategy", "SEO & Marketing", "Content Creation", "Social Media", "Paid Advertising"].map((service) => (
               <li key={service}>
                 <span className="inline-block hover:text-[#FFD166] hover:scale-110 transition-all duration-300 cursor-pointer">
                   {service}
                 </span>
+              </li>
+            ))}
+          </ul> */}
+
+          <ul className="space-y-2 text-[#E0F2F1] text-md font-semibold">
+            {[
+              { label: "Web Design & Development", to: "/services/web-design" },
+              { label: "Search Engine Optimization", to: "/services/seo" },
+              { label: "Local Maps Optimization", to: "/services/local-maps" },
+              { label: "Social Media Marketing", to: "/services/social-media" },
+              { label: "PPC Management", to: "/services/ppc-management" },
+              { label: "Content Writing", to: "/services/content-writing" },
+            ].map((link) => (
+              <li key={link.label}>
+                <Link
+                  to={link.to}
+                  className="inline-block hover:text-[#FFD166] hover:scale-110 transition-all duration-300"
+                >
+                  {link.label}
+                </Link>
               </li>
             ))}
           </ul>
