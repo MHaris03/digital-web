@@ -46,7 +46,7 @@ export default function FAQQuoteSection() {
                         Frequently Asked Questions
                     </h2>
                     <p className="text-gray-600 mb-8">
-                        Answers to the most common questions about Sky Lift Marketing's digital marketing services.
+                        Answers to the most common questions about Sky Lift Group's digital marketing services.
                     </p>
 
                     {faqs.map((faq, index) => (
@@ -137,7 +137,7 @@ export default function FAQQuoteSection() {
                             </label>
 
                             {/* Full width */}
-                            <select className="col-span-1 md:col-span-2 border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-[#00A693] outline-none">
+                            <select className="col-span-1 cursor-pointer md:col-span-2 border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-[#00A693] outline-none">
                                 <option value="">Choose a Service</option>
                                 <option value="web design">Web Design & Development</option>
                                 <option value="Social Media Marketing">SEO</option>
@@ -153,7 +153,7 @@ export default function FAQQuoteSection() {
                         <label className="inline-flex items-center space-x-2">
                             <input type="checkbox" className="w-5 h-5 text-[#00A693] border-gray-300 rounded focus:ring-2 focus:ring-[#00A693] outline-none" />
                             <span className="text-gray-700 text-sm">
-                                I agree to be contacted by the Sky Lift Marketing team regarding my request.
+                                I agree to be contacted by the Sky Lift Group team regarding my request.
                             </span>
                         </label>
 

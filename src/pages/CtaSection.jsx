@@ -29,7 +29,7 @@ export default function CTASection() {
       transition={{ duration: 0.8, delay: 0.2 }}
       viewport={{ once: true }}
     >
-      At <strong>Sky Lift Marketing</strong>, we craft smart and data-driven strategies that grow your audience, boost conversions, and help your brand stand out.
+      At <strong>Sky Lift Group</strong>, we craft smart and data-driven strategies that grow your audience, boost conversions, and help your brand stand out.
     </motion.p>
 
     <motion.div
@@ -88,7 +88,7 @@ export default function CTASection() {
 //           transition={{ duration: 0.8, delay: 0.2 }}
 //           viewport={{ once: true }}
 //         >
-//           At <strong>Sky Lift Marketing</strong>, we combine data, creativity, and AI-driven insights to grow your brand smarter and faster. Your audience, conversions, and revenue — elevated.
+//           At <strong>Sky Lift Group</strong>, we combine data, creativity, and AI-driven insights to grow your brand smarter and faster. Your audience, conversions, and revenue — elevated.
 //         </motion.p>
 
 //         <motion.div

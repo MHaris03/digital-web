@@ -6,6 +6,7 @@ import Mapside from "../assets/social-side.avif";
 import SliderBar from "./Sliderbar";
 import CTASection from "./CtaSection";
 import Testimonials from "./Testionmial";
+import { Link } from "react-router-dom";
 
 const services = [
     {
@@ -155,7 +156,7 @@ const SocialMediaMarketing = () => {
                         viewport={{ once: true }}
                     >
                         <p>
-                            Social media marketing helps your brand reach the right audience, engage followers, and convert them into loyal customers. At <strong>SKy Lift Marketing</strong>, we create strategies tailored to your business goals.
+                            Social media marketing helps your brand reach the right audience, engage followers, and convert them into loyal customers. At <strong>Sky Lift Group</strong>, we create strategies tailored to your business goals.
                         </p>
                         <p>
                             From content creation and paid campaigns to influencer collaborations and performance reporting, we cover all aspects of social media marketing.
@@ -189,14 +190,16 @@ const SocialMediaMarketing = () => {
                             <div className="text-[#00A693] mb-4">{service.icon}</div>
                             <h3 className="font-semibold text-xl mb-3 text-gray-900">{service.title}</h3>
                             <p className="text-gray-700 text-sm leading-relaxed mb-6">{service.desc}</p>
-                            <button
-                                className={`px-4 py-2 rounded-full font-semibold transition cursor-pointer ${service.highlight
-                                    ? "bg-[#00A693] text-white hover:bg-[#00927f]"
-                                    : "text-[#00A693] border border-[#00A693] hover:bg-[#00A693] hover:text-white"
-                                    }`}
-                            >
-                                Lets Start
-                            </button>
+                           <Link to="/contact">
+                                <button
+                                    className={`px-4 py-2 rounded-full font-semibold transition cursor-pointer ${service.highlight
+                                        ? "bg-[#00A693] text-white hover:bg-[#00927f]"
+                                        : "text-[#00A693] border border-[#00A693] hover:bg-[#00A693] hover:text-white"
+                                        }`}
+                                >
+                                    Lets Start
+                                </button>
+                            </Link>
                         </motion.div>
                     ))}
                 </div>

@@ -154,7 +154,7 @@ const PPCManagement = () => {
                         viewport={{ once: true }}
                     >
                         <p>
-                            Our PPC management services help businesses target the right audience at the right time. At <strong>SKy Lift Marketing</strong>, we design campaigns to maximize clicks, conversions, and ROI.
+                            Our PPC management services help businesses target the right audience at the right time. At <strong>Sky Lift Group</strong>, we design campaigns to maximize clicks, conversions, and ROI.
                         </p>
                         <p>
                             From keyword research and ad creation to bid management and analytics, we optimize every aspect of your PPC campaigns for success.

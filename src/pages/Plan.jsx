@@ -66,7 +66,7 @@ export default function Plan() {
 
         <div className="space-y-5 text-gray-700 leading-relaxed">
           <p>
-            At <strong className="text-[#00796B]">Sky Lift Marketing</strong>, we believe growth starts with a clear vision and
+            At <strong className="text-[#00796B]">Sky Lift Group</strong>, we believe growth starts with a clear vision and
             data-backed execution. Every strategy we design is tailored to your brand’s
             identity and your audience’s behavior — because success isn’t one-size-fits-all.
           </p>

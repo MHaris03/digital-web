@@ -24,7 +24,7 @@ export default function AboutUs() {
                     transition={{ duration: 0.8 }}
                     className="relative text-white text-4xl md:text-6xl font-bold text-center"
                 >
-                    About Skylift Marketing
+                    About Skylift Group
                 </motion.h1>
 
                 <motion.p
@@ -58,7 +58,7 @@ export default function AboutUs() {
                         >
                             Our Story
                         </motion.h2>
-                        <span className="text-[#00A693] text-semibold">Skylift Marketing</span> began with a simple idea: support businesses with smart digital
+                        <span className="text-[#00A693] text-semibold">Skylift Group</span> began with a simple idea: support businesses with smart digital
                         solutions that actually make a difference. What started as a small team grew into
                         a full-service agency trusted by clients worldwide. Our focus is on real results,
                         clear communication and long-term success.

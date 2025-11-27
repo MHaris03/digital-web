@@ -162,7 +162,7 @@ const Seo = () => {
                         viewport={{ once: true }}
                     >
                         <p>
-                            In the competitive online world, ranking high on search engines is crucial. At <strong>SKy Lift Marketing</strong>, we use proven SEO strategies to increase your visibility and attract the right audience.
+                            In the competitive online world, ranking high on search engines is crucial. At <strong>Sky Lift Group</strong>, we use proven SEO strategies to increase your visibility and attract the right audience.
                         </p>
                         <p>
                             From optimizing your website’s structure to creating targeted content, our team ensures your business stays ahead in search results.
@@ -197,14 +197,16 @@ const Seo = () => {
                             <div className="text-[#00A693] mb-4">{service.icon}</div>
                             <h3 className="font-semibold text-xl mb-3 text-gray-900">{service.title}</h3>
                             <p className="text-gray-700 text-sm leading-relaxed mb-6">{service.desc}</p>
-                            <button
-                                className={`px-4 py-2 rounded-full font-semibold transition cursor-pointer ${service.highlight
-                                    ? "bg-[#00A693] text-white hover:bg-[#00927f]"
-                                    : "text-[#00A693] border border-[#00A693] hover:bg-[#00A693] hover:text-white"
-                                    }`}
-                            >
-                                Lets Start
-                            </button>
+                           <Link to="/contact">
+                                <button
+                                    className={`px-4 py-2 rounded-full font-semibold transition cursor-pointer ${service.highlight
+                                        ? "bg-[#00A693] text-white hover:bg-[#00927f]"
+                                        : "text-[#00A693] border border-[#00A693] hover:bg-[#00A693] hover:text-white"
+                                        }`}
+                                >
+                                    Lets Start
+                                </button>
+                            </Link>
                         </motion.div>
                     ))}
                 </div>

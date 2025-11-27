@@ -6,6 +6,7 @@ import ContentSide from "../assets/writing-side.jpeg";
 import SliderBar from "./Sliderbar";
 import CTASection from "./CtaSection";
 import Testimonials from "./Testionmial";
+import { Link } from "react-router-dom";
 
 const services = [
     {
@@ -154,7 +155,7 @@ const ContentWritingServices = () => {
                         viewport={{ once: true }}
                     >
                         <p>
-                            Our content writing services help businesses connect with their audience. At <strong>SKy Lift Marketing</strong>, we create blogs, articles, web pages, and social media content that engages and converts.
+                            Our content writing services help businesses connect with their audience. At <strong>Sky Lift Group</strong>, we create blogs, articles, web pages, and social media content that engages and converts.
                         </p>
                         <p>
                             We focus on SEO-friendly content, compelling storytelling, and consistent messaging to ensure your brand stands out.
@@ -188,14 +189,16 @@ const ContentWritingServices = () => {
                             <div className="text-[#00A693] mb-4">{service.icon}</div>
                             <h3 className="font-semibold text-xl mb-3 text-gray-900">{service.title}</h3>
                             <p className="text-gray-700 text-sm leading-relaxed mb-6">{service.desc}</p>
-                            <button
-                                className={`px-4 py-2 rounded-full font-semibold transition cursor-pointer ${service.highlight
-                                    ? "bg-[#00A693] text-white hover:bg-[#00927f]"
-                                    : "text-[#00A693] border border-[#00A693] hover:bg-[#00A693] hover:text-white"
-                                    }`}
-                            >
-                                Lets Start
-                            </button>
+                            <Link to="/contact">
+                                <button
+                                    className={`px-4 py-2 rounded-full font-semibold transition cursor-pointer ${service.highlight
+                                        ? "bg-[#00A693] text-white hover:bg-[#00927f]"
+                                        : "text-[#00A693] border border-[#00A693] hover:bg-[#00A693] hover:text-white"
+                                        }`}
+                                >
+                                    Lets Start
+                                </button>
+                            </Link>
                         </motion.div>
                     ))}
                 </div>
@@ -265,7 +268,7 @@ const ContentWritingServices = () => {
                         className="flex items-center justify-center"
                     >
                         <div className="w-full h-80 flex items-center justify-center">
-                            <img src={ContentSide} alt="Content Writing Services" className="rounded-2xl shadow-lg"/>
+                            <img src={ContentSide} alt="Content Writing Services" className="rounded-2xl shadow-lg" />
                         </div>
                     </motion.div>
                 </div>

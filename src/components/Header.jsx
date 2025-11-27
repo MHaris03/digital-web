@@ -57,7 +57,7 @@ export const Header = () => {
                     <Link to="/" className="flex items-center gap-3">
                         <img
                             src={logo}
-                            alt="Sky Lift Marketing"
+                            alt="Sky Lift Group"
                             className="w-40 h-20 object-contain md:w-40 transition-transform duration-300"
                         />
                     </Link>
@@ -79,7 +79,11 @@ export const Header = () => {
                                 >
                                     <Link
                                         to={to}
-                                        className="text-sm font-medium text-gray-700 hover:text-[#00A693] transition-colors flex items-center gap-1"
+                                        // className="text-sm font-medium text-gray-700 hover:text-[#00A693] transition-colors flex items-center gap-1"
+                                        className={`text-sm font-medium transition-colors items-center gap-1 flex ${location.pathname.startsWith("/services")
+                                            ? "text-[#00A693]"
+                                            : "text-gray-700 hover:text-[#00A693]"
+                                            }`}
                                     >
                                         {label} <ChevronDown className="w-4 h-4" />
                                     </Link>
@@ -90,7 +94,10 @@ export const Header = () => {
                                                 <li key={label}>
                                                     <Link
                                                         to={to}
-                                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#00A693]"
+                                                        className={`block px-4 py-2 text-sm font-medium ${location.pathname === to
+                                                            ? "bg-gray-100 text-[#00A693]"
+                                                            : "text-gray-700 hover:bg-gray-200 hover:text-[#00A693]"
+                                                            }`}
                                                     >
                                                         {label}
                                                     </Link>

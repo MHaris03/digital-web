@@ -7,17 +7,19 @@ import "flag-icons/css/flag-icons.min.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: "",
+    businessname: "",
+    weburl: "",
+    firstname: "",
+    lastname: "",
     email: "",
     phone: "",
-    company: "",
     message: "",
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setFormData({ name: "", email: "", phone: "", company: "", message: "" });
+    setFormData({ businessname: "", weburl: "", firstname: "", lastname: "", email: "", phone: "", message: "" });
   };
 
   const handleChange = (e) => {
@@ -64,7 +66,7 @@ const Contact = () => {
                 {
                   icon: <Mail className="h-6 w-6 text-white" />,
                   title: "Email Us",
-                  lines: ["hello@digitalmark.com", "support@digitalmark.com"],
+                  lines: ["hello@skyliftgroup.com", "support@skyliftgroup.com"],
                 },
                 // {
                 //   icon: <Phone className="h-6 w-6 text-white" />,
@@ -135,15 +137,66 @@ const Contact = () => {
 
                 <form onSubmit={handleSubmit} className="space-y-6">
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
                     <div>
-                      <label className="block mb-1 font-medium">Full Name *</label>
+                      <label className="block mb-1 font-medium">Business Name *</label>
                       <input
                         className="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-[#00A693] outline-none"
-                        name="name"
-                        value={formData.name}
+                        name="businessname"
+                        value={formData.businessname}
                         onChange={handleChange}
                         required
+                      />
+                    </div>
+
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
+                    <div>
+                      <label className="block mb-1 font-medium">Website URL *</label>
+                      <input
+                        className="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-[#00A693] outline-none"
+                        name="weburl"
+                        value={formData.weburl}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block mb-1 font-medium">First Name *</label>
+                      <input
+                        className="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-[#00A693] outline-none"
+                        name="firstname"
+                        value={formData.firstname}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block mb-1 font-medium">Last Name *</label>
+                      <input
+                        className="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-[#00A693] outline-none"
+                        name="lastname"
+                        value={formData.lastname}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+
+
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block mb-1 font-medium">Phone</label>
+                      <input
+                        className="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-[#00A693] outline-none"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
                       />
                     </div>
 
@@ -159,27 +212,18 @@ const Contact = () => {
                       />
                     </div>
                   </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block mb-1 font-medium">Phone</label>
-                      <input
-                        className="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-[#00A693] outline-none"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block mb-1 font-medium">Company</label>
-                      <input
-                        className="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-[#00A693] outline-none"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleChange}
-                      />
-                    </div>
+                  <div>
+                    <label className="block mb-1 font-medium"> What Service Do You Need ? *</label>
+                    <select className="col-span-1 cursor-pointer md:col-span-2 border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-[#00A693] outline-none">
+                      <option value="">Choose a Service</option>
+                      <option value="web design">Web Design & Development</option>
+                      <option value="Social Media Marketing">SEO</option>
+                      <option value="Content Marketing">Content Marketing</option>
+                      <option value="Paid Advertising">Paid Advertising</option>
+                      <option value="Full Digital Strategy">Full Digital Strategy</option>
+                      <option value="local Maps Optimization">Local Maps Optimization</option>
+                      <option value="PPC Management">PPC Management</option>
+                    </select>
                   </div>
 
                   <div>

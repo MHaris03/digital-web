@@ -6,6 +6,7 @@ import Mapside from "../assets/map-side.webp";
 import SliderBar from "./Sliderbar";
 import CTASection from "./CtaSection";
 import Testimonials from "./Testionmial";
+import { Link } from "react-router-dom";
 
 const services = [
     {
@@ -155,7 +156,7 @@ const LocalMapOptimization = () => {
                         viewport={{ once: true }}
                     >
                         <p>
-                            Local search and maps optimization ensures your business gets discovered by nearby customers. At <strong>SKy Lift Marketing</strong>, we optimize your listings, keywords, and reputation to maximize local visibility.
+                            Local search and maps optimization ensures your business gets discovered by nearby customers. At <strong>Sky Lift Group</strong>, we optimize your listings, keywords, and reputation to maximize local visibility.
                         </p>
                         <p>
                             Our team focuses on Google My Business, Apple Maps, local keywords, citations, and reviews to help you stay competitive in your area.
@@ -189,14 +190,17 @@ const LocalMapOptimization = () => {
                             <div className="text-[#00A693] mb-4">{service.icon}</div>
                             <h3 className="font-semibold text-xl mb-3 text-gray-900">{service.title}</h3>
                             <p className="text-gray-700 text-sm leading-relaxed mb-6">{service.desc}</p>
-                            <button
-                                className={`px-4 py-2 rounded-full font-semibold transition cursor-pointer ${service.highlight
-                                    ? "bg-[#00A693] text-white hover:bg-[#00927f]"
-                                    : "text-[#00A693] border border-[#00A693] hover:bg-[#00A693] hover:text-white"
-                                    }`}
-                            >
-                                Lets Start
-                            </button>
+                            <Link to="/contact">
+                                <button
+                                    className={`px-4 py-2 rounded-full font-semibold transition cursor-pointer ${service.highlight
+                                        ? "bg-[#00A693] text-white hover:bg-[#00927f]"
+                                        : "text-[#00A693] border border-[#00A693] hover:bg-[#00A693] hover:text-white"
+                                        }`}
+                                >
+                                    Lets Start
+                                </button>
+                            </Link>
+
                         </motion.div>
                     ))}
                 </div>
@@ -266,7 +270,7 @@ const LocalMapOptimization = () => {
                         className="flex items-center justify-center"
                     >
                         <div className="w-full h-80 flex items-center justify-center">
-                            <img src={Mapside} alt="Local Maps Optimization Services" className="rounded-2xl shadow-lg"/>
+                            <img src={Mapside} alt="Local Maps Optimization Services" className="rounded-2xl shadow-lg" />
                         </div>
                     </motion.div>
                 </div>

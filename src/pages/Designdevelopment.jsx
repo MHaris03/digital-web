@@ -162,7 +162,7 @@ const Designweb = () => {
                         viewport={{ once: true }}
                     >
                         <p>
-                            In today’s digital world, your website is often the first interaction potential customers have with your brand. At <strong>SKy Lift Marketing</strong>, we create modern, user-friendly websites that look great and perform even better.
+                            In today’s digital world, your website is often the first interaction potential customers have with your brand. At <strong>Sky Lift Group</strong>, we create modern, user-friendly websites that look great and perform even better.
                         </p>
                         <p>
                             Whether you’re starting new or redesigning an existing site, we bring your vision to life.
@@ -195,7 +195,17 @@ const Designweb = () => {
                             <div className="text-[#00A693] mb-4">{service.icon}</div>
                             <h3 className="font-semibold text-xl mb-3 text-gray-900">{service.title}</h3>
                             <p className="text-gray-700 text-sm leading-relaxed mb-6">{service.desc}</p>
-                            <button className={`px-4 py-2 rounded-full font-semibold transition cursor-pointer ${service.highlight ? 'bg-[#00A693] text-white hover:bg-[#00927f]' : 'text-[#00A693] border border-[#00A693] hover:bg-[#00A693] hover:text-white'}`}>Lets Start</button>
+                            <Link to="/contact">
+                                <button
+                                    className={`px-4 py-2 rounded-full font-semibold transition cursor-pointer ${service.highlight
+                                        ? "bg-[#00A693] text-white hover:bg-[#00927f]"
+                                        : "text-[#00A693] border border-[#00A693] hover:bg-[#00A693] hover:text-white"
+                                        }`}
+                                >
+                                    Lets Start
+                                </button>
+                            </Link>
+
                         </motion.div>
                     ))}
                 </div>

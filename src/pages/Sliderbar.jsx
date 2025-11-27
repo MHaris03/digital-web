@@ -6,10 +6,10 @@ import "slick-carousel/slick/slick-theme.css";
 
 const SliderBar = () => {
   const slides = [
-    "🏆 Partnering with Sky Lift Marketing was the best decision for our online strategy –",
-    "🚀 350+ Real Results: 100% Quality Organic Leads – Sky Lift Marketing –",
-    "💡 Transforming Creativity into Conversions – Sky Lift Marketing SaaS Campaign –",
-    "🔥 120% ROI Growth in Just 3 Months – Sky Lift Marketing AI Success Story –",
+    "🏆 Partnering with Sky Lift Group was the best decision for our online strategy –",
+    "🚀 350+ Real Results: 100% Quality Organic Leads – Sky Lift Group –",
+    "💡 Transforming Creativity into Conversions – Sky Lift Group SaaS Campaign –",
+    "🔥 120% ROI Growth in Just 3 Months – Sky Lift Group AI Success Story –",
   ];
 
   const settings = {
