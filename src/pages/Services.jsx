@@ -112,7 +112,7 @@ export default function ServicesAttractive() {
           transition={{ duration: 0.8 }}
           className="relative text-white text-4xl md:text-6xl font-bold text-center"
         >
-          Social Media Marketing
+          Our Services
         </motion.h1>
 
         <motion.p
@@ -121,7 +121,7 @@ export default function ServicesAttractive() {
           transition={{ duration: 1 }}
           className="relative text-white text-lg md:text-xl mt-4 text-center max-w-xl"
         >
-          Grow your brand, engage your audience, and boost conversions with our full-service social media marketing solutions.
+          We help you build a real presence online with content that connects, campaigns that perform, and strategies that move your brand forward.
         </motion.p>
       </section>
 
