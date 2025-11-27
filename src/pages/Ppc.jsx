@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { ChevronDown, BarChart2, TrendingUp, Zap, Settings, Search, Users } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import PPCside from "../assets/ppc-bg.jpg"; 
-import PPCHero from "../assets/ppc-side.jpg"; 
+import PPCside from "../assets/ppc-bg.jpg";
+import PPCHero from "../assets/ppc-side.jpg";
 import SliderBar from "./Sliderbar";
 import CTASection from "./CtaSection";
 import Testimonials from "./Testionmial";
+import { Link } from "react-router-dom";
 
 const services = [
     {
@@ -188,14 +189,16 @@ const PPCManagement = () => {
                             <div className="text-[#00A693] mb-4">{service.icon}</div>
                             <h3 className="font-semibold text-xl mb-3 text-gray-900">{service.title}</h3>
                             <p className="text-gray-700 text-sm leading-relaxed mb-6">{service.desc}</p>
-                            <button
-                                className={`px-4 py-2 rounded-full font-semibold transition cursor-pointer ${service.highlight
-                                    ? "bg-[#00A693] text-white hover:bg-[#00927f]"
-                                    : "text-[#00A693] border border-[#00A693] hover:bg-[#00A693] hover:text-white"
-                                    }`}
-                            >
-                                Lets Start
-                            </button>
+                            <Link to="/contact">
+                                <button
+                                    className={`px-4 py-2 rounded-full font-semibold transition cursor-pointer ${service.highlight
+                                        ? "bg-[#00A693] text-white hover:bg-[#00927f]"
+                                        : "text-[#00A693] border border-[#00A693] hover:bg-[#00A693] hover:text-white"
+                                        }`}
+                                >
+                                    Lets Start
+                                </button>
+                            </Link>
                         </motion.div>
                     ))}
                 </div>
@@ -265,7 +268,7 @@ const PPCManagement = () => {
                         className="flex items-center justify-center"
                     >
                         <div className="w-full h-80 flex items-center justify-center">
-                            <img src={PPCside} alt="PPC Management Services" className="rounded-2xl shadow-lg"/>
+                            <img src={PPCside} alt="PPC Management Services" className="rounded-2xl shadow-lg" />
                         </div>
                     </motion.div>
                 </div>

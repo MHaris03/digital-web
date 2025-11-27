@@ -10,7 +10,7 @@ import {
     Settings,
     Zap
 } from "lucide-react";
-import HeroBg from "../assets/seo.webp";
+import HeroBg from "../assets/seo.jpg";
 import Seoside from "../assets/seo-side.jpg"
 import SliderBar from "./Sliderbar";
 import CTASection from "./CtaSection";
@@ -197,7 +197,7 @@ const Seo = () => {
                             <div className="text-[#00A693] mb-4">{service.icon}</div>
                             <h3 className="font-semibold text-xl mb-3 text-gray-900">{service.title}</h3>
                             <p className="text-gray-700 text-sm leading-relaxed mb-6">{service.desc}</p>
-                           <Link to="/contact">
+                            <Link to="/contact">
                                 <button
                                     className={`px-4 py-2 rounded-full font-semibold transition cursor-pointer ${service.highlight
                                         ? "bg-[#00A693] text-white hover:bg-[#00927f]"
@@ -276,7 +276,7 @@ const Seo = () => {
                         className="flex items-center justify-center"
                     >
                         <div className="w-full h-80 flex items-center justify-center shadow-md">
-                            <img src={Seoside} alt="Seo" className="rounded-2xl shadow-lg"/>
+                            <img src={Seoside} alt="Seo" className="rounded-2xl shadow-lg" />
                         </div>
                     </motion.div>
                 </div>

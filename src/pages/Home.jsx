@@ -20,7 +20,6 @@ const Home = () => {
 
   return (
     <div className="flex flex-col">
-      {/* Hero Section with Slider */}
       <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
         {/* Background */}
         <img
@@ -102,126 +101,14 @@ const Home = () => {
         </div>
       </section>
       <SliderBar />
-      {/* Animated Stats Section */}
       <Info />
       <Plan />
       <FocusPoints />
-      {/* <section className="bg-primary text-primary-foreground py-12 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/50 to-primary opacity-50"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="transform transition-all hover:scale-110">
-              <AnimatedCounter end={350} suffix="+" />
-              <div className="text-sm opacity-90 mt-2">Happy Clients</div>
-            </div>
-            <div className="transform transition-all hover:scale-110">
-              <AnimatedCounter end={85} suffix="%" />
-              <div className="text-sm opacity-90 mt-2">Average Growth</div>
-            </div>
-            <div className="transform transition-all hover:scale-110">
-              <div className="text-4xl font-bold">24/7</div>
-              <div className="text-sm opacity-90 mt-2">Support Available</div>
-            </div>
-            <div className="transform transition-all hover:scale-110">
-              <AnimatedCounter end={10} suffix="+" />
-              <div className="text-sm opacity-90 mt-2">Years Experience</div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* Services Preview with Animations */}
-      {/* <section className="py-20 ">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
-            <Badge className="mb-4">What We Offer</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Comprehensive Digital Solutions
-            </h2>
-            <p className="text-lg max-w-2xl mx-auto">
-              From strategy to execution, we deliver end-to-end digital marketing services tailored to your business goals.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in group">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg mb-4 group-hover:bg-primary group-hover:scale-110 transition-all">
-                <Target className="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors" />
-              </div>
-              <h3 className="text-xl font-bold mb-2">Digital Strategy</h3>
-              <p className="text-muted-foreground mb-4">
-                Comprehensive roadmaps that align with your business objectives and drive sustainable growth.
-              </p>
-              <Link to="/services" className="text-primary font-medium hover:underline inline-flex items-center group">
-                Lets Start <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-2" />
-              </Link>
-            </Card>
-
-            <Card className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in [animation-delay:100ms] group">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 mb-4 group-hover:bg-primary group-hover:scale-110 transition-all">
-                <TrendingUp className="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors" />
-              </div>
-              <h3 className="text-xl font-bold mb-2">SEO & Marketing</h3>
-              <p className="text-muted-foreground mb-4">
-                Boost your visibility and attract qualified leads with proven search optimization techniques.
-              </p>
-              <Link to="/services" className="text-primary font-medium hover:underline inline-flex items-center group">
-                Lets Start <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-2" />
-              </Link>
-            </Card>
-
-            <Card className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in [animation-delay:200ms] group">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 mb-4 group-hover:bg-primary group-hover:scale-110 transition-all">
-                <Users className="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors" />
-              </div>
-              <h3 className="text-xl font-bold mb-2">Social Media</h3>
-              <p className="text-muted-foreground mb-4">
-                Build authentic connections and engage your audience across all major social platforms.
-              </p>
-              <Link to="/services" className="text-primary font-medium hover:underline inline-flex items-center group">
-                Lets Start <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-2" />
-              </Link>
-            </Card>
-          </div>
-
-          <div className="text-center mt-12 animate-fade-in">
-            <Button size="lg" asChild className="group">
-              <Link to="/services">
-                View All Services
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section> */}
-
       <WhatWeOffer />
-
-      {/* CTA Section with Animation */}
-      {/* <section className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary/80"></div>
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
-            Ready to Grow Your Business?
-          </h2>
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto animate-fade-in">
-            Let's create a digital strategy that transforms your vision into measurable success.
-          </p>
-          <div className="animate-fade-in">
-            <Button size="lg" variant="secondary" asChild className="group">
-              <Link to="/contact">
-                Schedule Free Consultation
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-2" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section> */}
       <CTASection />
       <FAQSection />
       <Counter />
       <Testimonials />
-      {/* <RequestQuoteForm/> */}
     </div>
   );
 };
