@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import HeroBg from "../assets/services.webp";
 
 
 
@@ -102,7 +101,7 @@ export default function ServicesAttractive() {
     <div className="w-full">
       <section
         className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: `url(${HeroBg})` }}
+        style={{ backgroundImage: `url("/assets/services.webp")` }}
       >
         <div className="absolute inset-0 bg-black/50" />
 

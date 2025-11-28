@@ -2,10 +2,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { HeroSlider } from "../components/HeroSliderbar";
 import Info from "../pages/Info"
-import heroImage from "../assets/hero-main.jpg";
-import video2 from "../assets/video2.mp4"
-import analytics from "../assets/analytics.jpg";
-import bghero from "../assets/bg-hero.jpg"
+// import heroImage from "../assets/hero-main.jpg";
+// import video2 from "../assets/video2.mp4"
+// import analytics from "../assets/analytics.jpg";
+// import bghero from "../assets/bg-hero.jpg"
 import SliderBar from "./Sliderbar";
 import Plan from "./Plan";
 import FocusPoints from "./Focus";
@@ -23,7 +23,7 @@ const Home = () => {
       <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
         {/* Background */}
         <img
-          src={bghero}
+          src="/assets/bg-hero.jpg"
           alt="Team meeting"
           className="absolute inset-0 w-full h-full object-cover -z-10"
         />
@@ -61,7 +61,7 @@ const Home = () => {
               viewport={{ once: true }}
             >
               <video
-                src={video2}
+                src="/assets/video2.mp4"
                 autoPlay
                 loop
                 muted
@@ -78,7 +78,7 @@ const Home = () => {
               viewport={{ once: true }}
             >
               <img
-                src={heroImage}
+                src="/assets/hero-main.jpg"
                 alt="Creative team"
                 className="w-full h-48 object-cover"
               />
@@ -92,7 +92,7 @@ const Home = () => {
               viewport={{ once: true }}
             >
               <img
-                src={analytics}
+                src="/assets/analytics.jpg"
                 alt="Presentation analytics"
                 className="w-full h-48 object-cover"
               />

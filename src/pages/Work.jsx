@@ -1,9 +1,9 @@
 import { motion, useInView } from "framer-motion";
 import { ArrowRight, ExternalLink } from "lucide-react";
-import workDesk from "../assets/work-desk.jpg";
-import analytics from "../assets/analytics.jpg";
-import teamWork from "../assets/team-work.jpg";
-import Workside from "../assets/our-work.jpg"
+// import workDesk from "../assets/work-desk.jpg";
+// import analytics from "../assets/analytics.jpg";
+// import teamWork from "../assets/team-work.jpg";
+// import Workside from "../assets/our-work.jpg"
 import { useCountUp } from "../hooks/counte";
 import { useRef } from "react";
 import CTASection from "./CtaSection";
@@ -26,7 +26,7 @@ const Work = () => {
       category: "B2B SaaS",
       description: "Complete digital transformation including website redesign, SEO strategy, and lead generation campaigns.",
       results: ["150% increase in organic traffic", "85% growth in qualified leads", "2.5x ROI on ad spend"],
-      image: analytics,
+      image: "/assets/analytics.jpg",
       tags: ["SEO", "Web Design", "PPC"],
     },
     {
@@ -34,7 +34,7 @@ const Work = () => {
       category: "E-commerce",
       description: "End-to-end e-commerce marketing strategy with focus on social media and influencer partnerships.",
       results: ["300% social media growth", "65% increase in conversion rate", "4x revenue in 6 months"],
-      image: teamWork,
+      image: "/assets/team-work.jpg",
       tags: ["Social Media", "Content", "Email"],
     },
     {
@@ -42,7 +42,7 @@ const Work = () => {
       category: "Healthcare",
       description: "Local SEO optimization and reputation management for a growing healthcare provider.",
       results: ["Top 3 Google rankings", "200+ positive reviews", "120% patient growth"],
-      image: workDesk,
+      image: "/assets/work-desk.jpg",
       tags: ["Local SEO", "Reputation", "Content"],
     },
   ];
@@ -53,7 +53,7 @@ const Work = () => {
       {/* Hero Section */}
       <section
         className="relative w-full min-h-[70vh] md:min-h-[88vh] flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat px-4"
-        style={{ backgroundImage: `url(${Workside})` }}
+        style={{ backgroundImage: `url("/assets/our-work.jpg")` }}
       >
         <div className="absolute inset-0 bg-black/50" />
 

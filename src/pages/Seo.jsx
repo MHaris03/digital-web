@@ -10,8 +10,8 @@ import {
     Settings,
     Zap
 } from "lucide-react";
-import HeroBg from "../assets/seo.jpg";
-import Seoside from "../assets/seo-side.jpg"
+// import HeroBg from "../assets/seo.jpg";
+// import Seoside from "../assets/seo-side.jpg"
 import SliderBar from "./Sliderbar";
 import CTASection from "./CtaSection";
 import Testimonials from "./Testionmial";
@@ -78,7 +78,7 @@ const Seo = () => {
             {/* HERO SECTION */}
             <section
                 className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"
-                style={{ backgroundImage: `url(${HeroBg})` }}
+                style={{ backgroundImage: `url("/assets/seo.jpg")` }}
             >
                 <div className="absolute inset-0 bg-black/50" />
 
@@ -276,7 +276,7 @@ const Seo = () => {
                         className="flex items-center justify-center"
                     >
                         <div className="w-full h-80 flex items-center justify-center shadow-md">
-                            <img src={Seoside} alt="Seo" className="rounded-2xl shadow-lg" />
+                            <img src="/assets/seo-side.jpg" alt="Seo" className="rounded-2xl shadow-lg" />
                         </div>
                     </motion.div>
                 </div>

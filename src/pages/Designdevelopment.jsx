@@ -10,8 +10,8 @@ import {
     Code2,
     Wrench
 } from "lucide-react";
-import HeroBg from "../assets/web-design.jpg";
-import Webimg from "../assets/web-side.jpg"
+// import HeroBg from "../assets/web-design.jpg";
+// import Webimg from "../assets/web-side.jpg"
 import SliderBar from "./Sliderbar";
 import CTASection from "./CtaSection";
 import Testimonials from "./Testionmial";
@@ -83,7 +83,7 @@ const Designweb = () => {
             {/* SECTION 1 */}
             <section
                 className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"
-                style={{ backgroundImage: `url(${HeroBg})` }}
+                style={{ backgroundImage: `url("/assets/web-design.jpg")` }}
             >
                 <div className="absolute inset-0 bg-black/50" />
 
@@ -252,7 +252,7 @@ const Designweb = () => {
                     {/* RIGHT Image */}
                     <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="flex items-center justify-center">
                         <div className="w-full h-80 flex items-center justify-center shadow-md">
-                            <img src={Webimg} alt="web-development" className="rounded-2xl shadow-lg" />
+                            <img src="/assets/web-side.jpg" alt="web-development" className="rounded-2xl shadow-lg" />
                         </div>
                     </motion.div>
                 </div>

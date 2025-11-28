@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import Mianimg from "../assets/plan-mainimg.avif";
-import Leftimg from "../assets/plan-leftsmall.avif";
-import Rightimg from "../assets/plan-rightsmall.avif";
+// import Mianimg from "../assets/plan-mainimg.avif";
+// import Leftimg from "../assets/plan-leftsmall.avif";
+// import Rightimg from "../assets/plan-rightsmall.avif";
 
 export default function Plan() {
   return (
@@ -15,7 +15,7 @@ export default function Plan() {
           viewport={{ once: true }}
         >
           <img
-            src={Mianimg}
+            src="/assets/plan-mainimg.avif"
             alt="Charts and graphs"
             className="w-full h-64 md:h-80 object-cover rounded-2xl"
           />
@@ -29,7 +29,7 @@ export default function Plan() {
           viewport={{ once: true }}
         >
           <img
-            src={Rightimg}
+            src="/assets/plan-rightsmall.avif"
             alt="Creative marketing team brainstorming"
             className="w-full h-48 object-cover rounded-2xl"
           />
@@ -43,7 +43,7 @@ export default function Plan() {
           viewport={{ once: true }}
         >
           <img
-            src={Leftimg}
+            src="/assets/plan-leftsmall.avif"
             alt="Digital marketing strategy meeting"
             className="w-full h-48 object-cover rounded-2xl"
           />

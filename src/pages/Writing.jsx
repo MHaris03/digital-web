@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { ChevronDown, PenTool, FileText, Users, Zap, BarChart2, Settings } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import ContentHero from "../assets/writing-bg.jpg";
-import ContentSide from "../assets/writing-side.jpeg";
+// import ContentHero from "../assets/writing-bg.jpg";
+// import ContentSide from "../assets/writing-side.jpeg";
 import SliderBar from "./Sliderbar";
 import CTASection from "./CtaSection";
 import Testimonials from "./Testionmial";
@@ -70,7 +70,7 @@ const ContentWritingServices = () => {
             {/* HERO SECTION */}
             <section
                 className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"
-                style={{ backgroundImage: `url(${ContentHero})` }}
+                style={{ backgroundImage: `url("/assets/writing-bg.jpg")` }}
             >
                 <div className="absolute inset-0 bg-black/50" />
 
@@ -268,7 +268,7 @@ const ContentWritingServices = () => {
                         className="flex items-center justify-center"
                     >
                         <div className="w-full h-80 flex items-center justify-center">
-                            <img src={ContentSide} alt="Content Writing Services" className="rounded-2xl shadow-lg" />
+                            <img src="/assets/writing-side.jpeg" alt="Content Writing Services" className="rounded-2xl shadow-lg" />
                         </div>
                     </motion.div>
                 </div>

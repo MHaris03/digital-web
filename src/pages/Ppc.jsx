@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { ChevronDown, BarChart2, TrendingUp, Zap, Settings, Search, Users } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import PPCside from "../assets/ppc-bg.jpg";
-import PPCHero from "../assets/ppc-side.jpg";
+// import PPCside from "../assets/ppc-bg.jpg";
+// import PPCHero from "../assets/ppc-side.jpg";
 import SliderBar from "./Sliderbar";
 import CTASection from "./CtaSection";
 import Testimonials from "./Testionmial";
@@ -70,7 +70,7 @@ const PPCManagement = () => {
             {/* HERO SECTION */}
             <section
                 className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"
-                style={{ backgroundImage: `url(${PPCHero})` }}
+                style={{ backgroundImage: `url("/assets/ppc-side.jpg")` }}
             >
                 <div className="absolute inset-0 bg-black/50" />
 
@@ -268,7 +268,7 @@ const PPCManagement = () => {
                         className="flex items-center justify-center"
                     >
                         <div className="w-full h-80 flex items-center justify-center">
-                            <img src={PPCside} alt="PPC Management Services" className="rounded-2xl shadow-lg" />
+                            <img src="/assets/ppc-bg.jpg" alt="PPC Management Services" className="rounded-2xl shadow-lg" />
                         </div>
                     </motion.div>
                 </div>

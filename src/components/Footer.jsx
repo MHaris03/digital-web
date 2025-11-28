@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
-import logo from "../assets/main-logo.png"
+// import logo from "../assets/main-logo.png"
 import "flag-icons/css/flag-icons.min.css";
 
 
@@ -22,7 +22,7 @@ export const Footer = () => {
         >
           <div className="flex items-center gap-3">
             <img
-              src={logo}
+              src="/assets/main-logo.png"
               alt="Sky Lift Group"
               className="h-auto w-40 object-cover"
             />

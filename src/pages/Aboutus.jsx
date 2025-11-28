@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Lightbulb, Target, Users, ShieldCheck, Award } from "lucide-react";
-import heroBg from "../assets/servicebgimg.jpg";
-import story from "../assets/ourstory.jpg"
+// import heroBg from "../assets/servicebgimg.jpg";
+// import story from "../assets/ourstory.jpg"
 import CTASection from "./CtaSection";
 import SliderBar from "./Sliderbar";
 import Testimonials from "./Testionmial";
@@ -14,7 +14,7 @@ export default function AboutUs() {
             {/* Hero Section */}
             <section
                 className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"
-                style={{ backgroundImage: `url(${heroBg})` }}
+                style={{ backgroundImage: `url("/assets/servicebgimg.jpg")` }}
             >
                 <div className="absolute inset-0 bg-black/50" />
 
@@ -66,7 +66,7 @@ export default function AboutUs() {
 
                     {/* Image */}
                     <motion.img
-                        src={story}
+                        src="/assets/ourstory.jpg"
                         alt="Our Story"
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}

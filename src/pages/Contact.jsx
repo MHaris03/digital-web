@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
-import contact from "../assets/contact.jpg"
+// import contact from "../assets/contact.jpg"
 import SliderBar from "./Sliderbar";
 import "flag-icons/css/flag-icons.min.css";
 
@@ -31,7 +31,7 @@ const Contact = () => {
 
       <section
         className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: `url(${contact})` }}
+        style={{ backgroundImage: `url("/assets/contact.jpg")` }}
       >
         <div className="absolute inset-0 bg-black/50" />
 

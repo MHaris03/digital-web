@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { ChevronDown, MapPin, Search, Settings, BarChart2, Users, Zap } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import HeroBg from "../assets/maps-bg.jpeg";
-import Mapside from "../assets/map-side.webp";
+// import HeroBg from "../assets/maps-bg.jpeg";
+// import Mapside from "../assets/map-side.webp";
 import SliderBar from "./Sliderbar";
 import CTASection from "./CtaSection";
 import Testimonials from "./Testionmial";
@@ -70,7 +70,7 @@ const LocalMapOptimization = () => {
             {/* HERO SECTION */}
             <section
                 className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"
-                style={{ backgroundImage: `url(${HeroBg})` }}
+                style={{ backgroundImage: `url("/assets/maps-bg.jpeg")` }}
             >
                 <div className="absolute inset-0 bg-black/50" />
 
@@ -270,7 +270,7 @@ const LocalMapOptimization = () => {
                         className="flex items-center justify-center"
                     >
                         <div className="w-full h-80 flex items-center justify-center">
-                            <img src={Mapside} alt="Local Maps Optimization Services" className="rounded-2xl shadow-lg" />
+                            <img src="/assets/map-side.webp" alt="Local Maps Optimization Services" className="rounded-2xl shadow-lg" />
                         </div>
                     </motion.div>
                 </div>

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { ChevronDown, Users, TrendingUp, MessageCircle, Zap, BarChart2, Settings } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import HeroBg from "../assets/socialmedia-bg.jpg";
-import Mapside from "../assets/social-side.avif";
+// import HeroBg from "../assets/socialmedia-bg.jpg";
+// import Mapside from "../assets/social-side.avif";
 import SliderBar from "./Sliderbar";
 import CTASection from "./CtaSection";
 import Testimonials from "./Testionmial";
@@ -70,7 +70,7 @@ const SocialMediaMarketing = () => {
             {/* HERO SECTION */}
             <section
                 className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"
-                style={{ backgroundImage: `url(${HeroBg})` }}
+                style={{ backgroundImage: `url("/assets/socialmedia-bg.jpg")` }}
             >
                 <div className="absolute inset-0 bg-black/50" />
 
@@ -269,7 +269,7 @@ const SocialMediaMarketing = () => {
                         className="flex items-center justify-center"
                     >
                         <div className="w-full h-80  flex items-center justify-center">
-                            <img src={Mapside} alt="Social Media Marketing Services" className="rounded-2xl shadow-lg"/>
+                            <img src="/assets/social-side.avif" alt="Social Media Marketing Services" className="rounded-2xl shadow-lg"/>
                         </div>
                     </motion.div>
                 </div>
