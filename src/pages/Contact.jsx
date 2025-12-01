@@ -65,7 +65,7 @@ const Contact = () => {
                 {
                   icon: <Mail className="h-6 w-6 text-white" />,
                   title: "Email Us",
-                  lines: ["hello@skyliftgroup.com", "support@skyliftgroup.com"],
+                  lines: ["info@skyliftgroup.com"],
                 },
                 // {
                 //   icon: <Phone className="h-6 w-6 text-white" />,
