@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, MapPin, Search, Settings, BarChart2, Users, Zap } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-// import HeroBg from "../assets/maps-bg.jpeg";
-// import Mapside from "../assets/map-side.webp";
 import SliderBar from "./Sliderbar";
 import CTASection from "./CtaSection";
 import Testimonials from "./Testionmial";

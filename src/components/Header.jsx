@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
-// import logo from "../assets/logo-transparent.png";
 
 export const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -56,9 +55,9 @@ export const Header = () => {
                     {/* Logo */}
                     <Link to="/" className="flex items-center gap-3">
                         <img
-                            src="/assets/logo-transparent.png"
+                            src="/assets/sky-lift-logo.png"
                             alt="Sky Lift Group"
-                            className="w-40 h-20 object-contain md:w-40 transition-transform duration-300"
+                            className="w-44 h-26 object-contain md:w-44 transition-transform duration-300"
                         />
                     </Link>
 
@@ -123,13 +122,13 @@ export const Header = () => {
 
                     {/* Desktop Actions */}
                     <div className="hidden md:flex items-center space-x-5">
-                        <a
+                        {/* <a
                             href="tel:5614293999"
                             className="flex items-center text-sm font-medium text-gray-700 hover:text-[#00A693]"
                         >
                             <Phone className="mr-2 h-4 w-4 text-[#00A693]" />
                             (561) 429-3999
-                        </a>
+                        </a> */}
                         <Link
                             to="/contact"
                             className="bg-[#00A693] text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#00947F] transition shadow-sm"
@@ -156,7 +155,7 @@ export const Header = () => {
                     className={`md:hidden fixed top-0 left-0 h-screen w-full bg-white z-50 transform transition-transform duration-500 ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}
                 >
                     <div className="flex items-center justify-between p-2 border-b">
-                        <img src="/assets/logo-transparent.png" className="w-32 h-[32] object-contain" />
+                        <img src="/assets/sky-lift-logo.png" className="w-32 h-[32] object-contain" />
                         <button
                             onClick={() => setIsMenuOpen(false)}
                             className="text-red-500 hover:text-[#00A693] transition cursor-pointer"

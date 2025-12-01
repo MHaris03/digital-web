@@ -10,8 +10,6 @@ import {
     Settings,
     Zap
 } from "lucide-react";
-// import HeroBg from "../assets/seo.jpg";
-// import Seoside from "../assets/seo-side.jpg"
 import SliderBar from "./Sliderbar";
 import CTASection from "./CtaSection";
 import Testimonials from "./Testionmial";

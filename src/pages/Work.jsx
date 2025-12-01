@@ -1,9 +1,5 @@
 import { motion, useInView } from "framer-motion";
 import { ArrowRight, ExternalLink } from "lucide-react";
-// import workDesk from "../assets/work-desk.jpg";
-// import analytics from "../assets/analytics.jpg";
-// import teamWork from "../assets/team-work.jpg";
-// import Workside from "../assets/our-work.jpg"
 import { useCountUp } from "../hooks/counte";
 import { useRef } from "react";
 import CTASection from "./CtaSection";

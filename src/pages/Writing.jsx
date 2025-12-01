@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, PenTool, FileText, Users, Zap, BarChart2, Settings } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-// import ContentHero from "../assets/writing-bg.jpg";
-// import ContentSide from "../assets/writing-side.jpeg";
 import SliderBar from "./Sliderbar";
 import CTASection from "./CtaSection";
 import Testimonials from "./Testionmial";

@@ -1,18 +1,14 @@
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Instagram, Mail, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
-// import logo from "../assets/main-logo.png"
-import "flag-icons/css/flag-icons.min.css";
 
 
 export const Footer = () => {
   return (
     <footer className="relative py-20 overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.25)] bg-gradient-to-tr from-[#00A693] to-[#00796B]">
-
       {/* Container */}
       <div className="container mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12">
 
-        {/* Brand Section */}
         <motion.div
           className="space-y-4"
           initial={{ opacity: 0, y: 50 }}
@@ -22,14 +18,11 @@ export const Footer = () => {
         >
           <div className="flex items-center gap-3">
             <img
-              src="/assets/main-logo.png"
+              src="/assets/sky-lift.png"
               alt="Sky Lift Group"
               className="h-auto w-40 object-cover"
             />
 
-            {/* <span className="text-2xl font-bold text-white">
-              Sky Lift Group
-            </span> */}
           </div>
           <p className="text-[#E0F2F1] text-md font-semibold">
             Empowering businesses through innovative digital marketing strategies with measurable results.
@@ -71,15 +64,6 @@ export const Footer = () => {
           viewport={{ once: true }}
         >
           <h3 className="mb-4 font-bold text-lg text-white">Services</h3>
-          {/* <ul className="space-y-2 text-[#E0F2F1] text-md font-semibold">
-            {["Digital Strategy", "SEO & Marketing", "Content Creation", "Social Media", "Paid Advertising"].map((service) => (
-              <li key={service}>
-                <span className="inline-block hover:text-[#FFD166] hover:scale-110 transition-all duration-300 cursor-pointer">
-                  {service}
-                </span>
-              </li>
-            ))}
-          </ul> */}
 
           <ul className="space-y-2 text-[#E0F2F1] text-md font-semibold">
             {[
@@ -114,11 +98,18 @@ export const Footer = () => {
               <Phone className="w-5 h-5 text-[#FFD166]" /> (555) 123-4567
             </li> */}
             <li className="flex items-center gap-2">
-              <Mail className="w-5 h-5 text-[#FFD166]" /> hello@skyliftgroup.com
+              <Mail className="w-5 h-5 text-[#FFD166]" />
+              <a
+                href="mailto:info@skyliftgroup.com"
+                className=""
+              >
+                info@skyliftgroup.com
+              </a>
             </li>
-            <li className="flex items-center gap-2">
+
+            {/* <li className="flex items-center gap-2">
               <MapPin className="w-5 h-5 text-[#FFD166]" /> 123 Business Ave, NY
-            </li>
+            </li> */}
           </ul>
         </motion.div>
         <motion.div
@@ -131,11 +122,11 @@ export const Footer = () => {
 
           <ul className="space-y-3 text-[#E0F2F1] text-md font-semibold">
             <li className="flex items-center gap-2">
-              <span className="fi fi-us"></span>
-              USA
+              {/* <span className="fi fi-us"></span> */}
+              <MapPin className="w-5 h-5 text-[#FFD166]" /> USA , Canada , Australia
             </li>
 
-            <li className="flex items-center gap-2">
+            {/* <li className="flex items-center gap-2">
               <span className="fi fi-ca"></span>
               Canada
             </li>
@@ -143,7 +134,7 @@ export const Footer = () => {
             <li className="flex items-center gap-2">
               <span className="fi fi-au"></span>
               Australia
-            </li>
+            </li> */}
           </ul>
         </motion.div>
       </div>
@@ -157,12 +148,12 @@ export const Footer = () => {
         viewport={{ once: true }}
       >
         <p className="text-white/70 text-md font-semibold">© 2025 Sky Lift Group. All rights reserved.</p>
-        <div className="mt-4 md:mt-0 flex space-x-4">
+        {/* <div className="mt-4 md:mt-0 flex space-x-4">
           <a href="#" className="hover:text-[#FFD166] transition-colors text-white/70"><Facebook className="w-6 h-6" /></a>
           <a href="#" className="hover:text-[#FFD166] transition-colors text-white/70"><Twitter className="w-6 h-6" /></a>
           <a href="#" className="hover:text-[#FFD166] transition-colors text-white/70"><Linkedin className="w-6 h-6" /></a>
           <a href="#" className="hover:text-[#FFD166] transition-colors text-white/70"><Instagram className="w-6 h-6" /></a>
-        </div>
+        </div> */}
       </motion.div>
     </footer>
   );

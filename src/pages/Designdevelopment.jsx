@@ -10,8 +10,6 @@ import {
     Code2,
     Wrench
 } from "lucide-react";
-// import HeroBg from "../assets/web-design.jpg";
-// import Webimg from "../assets/web-side.jpg"
 import SliderBar from "./Sliderbar";
 import CTASection from "./CtaSection";
 import Testimonials from "./Testionmial";

@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, BarChart2, TrendingUp, Zap, Settings, Search, Users } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-// import PPCside from "../assets/ppc-bg.jpg";
-// import PPCHero from "../assets/ppc-side.jpg";
 import SliderBar from "./Sliderbar";
 import CTASection from "./CtaSection";
 import Testimonials from "./Testionmial";

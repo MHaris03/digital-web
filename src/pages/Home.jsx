@@ -2,10 +2,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { HeroSlider } from "../components/HeroSliderbar";
 import Info from "../pages/Info"
-// import heroImage from "../assets/hero-main.jpg";
-// import video2 from "../assets/video2.mp4"
-// import analytics from "../assets/analytics.jpg";
-// import bghero from "../assets/bg-hero.jpg"
 import SliderBar from "./Sliderbar";
 import Plan from "./Plan";
 import FocusPoints from "./Focus";

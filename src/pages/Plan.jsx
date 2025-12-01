@@ -1,7 +1,4 @@
 import { motion } from "framer-motion";
-// import Mianimg from "../assets/plan-mainimg.avif";
-// import Leftimg from "../assets/plan-leftsmall.avif";
-// import Rightimg from "../assets/plan-rightsmall.avif";
 
 export default function Plan() {
   return (
@@ -83,18 +80,6 @@ export default function Plan() {
             Let’s build a digital presence that’s smart, scalable, and unforgettable.
           </p>
         </div>
-
-        {/* <div className="mt-8 flex items-center justify-between border-t border-gray-200 pt-4">
-          <p className="font-semibold text-gray-900">Your Growth, Our Mission</p>
-          <motion.span
-            initial={{ y: 0 }}
-            animate={{ y: [0, 6, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5 }}
-            className="text-2xl text-gray-800"
-          >
-            ↓
-          </motion.span>
-        </div> */}
       </motion.div>
 
     </section>
