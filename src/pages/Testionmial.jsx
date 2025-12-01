@@ -7,20 +7,32 @@ import "slick-carousel/slick/slick-theme.css";
 
 
 export default function Testimonials() {
-    const settings = {
-        infinite: true,
-        autoplay: true,
-        autoplaySpeed: 2500,
-        arrows: false,
+    const sliderSettings = {
         dots: false,
-        pauseOnHover: false,
+        infinite: true,
+        speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
-        adaptiveHeight: false,
-        centerMode: false,
+        arrows: false,
         responsive: [
-            { breakpoint: 1024, settings: { slidesToShow: 2 } },
-            { breakpoint: 640, settings: { slidesToShow: 1 } },
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                },
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                },
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                },
+            },
         ],
     };
 
@@ -96,7 +108,7 @@ export default function Testimonials() {
                 </motion.div>
 
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-                    <Slider key={window.innerWidth} {...settings}>
+                    <Slider key={window.innerWidth} {...sliderSettings}>
                         {reviews.map((r, i) => (
                             <div key={i} className="px-3 sm:px-4 cursor-grab">
                                 <motion.div
