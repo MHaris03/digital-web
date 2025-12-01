@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
@@ -16,21 +16,14 @@ export default function Testimonials() {
         pauseOnHover: false,
         slidesToShow: 3,
         slidesToScroll: 1,
+        adaptiveHeight: false,
+        centerMode: false,
         responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                },
-            },
-            {
-                breakpoint: 640,
-                settings: {
-                    slidesToShow: 1,
-                },
-            },
+            { breakpoint: 1024, settings: { slidesToShow: 2 } },
+            { breakpoint: 640, settings: { slidesToShow: 1 } },
         ],
     };
+
 
     const reviews = [
         {
@@ -71,6 +64,11 @@ export default function Testimonials() {
         },
     ];
 
+    useEffect(() => {
+        setTimeout(() => {
+            window.dispatchEvent(new Event("resize"));
+        }, 300);
+    }, []);
 
     return (
         <>
@@ -98,7 +96,7 @@ export default function Testimonials() {
                 </motion.div>
 
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-                    <Slider {...settings}>
+                    <Slider key={window.innerWidth} {...settings}>
                         {reviews.map((r, i) => (
                             <div key={i} className="px-3 sm:px-4 cursor-grab">
                                 <motion.div
