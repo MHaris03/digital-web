@@ -10,19 +10,21 @@ import CTASection from "./CtaSection";
 import FAQSection from "./Faq";
 import Counter from "./Counter";
 import Testimonials from "./Testionmial";
+import useSeo from "../hooks/useSeo";
+
 
 const Home = () => {
   const navigate = useNavigate();
 
+  useSeo({
+    title: "Sky Lift Group – Digital Marketing, SEO & Web Solutions",
+    description:
+      "Sky Lift Group provides expert digital marketing, SEO, web design, PPC, and social media solutions to help businesses grow online.",
+    canonical: "https://www.skyliftgroup.com/"
+  });
+
   return (
     <div className="flex flex-col">
-      
-        {/* <title>Sky Lift Group – Digital Marketing, SEO & Web Solutions</title>
-        <meta
-          name="description"
-          content="Sky Lift Group provides expert digital marketing, SEO, web design, PPC, and social media solutions to help businesses grow online."
-        />
-        <link rel="canonical" href="https://www.skyliftgroup.com/" /> */}
 
       <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
         {/* Background */}

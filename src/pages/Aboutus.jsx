@@ -17,13 +17,6 @@ export default function AboutUs() {
 
     return (
         <div className="w-full overflow-hidden">
-            {/* <title>About Us | Sky Lift Group – Digital Marketing Experts</title>
-                <meta
-                    name="description"
-                    content="Learn about Sky Lift Group, a results-driven digital marketing agency helping brands grow through SEO, social media, PPC, and web design."
-                />
-                <link rel="canonical" href="https://www.skyliftgroup.com/about" /> */}
-            {/* Hero Section */}
             <section
                 className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"
                 style={{ backgroundImage: `url("/assets/servicebgimg.jpg")` }}

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-
+import useSeo from "../hooks/useSeo";
 
 
 const services = [
@@ -96,15 +96,15 @@ export default function ServicesAttractive() {
     refs.current.forEach((r) => observer.observe(r));
     return () => observer.disconnect();
   }, []);
+  useSeo({
+    title: "Our Services | Sky Lift Group – Digital Marketing & Web Solutions",
+    description:
+      "Explore the full range of services from Sky Lift Group, including SEO, social media marketing, PPC, web design, and digital marketing solutions for business growth.",
+    canonical: "https://www.skyliftgroup.com/services"
+  });
 
   return (
     <div className="w-full">
-        {/* <title>Our Services | Sky Lift Group – Digital Marketing & Web Solutions</title>
-        <meta
-          name="description"
-          content="Explore the full range of services from Sky Lift Group, including SEO, social media marketing, PPC, web design, and digital marketing solutions for business growth."
-        />
-        <link rel="canonical" href="https://www.skyliftgroup.com/services" /> */}
 
       <section
         className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"

@@ -3,6 +3,7 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 import { useCountUp } from "../hooks/counte";
 import { useRef } from "react";
 import CTASection from "./CtaSection";
+import useSeo from "../hooks/useSeo";
 
 
 const Work = () => {
@@ -43,15 +44,15 @@ const Work = () => {
     },
   ];
 
+  useSeo({
+    title: "Success Stories | Sky Lift Group – Inspiring Client Results",
+    description:
+      "Discover the success stories of our clients. Sky Lift Group helps businesses grow through digital marketing, SEO, social media, PPC, and web solutions, delivering measurable results.",
+    canonical: "https://www.skyliftgroup.com/success-stories"
+  });
 
   return (
     <div className="flex flex-col">
-        {/* <title>Success Stories | Sky Lift Group – Inspiring Client Results</title>
-        <meta
-          name="description"
-          content="Discover the success stories of our clients. Sky Lift Group helps businesses grow through digital marketing, SEO, social media, PPC, and web solutions, delivering measurable results."
-        />
-        <link rel="canonical" href="https://www.skyliftgroup.com/success-stories" /> */}
 
       {/* Hero Section */}
       <section

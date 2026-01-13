@@ -13,6 +13,7 @@ import {
 import SliderBar from "./Sliderbar";
 import CTASection from "./CtaSection";
 import Testimonials from "./Testionmial";
+import useSeo from "../hooks/useSeo";
 
 
 const services = [
@@ -76,15 +77,15 @@ const Designweb = () => {
         setOpenIndex(openIndex === index ? null : index);
     };
 
+    useSeo({
+        title: "Website Design & Development | Sky Lift Group",
+        description:
+            "Sky Lift Group provides professional website design and development services to create stunning, responsive, and SEO-friendly websites that drive business growth.",
+        canonical: "https://www.skyliftgroup.com/services/web-design"
+    });
+
     return (
         <div className="w-full">
-
-                {/* <title>Website Design & Development | Sky Lift Group</title>
-                <meta
-                    name="description"
-                    content="Sky Lift Group provides professional website design and development services to create stunning, responsive, and SEO-friendly websites that drive business growth."
-                />
-                <link rel="canonical" href="https://www.skyliftgroup.com/services/web-design" /> */}
             {/* SECTION 1 */}
             <section
                 className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"

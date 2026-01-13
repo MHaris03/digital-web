@@ -13,6 +13,7 @@ import {
 import SliderBar from "./Sliderbar";
 import CTASection from "./CtaSection";
 import Testimonials from "./Testionmial";
+import useSeo from "../hooks/useSeo";
 
 const services = [
     {
@@ -71,14 +72,15 @@ const Seo = () => {
     const [openIndex, setOpenIndex] = useState(null);
     const toggleFAQ = (index) => setOpenIndex(openIndex === index ? null : index);
 
+    useSeo({
+        title: "SEO & Digital Marketing Services | Sky Lift Group",
+        description:
+            "Sky Lift Group provides expert SEO and digital marketing services to improve website rankings, drive traffic, and grow your business online.",
+        canonical: "https://www.skyliftgroup.com/services/seo"
+    });
+
     return (
         <div className="w-full">
-                {/* <title>SEO & Digital Marketing Services | Sky Lift Group</title>
-                <meta
-                    name="description"
-                    content="Sky Lift Group provides expert SEO and digital marketing services to improve website rankings, drive traffic, and grow your business online."
-                />
-                <link rel="canonical" href="https://www.skyliftgroup.com/services/seo" /> */}
             {/* HERO SECTION */}
             <section
                 className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"

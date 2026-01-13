@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { use, useState } from "react";
 import { ChevronDown, Users, TrendingUp, MessageCircle, Zap, BarChart2, Settings } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import SliderBar from "./Sliderbar";
 import CTASection from "./CtaSection";
 import Testimonials from "./Testionmial";
 import { Link } from "react-router-dom";
+import useSeo from "../hooks/useSeo";
 
 const services = [
     {
@@ -63,15 +64,15 @@ const SocialMediaMarketing = () => {
     const [openIndex, setOpenIndex] = useState(null);
     const toggleFAQ = (index) => setOpenIndex(openIndex === index ? null : index);
 
+    useSeo({
+        title: "Social Media Marketing | Sky Lift Group",
+        description:
+            "Sky Lift Group offers expert social media marketing services to increase brand awareness, engage your audience, and drive business growth across platforms like Facebook, Instagram, LinkedIn, and more.",
+        canonical: "https://www.skyliftgroup.com/services/social-media"
+    });
+
     return (
         <div className="w-full">
-                {/* <title>Social Media Marketing | Sky Lift Group</title>
-                <meta
-                    name="description"
-                    content="Sky Lift Group offers expert social media marketing services to increase brand awareness, engage your audience, and drive business growth across platforms like Facebook, Instagram, LinkedIn, and more."
-                />
-                <link rel="canonical" href="https://www.skyliftgroup.com/services/social-media" /> */}
-
             {/* HERO SECTION */}
             <section
                 className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"

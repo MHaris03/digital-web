@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { use, useState } from "react";
 import { ChevronDown, MapPin, Search, Settings, BarChart2, Users, Zap } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import SliderBar from "./Sliderbar";
 import CTASection from "./CtaSection";
 import Testimonials from "./Testionmial";
 import { Link } from "react-router-dom";
+import useSeo from "../hooks/useSeo";
 
 const services = [
     {
@@ -63,14 +64,15 @@ const LocalMapOptimization = () => {
     const [openIndex, setOpenIndex] = useState(null);
     const toggleFAQ = (index) => setOpenIndex(openIndex === index ? null : index);
 
+    useSeo({
+        title: "Local Maps & SEO Optimization | Sky Lift Group",
+        description:
+            "Sky Lift Group offers Local SEO and Maps optimization services to help your business appear in local searches, attract nearby customers, and increase visibility online.",
+        canonical: "https://www.skyliftgroup.com/services/local-maps"
+    });
+
     return (
         <div className="w-full">
-                {/* <title>Local Maps & SEO Optimization | Sky Lift Group</title>
-                <meta
-                    name="description"
-                    content="Sky Lift Group offers Local SEO and Maps optimization services to help your business appear in local searches, attract nearby customers, and increase visibility online."
-                />
-                <link rel="canonical" href="https://www.skyliftgroup.com/services/local-maps" /> */}
 
             {/* HERO SECTION */}
             <section

@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { use, useState } from "react";
 import { ChevronDown, BarChart2, TrendingUp, Zap, Settings, Search, Users } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import SliderBar from "./Sliderbar";
 import CTASection from "./CtaSection";
 import Testimonials from "./Testionmial";
 import { Link } from "react-router-dom";
+import useSeo from "../hooks/useSeo";
 
 const services = [
     {
@@ -63,14 +64,15 @@ const PPCManagement = () => {
     const [openIndex, setOpenIndex] = useState(null);
     const toggleFAQ = (index) => setOpenIndex(openIndex === index ? null : index);
 
+    useSeo({
+        title: "PPC Management Services | Sky Lift Group",
+        description:
+            "Sky Lift Group provides professional PPC management services to optimize your ad campaigns, maximize ROI, and drive targeted traffic to your website.",
+        canonical: "https://www.skyliftgroup.com/services/ppc-management"
+    });
+
     return (
         <div className="w-full">
-                {/* <title>PPC Management Services | Sky Lift Group</title>
-                <meta
-                    name="description"
-                    content="Sky Lift Group provides professional PPC management services to optimize your ad campaigns, maximize ROI, and drive targeted traffic to your website."
-                />
-                <link rel="canonical" href="https://www.skyliftgroup.com/services/ppc-management" /> */}
             {/* HERO SECTION */}
             <section
                 className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"

@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { use, useState } from "react";
 import { ChevronDown, PenTool, FileText, Users, Zap, BarChart2, Settings } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import SliderBar from "./Sliderbar";
 import CTASection from "./CtaSection";
 import Testimonials from "./Testionmial";
 import { Link } from "react-router-dom";
+import useSeo from "../hooks/useSeo";
 
 const services = [
     {
@@ -63,14 +64,15 @@ const ContentWritingServices = () => {
     const [openIndex, setOpenIndex] = useState(null);
     const toggleFAQ = (index) => setOpenIndex(openIndex === index ? null : index);
 
+    useSeo({
+        title: "Content Writing Services | Sky Lift Group",
+        description:
+            "Sky Lift Group offers professional content writing services to create high-quality, engaging, and SEO-friendly content that attracts and converts your audience.",
+        canonical: "https://www.skyliftgroup.com/services/content-writing"
+    });
+
     return (
         <div className="w-full">
-            {/* <title>Content Writing Services | Sky Lift Group</title>
-                <meta
-                    name="description"
-                    content="Sky Lift Group offers professional content writing services to create high-quality, engaging, and SEO-friendly content that attracts and converts your audience."
-                />
-                <link rel="canonical" href="https://www.skyliftgroup.com/services/content-writing" /> */}
 
             {/* HERO SECTION */}
             <section
