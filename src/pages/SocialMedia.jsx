@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronDown, Users, TrendingUp, MessageCircle, Zap, BarChart2, Settings } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import SliderBar from "./Sliderbar";
 import CTASection from "./CtaSection";
 import Testimonials from "./Testionmial";
@@ -65,6 +66,15 @@ const SocialMediaMarketing = () => {
 
     return (
         <div className="w-full">
+            <Helmet>
+                <title>Social Media Marketing | Sky Lift Group</title>
+                <meta
+                    name="description"
+                    content="Sky Lift Group offers expert social media marketing services to increase brand awareness, engage your audience, and drive business growth across platforms like Facebook, Instagram, LinkedIn, and more."
+                />
+                <link rel="canonical" href="https://www.skyliftgroup.com/services/social-media" />
+            </Helmet>
+
             {/* HERO SECTION */}
             <section
                 className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"

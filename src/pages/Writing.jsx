@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronDown, PenTool, FileText, Users, Zap, BarChart2, Settings } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import SliderBar from "./Sliderbar";
 import CTASection from "./CtaSection";
 import Testimonials from "./Testionmial";
@@ -65,6 +66,15 @@ const ContentWritingServices = () => {
 
     return (
         <div className="w-full">
+            <Helmet>
+                <title>Content Writing Services | Sky Lift Group</title>
+                <meta
+                    name="description"
+                    content="Sky Lift Group offers professional content writing services to create high-quality, engaging, and SEO-friendly content that attracts and converts your audience."
+                />
+                <link rel="canonical" href="https://www.skyliftgroup.com/services/content-writing" />
+            </Helmet>
+
             {/* HERO SECTION */}
             <section
                 className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"
@@ -78,7 +88,7 @@ const ContentWritingServices = () => {
                     transition={{ duration: 0.8 }}
                     className="relative text-white text-4xl md:text-6xl font-bold text-center"
                 >
-                    Professional Content Writing Services
+                    Professional Content Writing
                 </motion.h1>
 
                 <motion.p

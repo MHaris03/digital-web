@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import SliderBar from "./Sliderbar";
 import "flag-icons/css/flag-icons.min.css";
 
@@ -27,6 +28,14 @@ const Contact = () => {
 
   return (
     <div className="flex flex-col">
+      <Helmet>
+        <title>Contact Us | Sky Lift Group – Get in Touch</title>
+        <meta
+          name="description"
+          content="Get in touch with Sky Lift Group. Contact us for inquiries about digital marketing, SEO, web design, PPC, and social media services to grow your business."
+        />
+        <link rel="canonical" href="https://www.skyliftgroup.com/contact" />
+      </Helmet>
 
       <section
         className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"

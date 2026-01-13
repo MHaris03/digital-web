@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { HeroSlider } from "../components/HeroSliderbar";
 import Info from "../pages/Info"
@@ -16,6 +17,14 @@ const Home = () => {
 
   return (
     <div className="flex flex-col">
+      <Helmet>
+        <title>Sky Lift Group – Digital Marketing, SEO & Web Solutions</title>
+        <meta
+          name="description"
+          content="Sky Lift Group provides expert digital marketing, SEO, web design, PPC, and social media solutions to help businesses grow online."
+        />
+        <link rel="canonical" href="https://www.skyliftgroup.com/" />
+      </Helmet>
       <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
         {/* Background */}
         <img

@@ -1,5 +1,10 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "skyliftgroup.com" }],
+      "destination": "https://www.skyliftgroup.com/$1",
+      "permanent": true
+    }
   ]
 }
