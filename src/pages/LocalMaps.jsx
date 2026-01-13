@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { ChevronDown, MapPin, Search, Settings, BarChart2, Users, Zap } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import SliderBar from "./Sliderbar";
 import CTASection from "./CtaSection";
@@ -66,14 +65,12 @@ const LocalMapOptimization = () => {
 
     return (
         <div className="w-full">
-            <Helmet>
-                <title>Local Maps & SEO Optimization | Sky Lift Group</title>
+                {/* <title>Local Maps & SEO Optimization | Sky Lift Group</title>
                 <meta
                     name="description"
                     content="Sky Lift Group offers Local SEO and Maps optimization services to help your business appear in local searches, attract nearby customers, and increase visibility online."
                 />
-                <link rel="canonical" href="https://www.skyliftgroup.com/services/local-maps" />
-            </Helmet>
+                <link rel="canonical" href="https://www.skyliftgroup.com/services/local-maps" /> */}
 
             {/* HERO SECTION */}
             <section

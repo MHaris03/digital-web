@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, BarChart2, TrendingUp, Zap, Settings, Search, Users } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Helmet } from "react-helmet-async";
 import SliderBar from "./Sliderbar";
 import CTASection from "./CtaSection";
 import Testimonials from "./Testionmial";
@@ -66,14 +65,12 @@ const PPCManagement = () => {
 
     return (
         <div className="w-full">
-            <Helmet>
-                <title>PPC Management Services | Sky Lift Group</title>
+                {/* <title>PPC Management Services | Sky Lift Group</title>
                 <meta
                     name="description"
                     content="Sky Lift Group provides professional PPC management services to optimize your ad campaigns, maximize ROI, and drive targeted traffic to your website."
                 />
-                <link rel="canonical" href="https://www.skyliftgroup.com/services/ppc-management" />
-            </Helmet>
+                <link rel="canonical" href="https://www.skyliftgroup.com/services/ppc-management" /> */}
             {/* HERO SECTION */}
             <section
                 className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"

@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import {
     Smartphone,
@@ -80,14 +79,12 @@ const Designweb = () => {
     return (
         <div className="w-full">
 
-            <Helmet>
-                <title>Website Design & Development | Sky Lift Group</title>
+                {/* <title>Website Design & Development | Sky Lift Group</title>
                 <meta
                     name="description"
                     content="Sky Lift Group provides professional website design and development services to create stunning, responsive, and SEO-friendly websites that drive business growth."
                 />
-                <link rel="canonical" href="https://www.skyliftgroup.com/services/web-design" />
-            </Helmet>
+                <link rel="canonical" href="https://www.skyliftgroup.com/services/web-design" /> */}
             {/* SECTION 1 */}
             <section
                 className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"

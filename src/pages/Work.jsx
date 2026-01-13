@@ -1,7 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { useCountUp } from "../hooks/counte";
-import { Helmet } from "react-helmet-async";
 import { useRef } from "react";
 import CTASection from "./CtaSection";
 
@@ -47,14 +46,12 @@ const Work = () => {
 
   return (
     <div className="flex flex-col">
-      <Helmet>
-        <title>Success Stories | Sky Lift Group – Inspiring Client Results</title>
+        {/* <title>Success Stories | Sky Lift Group – Inspiring Client Results</title>
         <meta
           name="description"
           content="Discover the success stories of our clients. Sky Lift Group helps businesses grow through digital marketing, SEO, social media, PPC, and web solutions, delivering measurable results."
         />
-        <link rel="canonical" href="https://www.skyliftgroup.com/success-stories" />
-      </Helmet>
+        <link rel="canonical" href="https://www.skyliftgroup.com/success-stories" /> */}
 
       {/* Hero Section */}
       <section

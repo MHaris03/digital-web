@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Helmet } from "react-helmet-async";
 import {
     Search,
     BarChart2,
@@ -74,14 +73,12 @@ const Seo = () => {
 
     return (
         <div className="w-full">
-            <Helmet>
-                <title>SEO & Digital Marketing Services | Sky Lift Group</title>
+                {/* <title>SEO & Digital Marketing Services | Sky Lift Group</title>
                 <meta
                     name="description"
                     content="Sky Lift Group provides expert SEO and digital marketing services to improve website rankings, drive traffic, and grow your business online."
                 />
-                <link rel="canonical" href="https://www.skyliftgroup.com/services/seo" />
-            </Helmet>
+                <link rel="canonical" href="https://www.skyliftgroup.com/services/seo" /> */}
             {/* HERO SECTION */}
             <section
                 className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"

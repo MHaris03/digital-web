@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -100,14 +99,12 @@ export default function ServicesAttractive() {
 
   return (
     <div className="w-full">
-      <Helmet>
-        <title>Our Services | Sky Lift Group – Digital Marketing & Web Solutions</title>
+        {/* <title>Our Services | Sky Lift Group – Digital Marketing & Web Solutions</title>
         <meta
           name="description"
           content="Explore the full range of services from Sky Lift Group, including SEO, social media marketing, PPC, web design, and digital marketing solutions for business growth."
         />
-        <link rel="canonical" href="https://www.skyliftgroup.com/services" />
-      </Helmet>
+        <link rel="canonical" href="https://www.skyliftgroup.com/services" /> */}
 
       <section
         className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"

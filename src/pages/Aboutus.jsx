@@ -1,22 +1,28 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async";
 import { Lightbulb, Target, Users, ShieldCheck, Award } from "lucide-react";
 import CTASection from "./CtaSection";
 import SliderBar from "./Sliderbar";
 import Testimonials from "./Testionmial";
+import useSeo from "../hooks/useSeo";
 
 export default function AboutUs() {
+
+    useSeo({
+        title: "About Us | Sky Lift Group – Digital Marketing Experts",
+        description:
+            "Learn about Sky Lift Group, a results-driven digital marketing agency helping brands grow through SEO, social media, PPC, and web design.",
+        canonical: "https://www.skyliftgroup.com/about"
+    });
+
     return (
         <div className="w-full overflow-hidden">
-            <Helmet>
-                <title>About Us | Sky Lift Group – Digital Marketing Experts</title>
+            {/* <title>About Us | Sky Lift Group – Digital Marketing Experts</title>
                 <meta
                     name="description"
                     content="Learn about Sky Lift Group, a results-driven digital marketing agency helping brands grow through SEO, social media, PPC, and web design."
                 />
-                <link rel="canonical" href="https://www.skyliftgroup.com/about" />
-            </Helmet>
+                <link rel="canonical" href="https://www.skyliftgroup.com/about" /> */}
             {/* Hero Section */}
             <section
                 className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"
