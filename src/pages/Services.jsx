@@ -96,6 +96,7 @@ export default function ServicesAttractive() {
     refs.current.forEach((r) => observer.observe(r));
     return () => observer.disconnect();
   }, []);
+
   useSeo({
     title: "Our Services | Sky Lift Group – Digital Marketing & Web Solutions",
     description:
