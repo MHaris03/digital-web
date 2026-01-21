@@ -14,6 +14,7 @@ import PPCManagement from "./pages/Ppc";
 import ContentWritingServices from "./pages/Writing";
 import Designweb from "./pages/Designdevelopment";
 import ScrollToTop from "./components/Scrolltotop";
+import NotFound from "./components/Notfound";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/services/social-media" element={<SocialMediaMarketing />} />
           <Route path="/services/ppc-management" element={<PPCManagement />} />
           <Route path="/services/content-writing" element={<ContentWritingServices />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
