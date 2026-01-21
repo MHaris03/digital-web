@@ -1,6 +1,9 @@
 RewriteEngine On
 RewriteBase /
-RewriteRule ^index\.html$ - [L]
+
+# Ignore existing files
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirect everything else to index.html
 RewriteRule . /index.html [L]
