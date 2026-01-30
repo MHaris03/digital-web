@@ -60,9 +60,9 @@ const Contact = () => {
           Have a project in mind? Send us a message and our team will get back to you shortly.
         </motion.p>
       </section>
-      <SliderBar />
+      {/* <SliderBar /> */}
       {/* FORM + INFO SECTION */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#0a0a0a] text-gray-100">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
 
@@ -74,11 +74,6 @@ const Contact = () => {
                   title: "Email Us",
                   lines: ["info@skyliftgroup.com"],
                 },
-                // {
-                //   icon: <Phone className="h-6 w-6 text-white" />,
-                //   title: "Call Us",
-                //   lines: ["(555) 123-4567", "(555) 987-6543"],
-                // },
                 {
                   icon: <MapPin className="h-6 w-6 text-white" />,
                   title: "Location",
@@ -96,8 +91,7 @@ const Contact = () => {
                       Australia
                     </div>,
                   ],
-                }
-                ,
+                },
                 {
                   icon: <Clock className="h-6 w-6 text-white" />,
                   title: "Business Hours",
@@ -110,16 +104,16 @@ const Contact = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className="p-6 rounded-xl bg-white shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                  className="p-6 rounded-xl bg-[#111111] shadow-md hover:-translate-y-1"
                 >
                   <div className="flex items-start space-x-4">
                     <div className="h-12 w-12 flex items-center justify-center rounded-lg bg-[#00A693] shadow-md">
                       {item.icon}
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">{item.title}</h3>
+                      <h3 className="font-semibold text-gray-100 mb-1">{item.title}</h3>
                       {item.lines.map((l, idx) => (
-                        <p key={idx} className="text-sm text-gray-600">{l}</p>
+                        <p key={idx} className="text-sm text-gray-300">{l}</p>
                       ))}
                     </div>
                   </div>
@@ -135,9 +129,9 @@ const Contact = () => {
               transition={{ duration: 0.6 }}
               className="lg:col-span-2"
             >
-              <div className="p-10 rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300">
+              <div className="p-10 rounded-2xl bg-[#111111] shadow-lg">
 
-                <h2 className="text-3xl font-bold mb-6 text-gray-900">
+                <h2 className="text-3xl font-bold mb-6 text-gray-100">
                   Send Us a Message
                 </h2>
 
@@ -145,35 +139,35 @@ const Contact = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
                     <div>
-                      <label className="block mb-1 font-medium">Business Name *</label>
+                      <label className="block mb-1 font-medium text-gray-100">Business Name *</label>
                       <input
-                        className="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-[#00A693] outline-none"
+                        className="border border-gray-700 rounded-lg px-4 py-3 w-full bg-[#0a0a0a] text-gray-100 focus:ring-2 focus:ring-[#00A693] outline-none"
                         name="businessname"
                         value={formData.businessname}
                         onChange={handleChange}
                         required
                       />
                     </div>
-
                   </div>
+
                   <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
                     <div>
-                      <label className="block mb-1 font-medium">Website URL *</label>
+                      <label className="block mb-1 font-medium text-gray-100">Website URL *</label>
                       <input
-                        className="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-[#00A693] outline-none"
+                        className="border border-gray-700 rounded-lg px-4 py-3 w-full bg-[#0a0a0a] text-gray-100 focus:ring-2 focus:ring-[#00A693] outline-none"
                         name="weburl"
                         value={formData.weburl}
                         onChange={handleChange}
                         required
                       />
                     </div>
-
                   </div>
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block mb-1 font-medium">First Name *</label>
+                      <label className="block mb-1 font-medium text-gray-100">First Name *</label>
                       <input
-                        className="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-[#00A693] outline-none"
+                        className="border border-gray-700 rounded-lg px-4 py-3 w-full bg-[#0a0a0a] text-gray-100 focus:ring-2 focus:ring-[#00A693] outline-none"
                         name="firstname"
                         value={formData.firstname}
                         onChange={handleChange}
@@ -182,24 +176,22 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <label className="block mb-1 font-medium">Last Name *</label>
+                      <label className="block mb-1 font-medium text-gray-100">Last Name *</label>
                       <input
-                        className="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-[#00A693] outline-none"
+                        className="border border-gray-700 rounded-lg px-4 py-3 w-full bg-[#0a0a0a] text-gray-100 focus:ring-2 focus:ring-[#00A693] outline-none"
                         name="lastname"
                         value={formData.lastname}
                         onChange={handleChange}
                         required
                       />
                     </div>
-
-
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block mb-1 font-medium">Phone</label>
+                      <label className="block mb-1 font-medium text-gray-100">Phone</label>
                       <input
-                        className="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-[#00A693] outline-none"
+                        className="border border-gray-700 rounded-lg px-4 py-3 w-full bg-[#0a0a0a] text-gray-100 focus:ring-2 focus:ring-[#00A693] outline-none"
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
@@ -207,9 +199,9 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <label className="block mb-1 font-medium">Email *</label>
+                      <label className="block mb-1 font-medium text-gray-100">Email *</label>
                       <input
-                        className="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-[#00A693] outline-none"
+                        className="border border-gray-700 rounded-lg px-4 py-3 w-full bg-[#0a0a0a] text-gray-100 focus:ring-2 focus:ring-[#00A693] outline-none"
                         name="email"
                         type="email"
                         value={formData.email}
@@ -218,12 +210,13 @@ const Contact = () => {
                       />
                     </div>
                   </div>
+
                   <div>
-                    <label className="block mb-1 font-medium"> What Service Do You Need ? *</label>
-                    <select className="col-span-1 cursor-pointer md:col-span-2 border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-[#00A693] outline-none">
+                    <label className="block mb-1 font-medium text-gray-100"> What Service Do You Need ? *</label>
+                    <select className="col-span-1 cursor-pointer md:col-span-2 border border-gray-700 rounded-lg px-4 py-3 w-full bg-[#0a0a0a] text-gray-100 focus:ring-2 focus:ring-[#00A693] outline-none">
                       <option value="">Choose a Service</option>
                       <option value="web design">Web Design & Development</option>
-                      <option value="Social Media Marketing">SEO</option>
+                      <option value="SEO">SEO</option>
                       <option value="Content Marketing">Content Marketing</option>
                       <option value="Paid Advertising">Paid Advertising</option>
                       <option value="Full Digital Strategy">Full Digital Strategy</option>
@@ -233,9 +226,9 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label className="block mb-1 font-medium">Message *</label>
+                    <label className="block mb-1 font-medium text-gray-100">Message *</label>
                     <textarea
-                      className="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-[#00A693] outline-none"
+                      className="border border-gray-700 rounded-lg px-4 py-3 w-full bg-[#0a0a0a] text-gray-100 focus:ring-2 focus:ring-[#00A693] outline-none"
                       rows={6}
                       name="message"
                       value={formData.message}
@@ -246,17 +239,17 @@ const Contact = () => {
 
                   <button
                     type="submit"
-                    className="w-full cursor-pointer md:w-auto bg-[#00A693] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#008f7f] transition-all"
+                    className="w-full cursor-pointer md:w-auto bg-[#00A693] text-white px-8 py-3 rounded-lg font-semibold"
                   >
                     Send Message
                   </button>
                 </form>
               </div>
             </motion.div>
-
           </div>
         </div>
       </section>
+
 
       {/* MAP PLACEHOLDER */}
       {/* <section className="py-20 bg-gray-100">

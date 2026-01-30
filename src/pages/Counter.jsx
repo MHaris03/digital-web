@@ -3,37 +3,70 @@ import { AnimatedCounter } from "../components/AnimatedCounter";
 
 export default function StatsSection() {
     return (
-        <section className=" py-16 relative overflow-hidden">
-            <div className="absolute inset-0 opacity-40"></div>
+        <section className="relative py-10 bg-[#0a0a0a] overflow-hidden">
+
+            {/* Soft background glow */}
+            {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#00A69320,transparent_60%)]"></div> */}
+
             <div className="container mx-auto px-6 relative z-10">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
 
                     {/* Happy Clients */}
-                    <div className="transform transition-all hover:scale-110 bg-white/10 rounded-xl p-6 flex flex-col items-center justify-center shadow-lg">
-                        <Smile className="w-10 h-10 text-yellow-400 mb-2" />
-                        <AnimatedCounter end={350} suffix="+" />
-                        <div className="text-sm opacity-90 mt-2">Happy Clients</div>
+                    <div className="group bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-xl shadow-lg
+                          transition-all duration-500 hover:-translate-y-2
+                          hover:border-[#00A693]/50 hover:shadow-[0_0_30px_#00A69340]">
+                        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl
+                            border border-[#00A693]/40 text-white
+                            transition-all duration-300">
+                            <Smile className="w-7 h-7" />
+                        </div>
+                        <div className="text-4xl font-bold text-white">
+                            <AnimatedCounter end={350} suffix="+" />
+                        </div>
+                        <div className="text-sm text-gray-400 mt-2">Happy Clients</div>
                     </div>
 
                     {/* Average Growth */}
-                    <div className="transform transition-all hover:scale-110 bg-white/10 rounded-xl p-6 flex flex-col items-center justify-center shadow-lg">
-                        <TrendingUp className="w-10 h-10 text-green-400 mb-2" />
-                        <AnimatedCounter end={85} suffix="%" />
-                        <div className="text-sm opacity-90 mt-2">Average Growth</div>
+                    <div className="group bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-xl shadow-lg
+                          transition-all duration-500 hover:-translate-y-2
+                          hover:border-[#00A693]/50 hover:shadow-[0_0_30px_#00A69340]">
+                        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl
+                            border border-[#00A693]/40 text-white
+                            transition-all duration-300">
+                            <TrendingUp className="w-7 h-7" />
+                        </div>
+                        <div className="text-4xl font-bold text-white">
+                            <AnimatedCounter end={85} suffix="%" />
+                        </div>
+                        <div className="text-sm text-gray-400 mt-2">Average Growth</div>
                     </div>
 
-                    {/* Support Available */}
-                    <div className="transform transition-all hover:scale-110 bg-white/10 rounded-xl p-6 flex flex-col items-center justify-center shadow-lg">
-                        <Clock className="w-10 h-10 text-blue-400 mb-2" />
-                        <div className="text-4xl font-bold">24/7</div>
-                        <div className="text-sm opacity-90 mt-2">Support Available</div>
+                    {/* Support */}
+                    <div className="group bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-xl shadow-lg
+                          transition-all duration-500 hover:-translate-y-2
+                          hover:border-[#00A693]/50 hover:shadow-[0_0_30px_#00A69340]">
+                        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl
+                            border border-[#00A693]/40 text-white
+                            transition-all duration-300">
+                            <Clock className="w-7 h-7" />
+                        </div>
+                        <div className="text-4xl font-bold text-white">24/7</div>
+                        <div className="text-sm text-gray-400 mt-2">Support Available</div>
                     </div>
 
-                    {/* Years Experience */}
-                    <div className="transform transition-all hover:scale-110 bg-white/10 rounded-xl p-6 flex flex-col items-center justify-center shadow-lg">
-                        <Briefcase className="w-10 h-10 text-purple-400 mb-2" />
-                        <AnimatedCounter end={10} suffix="+" />
-                        <div className="text-sm opacity-90 mt-2">Years Experience</div>
+                    {/* Experience */}
+                    <div className="group bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-xl shadow-lg
+                          transition-all duration-500 hover:-translate-y-2
+                          hover:border-[#00A693]/50 hover:shadow-[0_0_30px_#00A69340]">
+                        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl
+                            border border-[#00A693]/40 text-white
+                            transition-all duration-300">
+                            <Briefcase className="w-7 h-7" />
+                        </div>
+                        <div className="text-4xl font-bold text-white">
+                            <AnimatedCounter end={10} suffix="+" />
+                        </div>
+                        <div className="text-sm text-gray-400 mt-2">Years Experience</div>
                     </div>
 
                 </div>

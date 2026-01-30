@@ -1,110 +1,119 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Slider from "react-slick";
+
 
 const slides = [
   {
-    title: "Transform Your",
-    highlight: "Digital Presence",
+    title: "Power Your Growth with",
+    highlight: "AI-Driven Marketing",
     description:
-      "Data-driven digital marketing strategies that elevate brands, engage audiences, ",
-    subdes: "and deliver measurable results for modern businesses.",
-    stat1: { value: "500+", label: "Projects Completed" },
-    stat2: { value: "95%", label: "Client Satisfaction" },
+      "Smarter digital strategies powered by AI, data insights, and automation to help ",
+    subdes: "brands scale faster, convert better, and stay ahead of the competition.",
+    stat1: { value: "500+", label: "AI-Optimized Campaigns" },
+    stat2: { value: "95%", label: "Client Success Rate" },
   },
   {
-    title: "Accelerate Your",
-    highlight: "Business Growth",
+    title: "Turn Data into",
+    highlight: "Real Business Results",
     description:
-      "Innovative marketing solutions powered by AI and analytics to maximize your ",
-    subdes: "ROI and drive sustainable business expansion.",
-    stat1: { value: "350+", label: "Happy Clients" },
-    stat2: { value: "85%", label: "Average Growth" },
+      "We use AI analytics and predictive insights to identify opportunities, optimize ",
+    subdes: "performance, and maximize ROI across every digital channel.",
+    stat1: { value: "350+", label: "Brands Scaled" },
+    stat2: { value: "3×", label: "Average ROI Growth" },
   },
   {
-    title: "Build Lasting",
-    highlight: "Brand Connections",
+    title: "Build Smarter",
+    highlight: "Customer Experiences",
     description:
-      "Creative strategies that resonate with your audience and transform casual ",
-    subdes: "visitors into loyal brand advocates.",
-    stat1: { value: "10M+", label: "Reach Generated" },
-    stat2: { value: "4.9", label: "Rating Score" },
+      "AI-powered personalization and automation help you connect with the right ",
+    subdes: "audience at the right time, turning visitors into loyal customers.",
+    stat1: { value: "10M+", label: "Data Points Analyzed" },
+    stat2: { value: "4.9", label: "Client Rating" },
   },
 ];
 
-export const HeroSlider = ({ onGetStarted }) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
+export const HeroSlider = () => {
+
+
+  const settings = {
+    dots: false,
+    arrows: false,
+    infinite: true,
+    speed: 900,
+    autoplay: true,
+    autoplaySpeed: 6000,
+    pauseOnHover: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
   return (
-    <div className="relative">
-      <div className="overflow-hidden">
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`transition-all duration-500 ${index === currentSlide
-              ? "opacity-100 translate-x-0"
-              : index < currentSlide
-                ? "opacity-0 -translate-x-full absolute inset-0"
-                : "opacity-0 translate-x-full absolute inset-0"
-              }`}
-          >
-            <div className="space-y-8">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in">
-                {slide.title}
-                <span className="block text-primary animate-slide-up">
-                  {slide.highlight}
-                </span>
-              </h1>
+    <Slider {...settings} className="w-full">
+      {slides.map((slide, index) => (
+        <div key={index}>
+          <div className="flex flex-col items-center text-center space-y-8 max-w-6xl mx-auto">
 
-              <p className="text-lg md:text-xl text-muted-foreground max-w-lg animate-fade-in delay-100">
-                {slide.description}
-                <span className="text-[#00A693]">
-                  {slide.subdes}
-                </span>
-              </p>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.15)]">
+              {slide.title}
+              <span className="block text-[#00A693] neon-text">
+                {slide.highlight}
+              </span>
+            </h1>
 
-              <div className="flex items-center gap-8 pt-4 animate-fade-in delay-200">
-                <div className="transform transition-transform hover:scale-110">
-                  <div className="text-3xl font-bold text-primary">
-                    {slide.stat1.value}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    {slide.stat1.label}
-                  </div>
+            <p className="text-lg md:text-xl text-gray-200">
+              {slide.description}
+              <br />
+              <span className="text-[#00A693]"> {slide.subdes}</span>
+            </p>
+
+            <div className="flex gap-10">
+              <div>
+                <div className="text-3xl font-bold text-[#00A693]">
+                  {slide.stat1.value}
                 </div>
-                <div className="transform transition-transform hover:scale-110">
-                  <div className="text-3xl font-bold text-primary">
-                    {slide.stat2.value}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    {slide.stat2.label}
-                  </div>
+                <div className="text-sm text-gray-300">
+                  {slide.stat1.label}
                 </div>
               </div>
-
+              <div>
+                <div className="text-3xl font-bold text-[#00A693]">
+                  {slide.stat2.value}
+                </div>
+                <div className="text-sm text-gray-300">
+                  {slide.stat2.label}
+                </div>
+              </div>
             </div>
+
+            <button
+              className="
+    relative
+    bg-[#00A693] text-white font-semibold rounded-xl
+    transition-all duration-300
+    hover:scale-105 sm:hover:scale-110
+    hover:shadow-[0_0_25px_rgba(0,166,147,0.9)]
+    shadow-[0_0_12px_rgba(0,166,147,0.6)]
+    cursor-pointer
+
+    px-5 py-3
+    sm:px-6 sm:py-3
+    md:px-8 md:py-4
+
+    text-sm
+    sm:text-base
+    md:text-lg
+  "
+            >
+              <span className="relative z-10">
+                Book Your Free Strategy Call
+              </span>
+            </button>
+
           </div>
-        ))}
-        <Link to="/contact">
-         <button
-          className="bg-[#00A693] hover:bg-[#00947F] text-white font-semibold rounded-xl shadow-lg transition transform hover:scale-105
-          px-4 sm:px-6 md:px-8
-          py-2 sm:py-3 md:py-4
-          text-sm sm:text-base md:text-lg
-          mt-3 sm:mt-4 md:mt-5
-          w-full sm:w-auto cursor-pointer
-">
-          Book Your Free Strategy Call Today
-        </button>
-        </Link>
-       
-      </div>
-    </div>
+        </div>
+      ))}
+    </Slider>
   );
 };

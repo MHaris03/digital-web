@@ -1,10 +1,27 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, CircleStar, Monitor, BotMessageSquare } from "lucide-react";
+import {
+    ArrowRight,
+    Search,
+    Code2,
+    Star,
+    PhoneMissed,
+    Facebook,
+    Chrome,
+    Music2,
+    Bot,
+    Workflow,
+    MessageCircle,
+    Zap,
+    Phone,
+} from "lucide-react";
 
 export const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isServicesOpen, setIsServicesOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
     const location = useLocation();
     let timeoutId = null;
 
@@ -17,25 +34,10 @@ export const Header = () => {
         // { label: "Blog", to: "/blog" },
     ];
 
-    const serviceItems = [
-        { label: "Web Design & Development", to: "/services/web-design" },
-        { label: "Search Engine Optimization", to: "/services/seo" },
-        { label: "Local Maps Optimization", to: "/services/local-maps" },
-        { label: "Social Media Marketing", to: "/services/social-media" },
-        { label: "PPC Management", to: "/services/ppc-management" },
-        { label: "Content Writing", to: "/services/content-writing" },
-    ];
-
     const mobilenav = [
         { label: "Home", to: "/" },
         { label: "About Us", to: "/about-us" },
         { label: "Our Services", to: "/services" },
-        { label: "Web Design & Development", to: "/services/web-design" },
-        { label: "Search Engine Optimization", to: "/services/seo" },
-        { label: "Local Maps Optimization", to: "/services/local-maps" },
-        { label: "Social Media Marketing", to: "/services/social-media" },
-        { label: "PPC Management", to: "/services/ppc-management" },
-        { label: "Content Writing", to: "/services/content-writing" },
         { label: "Our Work", to: "/work" },
         { label: "Contact Us", to: "/contact" },
 
@@ -46,18 +48,36 @@ export const Header = () => {
         setIsServicesOpen(false);
     }, [isMenuOpen, location.pathname]);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 40);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        handleScroll();
+
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
 
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/90 backdrop-blur-md transition-shadow duration-300 shadow-sm">
+        <header
+            className={`sticky top-0 z-50 w-full transition-all duration-300
+    ${scrolled
+                    ? "bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/10 shadow-lg"
+                    : "bg-[#0a0a0a] backdrop-blur-md  border-b border-transparent"
+                }`}
+        >
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex h-20 items-center justify-between">
-
                     {/* Logo */}
                     <Link to="/" className="flex items-center gap-3">
                         <img
-                            src="/assets/sky-lift-logo.png"
+                            src="/assets/skyliftlogo.png"
                             alt="Sky Lift Group"
-                            className="w-44 h-26 object-contain md:w-44 transition-transform duration-300"
+                            className={`w-44 object-contain transition-all duration-300
+    ${scrolled ? "opacity-100" : "opacity-90"}
+  `}
                         />
                     </Link>
 
@@ -81,29 +101,78 @@ export const Header = () => {
                                         // className="text-sm font-medium text-gray-700 hover:text-[#00A693] transition-colors flex items-center gap-1"
                                         className={`text-sm font-medium transition-colors items-center gap-1 flex ${location.pathname.startsWith("/services")
                                             ? "text-[#00A693]"
-                                            : "text-gray-700 hover:text-[#00A693]"
+                                            : "text-gray-300 hover:text-[#00A693]"
                                             }`}
                                     >
                                         {label} <ChevronDown className="w-4 h-4" />
                                     </Link>
 
                                     {isServicesOpen && (
-                                        <ul className="absolute left-0 mt-2 w-60 bg-white shadow-lg rounded-md overflow-hidden animate-fadeIn pointer-events-auto z-50">
-                                            {serviceItems.map(({ label, to }) => (
-                                                <li key={label}>
+                                        <div
+                                            className="absolute left-1/2 top-full mt-6 w-[900px] -translate-x-1/2 rounded-2xl
+               bg-[#0a0a0a] border border-white/10 shadow-2xl p-8 z-50"
+                                            onMouseEnter={() => setIsServicesOpen(true)}
+                                            onMouseLeave={() => setIsServicesOpen(false)}
+                                        >
+                                            <div className="grid grid-cols-3 gap-10">
+
+                                                {/* MARKETING SERVICES */}
+                                                <div className="border-r border-white/10">
+                                                    <h4 className="text-xs font-semibold text-sky-400 mb-5 tracking-wider flex items-center gap-2">
+                                                        <CircleStar className="w-5 h-5" /> MARKETING SERVICES
+                                                    </h4>
+
+                                                    <ul className="space-y-4">
+                                                        <MegaItem icon={<Facebook />} label="Meta Ads" to="/services/meta-ads" />
+                                                        <MegaItem icon={<Music2 />} label="TikTok Ads" to="/services/tiktok-ads" />
+                                                        <MegaItem icon={<Search />} label="SEO" to="/services/seo" />
+                                                        <MegaItem icon={<Chrome />} label="Google Ads" to="/services/google-ads" />
+                                                    </ul>
+                                                </div>
+
+                                                {/* MARKETING SYSTEMS */}
+                                                <div className="border-r border-white/10 mr-2">
+                                                    <h4 className="text-xs font-semibold text-emerald-400 mb-5 tracking-wider flex items-center gap-2">
+                                                        <Monitor className="h-5 w-5" /> MARKETING SYSTEMS
+                                                    </h4>
+
+                                                    <ul className="space-y-4">
+                                                        <MegaItem icon={<Code2 />} label="Functional Website" to="/services/web-design" />
+                                                        <MegaItem icon={<Star />} label="5-Star Reviews" to="/services/reviews" />
+                                                        <MegaItem icon={<PhoneMissed />} label="Missed Call Text Back" to="/services/missed-call-text-back" />
+                                                        <MegaItem icon={<MessageCircle />} label="Automated Lead Follow-Up" to="/services/lead-follow-up" />
+                                                        <MegaItem icon={<Zap />} label="One-Click Marketing Campaigns" to="/services/one-click-campaigns" />
+                                                    </ul>
+                                                </div>
+
+                                                {/* AI WORKFLOWS */}
+                                                <div className="flex flex-col justify-between">
+                                                    <div>
+                                                        <h4 className="text-xs font-semibold text-purple-400 mb-5 tracking-wider flex items-center gap-2">
+                                                            <BotMessageSquare className="h-5 w-5" /> AI WORKFLOWS
+                                                        </h4>
+
+                                                        <ul className="space-y-4">
+                                                            <MegaItem icon={<Workflow />} label="AI Workflow Automations" to="/services/ai-workflows" />
+                                                            <MegaItem icon={<Bot />} label="AI Voice Agents" to="/services/ai-voice-agents" />
+                                                            <MegaItem icon={<Bot />} label="AI Chatbots" to="/services/ai-chatbots" />
+                                                        </ul>
+                                                    </div>
+
                                                     <Link
-                                                        to={to}
-                                                        className={`block px-4 py-2 text-sm font-medium ${location.pathname === to
-                                                            ? "bg-gray-100 text-[#00A693]"
-                                                            : "text-gray-700 hover:bg-gray-200 hover:text-[#00A693]"
-                                                            }`}
+                                                        to="/services"
+                                                        className="mt-8 inline-flex items-center justify-center gap-2
+                     rounded-xl border border-[#00A693] text-[#00A693] px-6 py-3
+                    transition"
                                                     >
-                                                        {label}
+                                                        All Services <ArrowRight className="h-4 w-4" />
                                                     </Link>
-                                                </li>
-                                            ))}
-                                        </ul>
+                                                </div>
+
+                                            </div>
+                                        </div>
                                     )}
+
                                 </div>
                             ) : (
                                 <Link
@@ -111,7 +180,7 @@ export const Header = () => {
                                     to={to}
                                     className={`text-sm font-medium transition-colors ${location.pathname === to
                                         ? "text-[#00A693]"
-                                        : "text-gray-700 hover:text-[#00A693]"
+                                        : "text-gray-300 hover:text-[#00A693]"
                                         }`}
                                 >
                                     {label}
@@ -122,13 +191,7 @@ export const Header = () => {
 
                     {/* Desktop Actions */}
                     <div className="hidden md:flex items-center space-x-5">
-                        {/* <a
-                            href="tel:5614293999"
-                            className="flex items-center text-sm font-medium text-gray-700 hover:text-[#00A693]"
-                        >
-                            <Phone className="mr-2 h-4 w-4 text-[#00A693]" />
-                            (561) 429-3999
-                        </a> */}
+
                         <Link
                             to="/contact"
                             className="bg-[#00A693] text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#00947F] transition shadow-sm"
@@ -140,7 +203,7 @@ export const Header = () => {
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="md:hidden text-gray-700 hover:text-[#00A693] transition"
+                        className="md:hidden text-gray-300 hover:text-[#00A693] transition"
                     >
                         {isMenuOpen ? (
                             <X className="h-7 w-7 transition-transform duration-300 rotate-180 cursor-pointer" />
@@ -190,3 +253,22 @@ export const Header = () => {
         </header>
     );
 };
+
+
+
+const MegaItem = ({ icon, label, to }) => (
+    <li>
+        <Link
+            to={to}
+            className="flex items-center gap-3 text-sm text-gray-300
+                 hover:text-white transition group"
+        >
+            <span className="flex h-9 w-9 items-center justify-center rounded-lg
+                       bg-white/5 border border-white/10
+                       group-hover:border-[#00A693]/50">
+                {icon}
+            </span>
+            {label}
+        </Link>
+    </li>
+);

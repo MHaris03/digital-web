@@ -1,163 +1,163 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 const faqs = [
     {
         question: "What digital marketing services do you offer?",
-        answer: "We provide strategy, SEO, social media management, content creation, paid advertising, and analytics tailored to your brand."
+        answer:
+            "We provide strategy, SEO, social media management, content creation, paid advertising, and analytics tailored to your brand.",
     },
     {
         question: "How long does it take to see results?",
-        answer: "Initial results are typically visible within 2-3 months, depending on the campaign and strategy."
+        answer:
+            "Initial results are typically visible within 2–3 months, depending on the campaign and strategy.",
     },
     {
         question: "Do you provide custom packages?",
-        answer: "Yes. Each business is unique, so we create a package that fits your goals and audience."
+        answer:
+            "Yes. Each business is unique, so we create a package that fits your goals and audience.",
     },
     {
         question: "Can you manage multiple platforms for my brand?",
-        answer: "Absolutely. We handle all major platforms like Google, Facebook, Instagram, LinkedIn, ensuring consistent messaging."
+        answer:
+            "Absolutely. We handle Google, Facebook, Instagram, LinkedIn, and more with consistent messaging.",
     },
     {
         question: "How do you track and report performance?",
-        answer: "We provide detailed analytics dashboards, regular reports, and actionable insights so you always know your ROI."
+        answer:
+            "We provide dashboards, clear reports, and actionable insights so you always know your ROI.",
     },
     {
         question: "Can I request ongoing support?",
-        answer: "Yes, we offer ongoing support and optimization to ensure long-term results and growth."
-    }
+        answer:
+            "Yes, we offer ongoing optimization and support for long-term growth.",
+    },
 ];
 
 export default function FAQQuoteSection() {
     const [openIndex, setOpenIndex] = useState(null);
 
-    const toggle = (index) => {
-        setOpenIndex(openIndex === index ? null : index);
-    };
-
     return (
-        <section className="py-20 bg-gradient-to-br from-[#F7FAFC] to-[#E8F5F3]">
-            <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-10">
+        <section className="py-10 bg-[#0a0a0a]">
+            <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-14">
 
-                {/* Left: FAQ */}
-                <div className="lg:w-1/2 space-y-4">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+                {/* FAQ */}
+                <div className="lg:w-1/2">
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
                         Frequently Asked Questions
                     </h2>
-                    <p className="text-gray-600 mb-8">
-                        Answers to the most common questions about Sky Lift Group's digital marketing services.
+                    <p className="text-gray-400 mb-10">
+                        Everything you need to know about working with Sky Lift Group.
                     </p>
 
-                    {faqs.map((faq, index) => (
-                        <motion.div
-                            key={index}
-                            className="bg-white rounded-xl shadow-md overflow-hidden"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                        >
-                            <button
-                                onClick={() => toggle(index)}
-                                className="w-full flex cursor-pointer justify-between items-center p-5 text-left text-gray-900 font-medium hover:bg-gray-100 transition"
+                    <div className="space-y-4">
+                        {faqs.map((faq, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.4, delay: index * 0.1 }}
+                                viewport={{ once: true }}
+                                className="bg-white/5 border border-white/10 rounded-xl overflow-hidden"
                             >
-                                {faq.question}
-                                <ChevronDown
-                                    className={`h-5 w-5 transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""}`}
-                                />
-                            </button>
-                            {openIndex === index && (
-                                <div className="p-5 text-gray-700 border-t border-gray-200">
-                                    {faq.answer}
-                                </div>
-                            )}
-                        </motion.div>
-                    ))}
+                                <button
+                                    onClick={() =>
+                                        setOpenIndex(openIndex === index ? null : index)
+                                    }
+                                    className="w-full flex justify-between items-center p-5 text-left text-white font-medium hover:bg-white/5 transition"
+                                >
+                                    {faq.question}
+                                    <ChevronDown
+                                        className={`h-5 w-5 cursor-pointer text-[#00A693] transition-transform ${openIndex === index ? "rotate-180" : ""
+                                            }`}
+                                    />
+                                </button>
+
+                                <AnimatePresence>
+                                    {openIndex === index && (
+                                        <motion.div
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: "auto", opacity: 1 }}
+                                            exit={{ height: 0, opacity: 0 }}
+                                            transition={{ duration: 0.3 }}
+                                            className="px-5 py-5 pb-5 text-gray-300 border-t border-white/10"
+                                        >
+                                            {faq.answer}
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
 
-                {/* Right: Request Quote Form */}
-                <div className="lg:w-1/2 flex-1">
+                {/* Quote Form */}
+                <div className="lg:w-1/2">
                     <motion.form
-                        className="bg-white p-8 rounded-2xl shadow-lg space-y-6"
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
+                        transition={{ duration: 0.7 }}
                         viewport={{ once: true }}
+                        className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-lg"
                     >
-                        <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                        <h3 className="text-3xl font-bold text-white mb-3">
                             Request a Free Quote
                         </h3>
-                        <p className="text-gray-600 mb-6">
-                            Fill out this form and our team will craft a personalized digital marketing plan for your business.
+                        <p className="text-gray-400 mb-8">
+                            Share your details and we’ll prepare a tailored strategy for you.
                         </p>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {/* Full width */}
-                            <input
-                                type="text"
-                                placeholder="Business Name"
-                                className="col-span-1 md:col-span-2 border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-[#00A693] outline-none"
-                            />
+                            <input className="md:col-span-2 input-dark" placeholder="Business Name" />
+                            <input className="input-dark" placeholder="First Name" />
+                            <input className="input-dark" placeholder="Last Name" />
+                            <input className="input-dark" placeholder="Phone" />
+                            <input className="input-dark" placeholder="Email" />
+                            <input className="md:col-span-2 input-dark" placeholder="Website URL" />
 
-                            <input
-                                type="text"
-                                placeholder="First Name"
-                                className="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-[#00A693] outline-none"
-                            />
-
-                            <input
-                                type="text"
-                                placeholder="Last Name"
-                                className="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-[#00A693] outline-none"
-                            />
-
-                            <input
-                                type="tel"
-                                placeholder="Phone"
-                                className="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-[#00A693] outline-none"
-                            />
-
-                            <input
-                                type="email"
-                                placeholder="Email"
-                                className="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-[#00A693] outline-none"
-                            />
-
-                            {/* Full width */}
-                            <input
-                                type="url"
-                                placeholder="Website URL"
-                                className="col-span-1 md:col-span-2 border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-[#00A693] outline-none"
-                            />
-
-                            {/* Select Service Heading */}
-                            <label className="col-span-1 md:col-span-2 text-gray-700 font-medium">
-                                What Service Do You Need ?
-                            </label>
-
-                            {/* Full width */}
-                            <select className="col-span-1 cursor-pointer md:col-span-2 border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-[#00A693] outline-none">
-                                <option value="">Choose a Service</option>
-                                <option value="web design">Web Design & Development</option>
-                                <option value="Social Media Marketing">SEO</option>
-                                <option value="Content Marketing">Content Marketing</option>
-                                <option value="Paid Advertising">Paid Advertising</option>
-                                <option value="Full Digital Strategy">Full Digital Strategy</option>
-                                <option value="local Maps Optimization">Local Maps Optimization</option>
-                                <option value="PPC Management">PPC Management</option>
+                            <select
+                                className="
+                                    md:col-span-2 cursor-pointer
+                                    bg-white/5 text-white
+                                    border border-white/10 rounded-lg px-4 py-3
+                                    focus:outline-none focus:ring-2 focus:ring-[#00A693]
+                                "
+                            >
+                                <option value="" className="bg-[#0a0a0a] text-gray-400">
+                                    Choose a Service
+                                </option>
+                                <option className="bg-[#0a0a0a] text-white">Web Design & Development</option>
+                                <option className="bg-[#0a0a0a] text-white">SEO</option>
+                                <option className="bg-[#0a0a0a] text-white">Content Marketing</option>
+                                <option className="bg-[#0a0a0a] text-white">Paid Advertising</option>
+                                <option className="bg-[#0a0a0a] text-white">Full Digital Strategy</option>
+                                <option className="bg-[#0a0a0a] text-white">Local Maps Optimization</option>
+                                <option className="bg-[#0a0a0a] text-white">PPC Management</option>
                             </select>
                         </div>
-                        <textarea placeholder="Describe your requirements..." rows="4" className="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-[#00A693] outline-none"></textarea>
 
-                        <label className="inline-flex items-center space-x-2">
-                            <input type="checkbox" className="w-5 h-5 text-[#00A693] border-gray-300 rounded focus:ring-2 focus:ring-[#00A693] outline-none" />
-                            <span className="text-gray-700 text-sm">
-                                I agree to be contacted by the Sky Lift Group team regarding my request.
-                            </span>
+                        <textarea
+                            rows="4"
+                            placeholder="Describe your requirements..."
+                            className="input-dark mt-6"
+                        ></textarea>
+
+                        <label className="flex items-start gap-3 mt-6 text-gray-400 text-sm">
+                            <input type="checkbox" className="accent-[#00A693] mt-1" />
+                            I agree to be contacted by Sky Lift Group regarding my request.
                         </label>
 
-                        <button type="submit" className="w-full cursor-pointer bg-[#00A693] hover:bg-[#00947F] text-white font-semibold px-6 py-4 rounded-xl shadow-lg transition-transform hover:scale-105">
+                        <button
+                            type="submit"
+                            className="
+                w-full mt-8 py-4 rounded-xl font-semibold
+                bg-[#00A693] text-white cursor-pointer
+                hover:bg-[#00947F]
+                hover:shadow-[0_0_30px_rgba(0,166,147,0.6)]
+                transition-all duration-300
+              "
+                        >
                             Submit Request
                         </button>
                     </motion.form>

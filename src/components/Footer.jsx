@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 import { Facebook, Twitter, Linkedin, Instagram, Mail, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 
-
 export const Footer = () => {
   return (
-    <footer className="relative py-20 overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.25)] bg-gradient-to-tr from-[#00A693] to-[#00796B]">
+    <footer className="relative py-5 overflow-hidden bg-[#0a0a0a] text-gray-100">
       {/* Container */}
       <div className="container mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12">
 
+        {/* Logo & Description */}
         <motion.div
           className="space-y-4"
           initial={{ opacity: 0, y: 50 }}
@@ -22,10 +22,9 @@ export const Footer = () => {
               alt="Sky Lift Group"
               className="h-auto w-40 object-cover"
             />
-
           </div>
-          <p className="text-[#E0F2F1] text-md font-semibold">
-            Empowering businesses through innovative digital marketing strategies with measurable results.
+          <p className="text-gray-300 text-md font-medium leading-relaxed">
+            Empowering businesses through AI-driven digital marketing strategies that deliver clear, measurable results.
           </p>
         </motion.div>
 
@@ -37,7 +36,7 @@ export const Footer = () => {
           viewport={{ once: true }}
         >
           <h3 className="mb-4 font-bold text-lg text-white">Quick Links</h3>
-          <ul className="space-y-2 text-[#E0F2F1] text-md font-semibold">
+          <ul className="space-y-2 text-gray-300 text-md font-medium">
             {[
               { label: "Home", path: "/" },
               { label: "Services", path: "/services" },
@@ -47,7 +46,7 @@ export const Footer = () => {
               <li key={link.label}>
                 <Link
                   to={link.path}
-                  className="inline-block hover:text-[#FFD166] hover:scale-110 transition-all duration-300"
+                  className="inline-block hover:text-[#00A693] hover:scale-105 transition-all duration-300"
                 >
                   {link.label}
                 </Link>
@@ -64,11 +63,10 @@ export const Footer = () => {
           viewport={{ once: true }}
         >
           <h3 className="mb-4 font-bold text-lg text-white">Services</h3>
-
-          <ul className="space-y-2 text-[#E0F2F1] text-md font-semibold">
+          <ul className="space-y-2 text-gray-300 text-md font-medium">
             {[
               { label: "Web Design & Development", to: "/services/web-design" },
-              { label: "Search Engine Optimization", to: "/services/seo" },
+              { label: "SEO", to: "/services/seo" },
               { label: "Local Maps Optimization", to: "/services/local-maps" },
               { label: "Social Media Marketing", to: "/services/social-media" },
               { label: "PPC Management", to: "/services/ppc-management" },
@@ -77,7 +75,7 @@ export const Footer = () => {
               <li key={link.label}>
                 <Link
                   to={link.to}
-                  className="inline-block hover:text-[#FFD166] hover:scale-110 transition-all duration-300"
+                  className="inline-block hover:text-[#00A693] hover:scale-105 transition-all duration-300"
                 >
                   {link.label}
                 </Link>
@@ -85,6 +83,7 @@ export const Footer = () => {
             ))}
           </ul>
         </motion.div>
+
         {/* Contact */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -93,67 +92,56 @@ export const Footer = () => {
           viewport={{ once: true }}
         >
           <h3 className="mb-4 font-bold text-lg text-white">Contact</h3>
-          <ul className="space-y-3 text-[#E0F2F1] text-md font-semibold">
-            {/* <li className="flex items-center gap-2">
-              <Phone className="w-5 h-5 text-[#FFD166]" /> (555) 123-4567
-            </li> */}
+          <ul className="space-y-3 text-gray-300 text-md font-medium">
             <li className="flex items-center gap-2">
-              <Mail className="w-5 h-5 text-[#FFD166]" />
+              <Mail className="w-5 h-5 text-[#00A693]" />
               <a
                 href="mailto:info@skyliftgroup.com"
-                className=""
+                className="hover:text-[#00A693] transition-colors duration-300"
               >
                 info@skyliftgroup.com
               </a>
             </li>
-
-            {/* <li className="flex items-center gap-2">
-              <MapPin className="w-5 h-5 text-[#FFD166]" /> 123 Business Ave, NY
-            </li> */}
+            <li className="flex items-center gap-2">
+              <MapPin className="w-5 h-5 text-[#00A693]" />
+              USA, Canada, Australia
+            </li>
           </ul>
         </motion.div>
+
+        {/* Social Links */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <h3 className="mb-4 font-bold text-lg text-white">Location</h3>
-
-          <ul className="space-y-3 text-[#E0F2F1] text-md font-semibold">
-            <li className="flex items-center gap-2">
-              {/* <span className="fi fi-us"></span> */}
-              <MapPin className="w-5 h-5 text-[#FFD166]" /> USA , Canada , Australia
-            </li>
-
-            {/* <li className="flex items-center gap-2">
-              <span className="fi fi-ca"></span>
-              Canada
-            </li>
-
-            <li className="flex items-center gap-2">
-              <span className="fi fi-au"></span>
-              Australia
-            </li> */}
-          </ul>
+          <h3 className="mb-4 font-bold text-lg text-white">Follow Us</h3>
+          <div className="flex gap-4 mt-2">
+            {[Facebook, Twitter, Linkedin, Instagram].map((Icon, idx) => (
+              <a
+                key={idx}
+                href="#"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-[#00A693]/20 hover:bg-[#00A693] transition-all duration-300 text-white"
+              >
+                <Icon className="w-5 h-5" />
+              </a>
+            ))}
+          </div>
         </motion.div>
       </div>
 
       {/* Bottom Section */}
       <motion.div
-        className="mt-12 flex flex-col md:flex-row items-center justify-between pt-6 px-6 border-t border-white/20"
+        className="mt-5 flex flex-col md:flex-row items-center justify-center pt-6 px-6 border-t border-white/20"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
+        transition={{ duration: 0.6, delay: 0.5 }}
         viewport={{ once: true }}
       >
-        <p className="text-white/70 text-md font-semibold">© 2025 Sky Lift Group. All rights reserved.</p>
-        {/* <div className="mt-4 md:mt-0 flex space-x-4">
-          <a href="#" className="hover:text-[#FFD166] transition-colors text-white/70"><Facebook className="w-6 h-6" /></a>
-          <a href="#" className="hover:text-[#FFD166] transition-colors text-white/70"><Twitter className="w-6 h-6" /></a>
-          <a href="#" className="hover:text-[#FFD166] transition-colors text-white/70"><Linkedin className="w-6 h-6" /></a>
-          <a href="#" className="hover:text-[#FFD166] transition-colors text-white/70"><Instagram className="w-6 h-6" /></a>
-        </div> */}
+        <p className="text-gray-400 text-md font-medium">
+          © 2025 Sky Lift Group. All rights reserved.
+        </p>
       </motion.div>
     </footer>
   );

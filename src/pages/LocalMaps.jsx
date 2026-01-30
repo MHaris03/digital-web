@@ -79,7 +79,7 @@ const LocalMapOptimization = () => {
                 className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"
                 style={{ backgroundImage: `url("/assets/maps-bg.jpeg")` }}
             >
-                <div className="absolute inset-0 bg-black/50" />
+                <div className="absolute inset-0 bg-black/70" />
 
                 <motion.h1
                     initial={{ opacity: 0, y: 40 }}
@@ -100,17 +100,17 @@ const LocalMapOptimization = () => {
                 </motion.p>
             </section>
 
-            <SliderBar />
+            {/* <SliderBar /> */}
 
             {/* STRATEGY SECTION */}
             <motion.section
-                className="relative py-20 md:py-24 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"
+                className="relative py-20 md:py-24 overflow-hidden bg-[#0a0a0a]"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
             >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,#00A69330,transparent_70%)] blur-2xl"></div>
+                <div className="absolute "></div>
 
                 <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-12 items-center px-6 md:px-0">
                     <motion.div
@@ -177,7 +177,7 @@ const LocalMapOptimization = () => {
 
             {/* LOCAL SERVICES SECTION */}
             <motion.section
-                className="py-20 px-6 md:px-12 bg-white"
+                className="py-20 px-6 md:px-12 bg-[#0a0a0a]"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
@@ -187,7 +187,7 @@ const LocalMapOptimization = () => {
                     {services.map((service, idx) => (
                         <motion.div
                             key={idx}
-                            className={`relative group rounded-2xl p-8 border transition-all duration-500 shadow-md backdrop-blur-xl bg-white/10 hover:shadow-[0_0_25px_#00A69340] hover:border-[#00A693]/40 ${service.highlight ? "border-[#00A693]/30" : "border-gray-200"
+                            className={`relative group rounded-2xl p-8 border transition-all duration-500 shadow-md backdrop-blur-xl bg-white/10 hover:shadow-[0_0_25px_#00A69340] hover:border-[#00A693]/40 ${service.highlight ? "border-[#00A693]/30" : "border-gray-700"
                                 }`}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -195,8 +195,8 @@ const LocalMapOptimization = () => {
                             viewport={{ once: true }}
                         >
                             <div className="text-[#00A693] mb-4">{service.icon}</div>
-                            <h3 className="font-semibold text-xl mb-3 text-gray-900">{service.title}</h3>
-                            <p className="text-gray-700 text-sm leading-relaxed mb-6">{service.desc}</p>
+                            <h3 className="font-semibold text-xl mb-3 text-gray-100">{service.title}</h3>
+                            <p className="text-gray-300 text-sm leading-relaxed mb-6">{service.desc}</p>
                             <Link to="/contact">
                                 <button
                                     className={`px-4 py-2 rounded-full font-semibold transition cursor-pointer ${service.highlight
@@ -207,7 +207,6 @@ const LocalMapOptimization = () => {
                                     Lets Start
                                 </button>
                             </Link>
-
                         </motion.div>
                     ))}
                 </div>
@@ -215,7 +214,7 @@ const LocalMapOptimization = () => {
 
             {/* FAQ SECTION */}
             <motion.section
-                className="bg-white py-20 px-6 md:px-12"
+                className="bg-[#0a0a0a] py-20 px-6 md:px-12"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
@@ -228,7 +227,7 @@ const LocalMapOptimization = () => {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl font-bold mb-6">Frequently Asked Questions</h2>
+                        <h2 className="text-3xl font-bold mb-6 text-gray-100">Frequently Asked Questions</h2>
                         <div className="space-y-4">
                             {faqs.map((item, index) => (
                                 <motion.div
@@ -258,8 +257,8 @@ const LocalMapOptimization = () => {
                                                 exit={{ height: 0, opacity: 0 }}
                                                 transition={{ duration: 0.3 }}
                                             >
-                                                <div className="mt-4 border-t border-gray-300 pt-3">
-                                                    <p className="text-black text-md leading-relaxed">{item.a}</p>
+                                                <div className="mt-4 border-t border-gray-700 pt-3">
+                                                    <p className="text-gray-300 text-md leading-relaxed">{item.a}</p>
                                                 </div>
                                             </motion.div>
                                         )}
@@ -276,7 +275,7 @@ const LocalMapOptimization = () => {
                         viewport={{ once: true }}
                         className="flex items-center justify-center"
                     >
-                        <div className="w-full h-80 flex items-center justify-center">
+                        <div className="w-full h-80 flex items-center justify-center shadow-md">
                             <img src="/assets/map-side.webp" alt="Local Maps Optimization Services" className="rounded-2xl shadow-lg" />
                         </div>
                     </motion.div>
