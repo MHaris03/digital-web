@@ -65,10 +65,10 @@ const FivestarReviews = () => {
     const toggleFAQ = (index) => setOpenIndex(openIndex === index ? null : index);
 
     useSeo({
-        title: "Meta Ads Services | Sky Lift Group",
+        title: "Five Star views Services | Sky Lift Group",
         description:
             "Sky Lift Group delivers high-performing Meta Ads campaigns on Facebook and Instagram to drive leads, sales, and scalable growth.",
-        canonical: "https://www.skyliftgroup.com/services/tiktok-ads"
+        canonical: "https://www.skyliftgroup.com/services/review"
     });
 
 
@@ -77,7 +77,7 @@ const FivestarReviews = () => {
             {/* HERO SECTION */}
             <section
                 className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"
-                style={{ backgroundImage: `url("/assets/tik-tok-ads.png")` }}
+                style={{ backgroundImage: `url("/assets/five-bg.jpeg")` }}
             >
                 <div className="absolute inset-0 bg-black/70" />
 
@@ -285,7 +285,7 @@ const FivestarReviews = () => {
                         className="flex items-center justify-center"
                     >
                         <div className="w-full h-80 flex items-center justify-center shadow-md">
-                            <img src="/assets/tik-tok.png" alt="TikTok ADs" className="rounded-2xl shadow-lg" />
+                            <img src="/assets/five-star.jpg" alt="TikTok ADs" className="rounded-2xl shadow-lg" />
                         </div>
                     </motion.div>
                 </div>
