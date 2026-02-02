@@ -3,6 +3,14 @@ import { Facebook, Twitter, Linkedin, Instagram, Mail, MapPin } from "lucide-rea
 import { motion } from "framer-motion";
 
 export const Footer = () => {
+
+  const socialLinks = [
+    { icon: Facebook, label: "Facebook", to: "/" },
+    { icon: Twitter, label: "Twitter", to: "/" },
+    { icon: Linkedin, label: "LinkedIn", to: "/" },
+    { icon: Instagram, label: "Instagram", to: "/" },
+  ];
+
   return (
     <footer className="relative py-5 overflow-hidden bg-[#0a0a0a] text-gray-100">
       {/* Container */}
@@ -17,11 +25,13 @@ export const Footer = () => {
           viewport={{ once: true }}
         >
           <div className="flex items-center gap-3">
-            <img
-              src="/assets/sky-lift.png"
-              alt="Sky Lift Group"
-              className="h-auto w-40 object-cover"
-            />
+            <Link to='/'>
+              <img
+                src="/assets/skyliftlogo.png"
+                alt="Sky Lift Group"
+                className="h-auto w-40 object-cover"
+              />
+            </Link>
           </div>
           <p className="text-gray-300 text-md font-medium leading-relaxed">
             Empowering businesses through AI-driven digital marketing strategies that deliver clear, measurable results.
@@ -118,14 +128,21 @@ export const Footer = () => {
         >
           <h3 className="mb-4 font-bold text-lg text-white">Follow Us</h3>
           <div className="flex gap-4 mt-2">
-            {[Facebook, Twitter, Linkedin, Instagram].map((Icon, idx) => (
-              <a
+            {socialLinks.map(({ icon: Icon, label, to }, idx) => (
+              <Link
                 key={idx}
-                href="#"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-[#00A693]/20 hover:bg-[#00A693] transition-all duration-300 text-white"
+                to={to}
+                aria-label={label}
+                className="
+        w-10 h-10 flex items-center justify-center
+        rounded-full bg-[#00A693]/20 hover:bg-[#00A693]
+        transition-all duration-300 text-white
+        focus:outline-none focus:ring-2 focus:ring-[#00A693]
+        focus:ring-offset-2 focus:ring-offset-black
+      "
               >
-                <Icon className="w-5 h-5" />
-              </a>
+                <Icon className="w-5 h-5" aria-hidden="true" />
+              </Link>
             ))}
           </div>
         </motion.div>

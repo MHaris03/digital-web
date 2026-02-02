@@ -116,25 +116,37 @@ export default function FAQQuoteSection() {
                             <input className="input-dark" placeholder="Email" />
                             <input className="md:col-span-2 input-dark" placeholder="Website URL" />
 
-                            <select
-                                className="
-                                    md:col-span-2 cursor-pointer
-                                    bg-white/5 text-white
-                                    border border-white/10 rounded-lg px-4 py-3
-                                    focus:outline-none focus:ring-2 focus:ring-[#00A693]
-                                "
-                            >
-                                <option value="" className="bg-[#0a0a0a] text-gray-400">
+                            <div className="md:col-span-2">
+                                <label
+                                    htmlFor="service"
+                                    className="sr-only"
+                                >
                                     Choose a Service
-                                </option>
-                                <option className="bg-[#0a0a0a] text-white">Web Design & Development</option>
-                                <option className="bg-[#0a0a0a] text-white">SEO</option>
-                                <option className="bg-[#0a0a0a] text-white">Content Marketing</option>
-                                <option className="bg-[#0a0a0a] text-white">Paid Advertising</option>
-                                <option className="bg-[#0a0a0a] text-white">Full Digital Strategy</option>
-                                <option className="bg-[#0a0a0a] text-white">Local Maps Optimization</option>
-                                <option className="bg-[#0a0a0a] text-white">PPC Management</option>
-                            </select>
+                                </label>
+
+                                <select
+                                    id="service"
+                                    name="service"
+                                    className="
+            w-full cursor-pointer
+            bg-white/5 text-white
+            border border-white/10 rounded-lg px-4 py-3
+            focus:outline-none focus:ring-2 focus:ring-[#00A693]
+        "
+                                >
+                                    <option value="" className="bg-[#0a0a0a] text-gray-400">
+                                        Choose a Service
+                                    </option>
+                                    <option className="bg-[#0a0a0a] text-white">Web Design & Development</option>
+                                    <option className="bg-[#0a0a0a] text-white">SEO</option>
+                                    <option className="bg-[#0a0a0a] text-white">Content Marketing</option>
+                                    <option className="bg-[#0a0a0a] text-white">Paid Advertising</option>
+                                    <option className="bg-[#0a0a0a] text-white">Full Digital Strategy</option>
+                                    <option className="bg-[#0a0a0a] text-white">Local Maps Optimization</option>
+                                    <option className="bg-[#0a0a0a] text-white">PPC Management</option>
+                                </select>
+                            </div>
+
                         </div>
 
                         <textarea

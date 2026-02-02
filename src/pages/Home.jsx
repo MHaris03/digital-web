@@ -29,6 +29,9 @@ const Home = () => {
         <img
           src="/assets/bg-hero.jpg"
           alt="Team meeting"
+          fetchPriority="high"
+          width={1920}
+          height={1080}
           className="absolute inset-0 w-full h-full object-cover -z-10"
         />
         <div className="absolute inset-0 bg-black/80 -z-10"></div>

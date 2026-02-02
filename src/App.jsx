@@ -15,6 +15,10 @@ import ContentWritingServices from "./pages/Writing";
 import Designweb from "./pages/Designdevelopment";
 import ScrollToTop from "./components/Scrolltotop";
 import NotFound from "./components/Notfound";
+import MetaAds from "./pages/MetaAds";
+import TikTokdas from "./pages/TikTok-ads";
+import Googleads from "./pages/GoogleAds";
+import FivestarReviews from "./pages/FivestarReviews";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +39,11 @@ const App = () => (
           <Route path="/services/social-media" element={<SocialMediaMarketing />} />
           <Route path="/services/ppc-management" element={<PPCManagement />} />
           <Route path="/services/content-writing" element={<ContentWritingServices />} />
+          <Route path="/services/meta-ads" element={<MetaAds />} />
+          <Route path="/services/tiktok-ads" element={<TikTokdas />} />
+          <Route path="/services/google-ads" element={<Googleads />} />
+          <Route path="/services/reviews" element={<FivestarReviews />} />
+
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

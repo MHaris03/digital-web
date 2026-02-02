@@ -194,10 +194,21 @@ export const Header = () => {
 
                         <Link
                             to="/contact"
-                            className="bg-[#00A693] text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#00947F] transition shadow-sm"
+                            className="
+                            bg-[#00A693]
+                            text-white
+                            px-4 py-2
+                            rounded-lg
+                            text-sm
+                            font-medium
+                            hover:bg-[#00947F]
+                            transition
+                            shadow-sm
+                        "
                         >
                             Get Started
                         </Link>
+
                     </div>
 
                     {/* Mobile Menu Button */}
