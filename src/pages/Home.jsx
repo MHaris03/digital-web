@@ -27,7 +27,7 @@ const Home = () => {
 
       <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
         <img
-          src="/assets/bg-hero.jpg"
+          src="/assets/bg-hero.webp"
           alt="Team meeting"
           fetchPriority="high"
           width={1920}
@@ -42,19 +42,15 @@ const Home = () => {
           </div>
         </div> */}
 
-        <div className="container mx-auto px-6 py-20 items-center z-10">
-
+        <div className="container mx-auto px-6 py-20 z-10">
           <motion.div
             className="space-y-6"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
           >
-
             <HeroSlider />
           </motion.div>
-
         </div>
       </section>
 

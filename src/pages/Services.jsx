@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import useSeo from "../hooks/useSeo";
 import OurService from "./OurServices";
 import CTASection from "./CtaSection";
+import { useEffect } from "react";
 
 
 
@@ -14,13 +15,17 @@ export default function ServicesAttractive() {
     canonical: "https://www.skyliftgroup.com/services"
   });
 
+  useEffect(() => {
+    const img = new Image()
+    img.src = "/assets/services.webp"
+  }, [])
+
+
   return (
     <div className="w-full">
 
-      <section
-        className="relative w-full h-[88vh] flex flex-col items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: `url("/assets/services.webp")` }}
-      >
+     <section className="services-hero relative w-full h-[88vh] flex flex-col items-center justify-center">
+
         <div className="absolute inset-0 bg-black/80" />
 
         <motion.h1
