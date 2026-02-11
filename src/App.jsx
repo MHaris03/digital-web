@@ -19,6 +19,7 @@ import MetaAds from "./pages/MetaAds";
 import TikTokdas from "./pages/TikTok-ads";
 import Googleads from "./pages/GoogleAds";
 import FivestarReviews from "./pages/FivestarReviews";
+import Schedule from "./pages/Schedule";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +44,7 @@ const App = () => (
           <Route path="/services/tiktok-ads" element={<TikTokdas />} />
           <Route path="/services/google-ads" element={<Googleads />} />
           <Route path="/services/reviews" element={<FivestarReviews />} />
+          <Route path="/book" element={<Schedule />} />
 
           <Route path="*" element={<NotFound />} />
         </Route>

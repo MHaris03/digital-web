@@ -193,7 +193,7 @@ export const Header = () => {
                     <div className="hidden md:flex items-center space-x-5">
 
                         <Link
-                            to="/contact"
+                            to="/book"
                             className="
                             bg-[#00A693]
                             text-white
