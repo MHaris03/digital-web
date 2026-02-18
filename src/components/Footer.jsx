@@ -52,6 +52,9 @@ export const Footer = () => {
               { label: "Services", path: "/services" },
               { label: "Our Work", path: "/work" },
               { label: "Contact", path: "/contact" },
+              { label: "Privacy policy", path: "/privacy-policy" },
+              { label: "Terms Conditions", path: "/terms-conditions" },
+              { label: "FAQ", path: "/faq" },
             ].map((link) => (
               <li key={link.label}>
                 <Link
@@ -157,7 +160,7 @@ export const Footer = () => {
         viewport={{ once: true }}
       >
         <p className="text-gray-400 text-md font-medium">
-          © 2025 Sky Lift Group. All rights reserved.
+          © {new Date().getFullYear()} Sky Lift Group. All rights reserved.
         </p>
       </motion.div>
     </footer>

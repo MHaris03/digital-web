@@ -106,9 +106,11 @@ export const HeroSlider = () => {
     md:text-lg
   "
             >
-              <span className="relative z-10">
-                Book Your Free Strategy Call
-              </span>
+              <Link to="book">
+                <span className="relative z-10">
+                  Book Your Free Strategy Call
+                </span>
+              </Link>
             </button>
 
           </div>

@@ -9,11 +9,12 @@ import { useEffect } from "react";
 export default function ServicesAttractive() {
 
   useSeo({
-    title: "Our Services | Sky Lift Group – Automation, Chatbots & AI Solutions",
+    title: "AI Automation Services | Sky Lift Group – Chatbots, Voice Agents & Smart Marketing",
     description:
-      "Discover AI-powered services from Sky Lift Group, including AI chatbots, voice agents, workflow automations, and smart marketing systems designed to scale your business faster.",
+      "Sky Lift Group provides AI chatbots, AI voice agents, workflow automation, SEO, PPC, and smart digital marketing solutions that help businesses generate leads, automate operations, and scale revenue.",
     canonical: "https://www.skyliftgroup.com/services"
   });
+
 
   useEffect(() => {
     const img = new Image()
@@ -24,7 +25,7 @@ export default function ServicesAttractive() {
   return (
     <div className="w-full">
 
-     <section className="services-hero relative w-full h-[88vh] flex flex-col items-center justify-center">
+      <section className="services-hero relative w-full h-[88vh] flex flex-col items-center justify-center">
 
         <div className="absolute inset-0 bg-black/80" />
 

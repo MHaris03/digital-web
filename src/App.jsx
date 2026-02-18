@@ -20,6 +20,9 @@ import TikTokdas from "./pages/TikTok-ads";
 import Googleads from "./pages/GoogleAds";
 import FivestarReviews from "./pages/FivestarReviews";
 import Schedule from "./pages/Schedule";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsConditions from "./pages/TermsCondition";
+import Faq from "./pages/Faqs";
 
 const queryClient = new QueryClient();
 
@@ -45,6 +48,9 @@ const App = () => (
           <Route path="/services/google-ads" element={<Googleads />} />
           <Route path="/services/reviews" element={<FivestarReviews />} />
           <Route path="/book" element={<Schedule />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions" element={<TermsConditions/>}/>
+          <Route path="/faq" element={<Faq/>}/>
 
           <Route path="*" element={<NotFound />} />
         </Route>
