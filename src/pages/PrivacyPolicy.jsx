@@ -154,6 +154,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import useSeo from "../hooks/useSeo";
 import { Link } from "react-router-dom";
+import { Mail } from "lucide-react";
 
 const PrivacyPolicy = () => {
     useSeo({
@@ -238,12 +239,27 @@ const PrivacyPolicy = () => {
                     {/* Section 3 */}
                     <div>
                         <h2 className="text-2xl font-semibold text-white mb-4">
-                            Questions, Complaints and Contacts
+                            Contact Information
+
                         </h2>
-                        <p>
-                            If you have any questions regarding this Privacy Policy, please contact us
-                            at Hello@skyliftgroup.com.
+                        <p className="text-gray-400">
+                            For questions regarding these Terms and Conditions, contact:
                         </p>
+
+                        <div className="mt-4 space-y-2 text-gray-300">
+                            <div>Sky Lift Group</div>
+
+                            <div className="flex items-center gap-2">
+                                <Mail className="text-[#00A693]" size={18} />
+                                <a
+                                    href="mailto:hello@skyliftgroup.com"
+                                    className="hover:text-[#00A693] transition-colors"
+                                >
+                                    hello@skyliftgroup.com
+                                </a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 <motion.div
