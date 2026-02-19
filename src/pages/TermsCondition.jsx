@@ -319,7 +319,7 @@ const TermsConditions = () => {
                     viewport={{ once: true }}
                 >
                     <h3 className="text-3xl font-bold text-white mb-8">
-                        Questions About Our Privacy Policy?
+                        Questions About Our Terms & Conditions?
                     </h3>
 
                     <Link
