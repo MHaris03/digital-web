@@ -183,67 +183,113 @@ const PrivacyPolicy = () => {
                     </span>
 
                     <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                        Privacy
-                        <span className="text-[#00A693]"> Policy</span>
+                        Privacy <span className="text-[#00A693]">Policy</span>
                     </h1>
 
                     <p className="max-w-3xl mx-auto text-lg">
-                        We are committed to protecting your data while delivering
+                        We are committed to protecting your information while delivering
                         high-performance digital marketing and AI-powered solutions.
                     </p>
                 </motion.div>
 
-                {/* Content */}
                 <div className="space-y-12">
 
-                    {/* Section 1 */}
+                    {/* Introduction */}
                     <div>
                         <h2 className="text-2xl font-semibold text-white mb-4">
                             Introduction
                         </h2>
                         <p>
-                            This page (“Privacy Policy” or “Policy”) provides our policies and
-                            procedures for collecting, using and disclosing your information and
-                            outlines the security measures we’ve put in place to protect the information
-                            that you store using Sky Lift Group.'s ("Sky Lift Group") services,
-                            including the services made available through this web site, and any other software
-                            or services offered by Sky Lift Group in connection with such services
-                            (the “Services”). By using these Services, you consent to the collection, transfer,
-                            processing, storage, disclosure and other uses of your information described in this
-                            Privacy Policy.
+                            This Privacy Policy explains how Sky Lift Group collects, uses,
+                            processes, and protects your information when you use our website
+                            and services. By accessing or using our services, you agree to the
+                            collection and use of information in accordance with this policy.
                         </p>
                     </div>
 
-                    {/* Section 2 */}
+                    {/* Information Collected */}
                     <div>
-                        <h1 className="text-3xl font-bold text-white mb-8">
-                            What information does Sky Lift Group collect and store?
-
-                        </h1>
-
                         <h2 className="text-2xl font-semibold text-white mb-4">
+                            Information We Collect
+                        </h2>
+
+                        <h3 className="text-xl font-semibold text-white mb-2">
                             Personal Information
+                        </h3>
+                        <p className="mb-4">
+                            When you request information or register for our services, we may
+                            collect personal details such as your name, company name, email
+                            address, phone number, and billing information.
+                        </p>
+
+                        <h3 className="text-xl font-semibold text-white mb-2">
+                            Usage Information
+                        </h3>
+                        <p>
+                            We may collect information about how you interact with our website
+                            and services, including IP address, browser type, pages visited,
+                            and other diagnostic data to improve user experience.
+                        </p>
+                    </div>
+
+                    {/* No Selling of Data */}
+                    <div>
+                        <h2 className="text-2xl font-semibold text-white mb-4">
+                            Data Protection & Non-Sale of Information
                         </h2>
                         <p>
-                            When expressing an interest in obtaining additional information about the Services or
-                            registering to use the Services, Sky Lift Group requires you to provide your
-                            personal contact information, such as your name, company name, address, phone number,
-                            and email address (these are referred to below as your “Personal Contact Information”).
-                            When purchasing the Services, Sky Lift Group also requires you to provide financial
-                            and billing information, such as billing name and address, credit card number, and the
-                            number of employees within the organization that will be using the Services
-                            (“Billing Information”).
+                            Sky Lift Group does not sell, rent, trade, or share your personal
+                            information with third parties for their marketing or promotional
+                            purposes. Your information is used strictly to provide and improve
+                            our services.
                         </p>
                     </div>
 
-                    {/* Section 3 */}
+                    {/* SMS Compliance Section */}
+                    <div>
+                        <h2 className="text-2xl font-semibold text-white mb-4">
+                            Mobile Information & SMS Privacy
+                        </h2>
+
+                        <p className="mb-4">
+                            Mobile phone numbers and SMS opt-in data collected through our
+                            website, forms, or services are used solely for communication
+                            related to our services, updates, and customer support.
+                        </p>
+
+                        <p className="mb-4">
+                            SMS consent and mobile opt-in information will not be shared with
+                            any third parties or affiliates for marketing purposes. We do not
+                            disclose mobile information to external organizations except as
+                            required by law or to fulfill services you have requested.
+                        </p>
+
+                        <p>
+                            You may opt out of SMS communications at any time by replying
+                            “STOP” to any message or by contacting us directly.
+                        </p>
+                    </div>
+
+                    {/* Security */}
+                    <div>
+                        <h2 className="text-2xl font-semibold text-white mb-4">
+                            Data Security
+                        </h2>
+                        <p>
+                            We implement appropriate technical and organizational safeguards
+                            to protect your personal information against unauthorized access,
+                            alteration, disclosure, or destruction.
+                        </p>
+                    </div>
+
+                    {/* Contact */}
                     <div>
                         <h2 className="text-2xl font-semibold text-white mb-4">
                             Contact Information
-
                         </h2>
+
                         <p className="text-gray-400">
-                            For questions regarding these Terms and Conditions, contact:
+                            If you have questions about this Privacy Policy, please contact us:
                         </p>
 
                         <div className="mt-4 space-y-2 text-gray-300">
@@ -259,9 +305,10 @@ const PrivacyPolicy = () => {
                                 </a>
                             </div>
                         </div>
-
                     </div>
                 </div>
+
+                {/* CTA */}
                 <motion.div
                     className="text-center mt-24"
                     initial={{ opacity: 0, y: 40 }}
@@ -279,11 +326,10 @@ const PrivacyPolicy = () => {
                     >
                         Contact Sky Lift Group
                     </Link>
-
                 </motion.div>
 
-            </div >
-        </section >
+            </div>
+        </section>
     );
 };
 
