@@ -232,6 +232,16 @@ const PrivacyPolicy = () => {
                         </p>
                     </div>
 
+                    {/* Cookies & Tracking */}
+                    <div>
+                        <h2 className="text-2xl font-semibold text-white mb-4">
+                            Cookies & Tracking Technologies
+                        </h2>
+                        <p>
+                            We use cookies and similar tracking technologies to enhance your browsing experience, analyze website traffic, and improve our services. You can choose to disable cookies through your browser settings; however, some parts of the website may not function properly.
+                        </p>
+                    </div>
+
                     {/* No Selling of Data */}
                     <div>
                         <h2 className="text-2xl font-semibold text-white mb-4">
@@ -244,36 +254,37 @@ const PrivacyPolicy = () => {
                             our services.
                         </p>
                     </div>
+                    {/* User Rights */}
+                    <div>
+                        <h2 className="text-2xl font-semibold text-white mb-4">
+                            Your Rights
+                        </h2>
+                        <p>
+                            You have the right to access, update, or request deletion of your personal information at any time. To make such a request, please contact us using the information provided below.
+                        </p>
+                    </div>
 
+                    {/* SMS Compliance Section */}
                     {/* SMS Compliance Section */}
                     <div>
                         <h2 className="text-2xl font-semibold text-white mb-4">
                             Mobile Information & SMS Privacy
                         </h2>
-                        <p className="mb-4">
-                            No mobile information will be shared with third parties/affiliates for
-                            marketing/promotional purposes. All other categories exclude text messaging
-                            originator opt-in data and consent; this information will not be shared with
-                            any third parties.
 
+                        <p className="mb-4">
+                            By submitting your information through our website forms, you consent to receive SMS messages from Sky Lift Group related to our services, updates, and customer support. Message frequency may vary based on your interaction with us. Message and data rates may apply depending on your mobile carrier.
                         </p>
 
                         <p className="mb-4">
-                            Mobile phone numbers and SMS opt-in data collected through our
-                            website, forms, or services are used solely for communication
-                            related to our services, updates, and customer support.
+                            No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. All other categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.
                         </p>
 
                         <p className="mb-4">
-                            SMS consent and mobile opt-in information will not be shared with
-                            any third parties or affiliates for marketing purposes. We do not
-                            disclose mobile information to external organizations except as
-                            required by law or to fulfill services you have requested.
+                            SMS consent and mobile opt-in information will not be shared with any third parties or affiliates for marketing purposes. We do not disclose mobile information to external organizations except as required by law or to fulfill services you have requested.
                         </p>
 
                         <p>
-                            You may opt out of SMS communications at any time by replying
-                            “STOP” to any message or by contacting us directly.
+                            You may opt out of SMS communications at any time by replying “STOP” to any message or by contacting us directly.
                         </p>
                     </div>
 
@@ -286,6 +297,16 @@ const PrivacyPolicy = () => {
                             We implement appropriate technical and organizational safeguards
                             to protect your personal information against unauthorized access,
                             alteration, disclosure, or destruction.
+                        </p>
+                    </div>
+
+                    {/* Age Restriction */}
+                    <div>
+                        <h2 className="text-2xl font-semibold text-white mb-4">
+                            Age Restriction
+                        </h2>
+                        <p>
+                            Our services are intended for individuals who are at least 18 years old. We do not knowingly collect personal information from individuals under the age of 18.
                         </p>
                     </div>
 
