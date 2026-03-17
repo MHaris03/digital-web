@@ -250,6 +250,13 @@ const PrivacyPolicy = () => {
                         <h2 className="text-2xl font-semibold text-white mb-4">
                             Mobile Information & SMS Privacy
                         </h2>
+                        <p className="mb-4">
+                            No mobile information will be shared with third parties/affiliates for
+                            marketing/promotional purposes. All other categories exclude text messaging
+                            originator opt-in data and consent; this information will not be shared with
+                            any third parties.
+
+                        </p>
 
                         <p className="mb-4">
                             Mobile phone numbers and SMS opt-in data collected through our
