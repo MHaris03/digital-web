@@ -108,7 +108,7 @@ export const HeroSlider = () => {
             >
               <Link to="book">
                 <span className="relative z-10">
-                  Book Your Free Strategy Call
+                  Book Now
                 </span>
               </Link>
             </button>
