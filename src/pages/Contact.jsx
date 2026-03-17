@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import SliderBar from "./Sliderbar";
@@ -6,6 +6,7 @@ import useSeo from "../hooks/useSeo";
 import "flag-icons/css/flag-icons.min.css";
 
 const Contact = () => {
+  const [loading, setLoading] = useState(true);
   const [formData, setFormData] = useState({
     businessname: "",
     weburl: "",
@@ -32,6 +33,11 @@ const Contact = () => {
       "Get in touch with Sky Lift Group. Contact us for inquiries about digital marketing, SEO, web design, PPC, and social media services to grow your business.",
     canonical: "https://www.skyliftgroup.com/contact"
   });
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 8000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="flex flex-col">
@@ -122,7 +128,7 @@ const Contact = () => {
             </div>
 
             {/* CONTACT FORM */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -245,29 +251,51 @@ const Contact = () => {
                   </button>
                 </form>
               </div>
+            </motion.div> */}
+
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="lg:col-span-2"
+            >
+
+              <div className="relative w-full h-[850px] rounded-lg overflow-hidden">
+
+                {/* Loader */}
+                {loading && (
+                  <div
+                    className={`absolute inset-0 flex items-center justify-center bg-[#111111] z-10 transition-opacity duration-500 ${loading ? "opacity-100" : "opacity-0 pointer-events-none"
+                      }`}
+                  >
+                    <div className="flex flex-col items-center gap-3">
+
+                      {/* Spinner */}
+                      <div className="w-10 h-10 border-4 border-[#c1a944] border-t-transparent rounded-full animate-spin"></div>
+
+                      {/* Text */}
+                      <p className="text-gray-300 text-sm">Loading form...</p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Iframe */}
+                <iframe
+                  src="https://api.leadconnectorhq.com/widget/form/J6Gtz1pzBFNFDvoMGV05"
+                  className="w-full h-full border-none"
+                  title="Form"
+                  onLoad={() => setLoading(false)}
+                />
+
+              </div>
+
+
             </motion.div>
           </div>
         </div>
       </section>
 
-
-      {/* MAP PLACEHOLDER */}
-      {/* <section className="py-20 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="overflow-hidden rounded-2xl shadow-md bg-white"
-          >
-            <div className="aspect-video flex items-center justify-center bg-gray-100">
-              <MapPin className="h-12 w-12 text-[#00A693] mb-3" />
-              <p className="text-gray-600">Interactive map will display here</p>
-            </div>
-          </motion.div>
-        </div>
-      </section> */}
 
     </div>
   );
