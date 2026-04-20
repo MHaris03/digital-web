@@ -5,6 +5,7 @@ import CTASection from "./CtaSection";
 import SliderBar from "./Sliderbar";
 import Testimonials from "./Testionmial";
 import useSeo from "../hooks/useSeo";
+import CeoMessage from "../components/CEO";
 
 export default function AboutUs() {
 
@@ -81,6 +82,7 @@ export default function AboutUs() {
                     />
                 </div>
             </section>
+            <CeoMessage />
 
             {/* Mission & Vision */}
             <section className="bg-[#0a0a0a] py-10 px-4">
