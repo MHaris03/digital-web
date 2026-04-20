@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Quote, Linkedin, Twitter, Mail, Target, TrendingUp, Heart, Sparkles } from "lucide-react";
-import Ceoimg from "../../public/assets/Usama.png"
+import Ceoimg from "../../public/assets/CEO.png"
 
 export default function CeoMessage() {
 
